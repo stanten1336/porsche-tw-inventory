@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>保時捷台灣庫存儀表板</title>
+  <meta name="description" content="台灣各保時捷中心在 Porsche Finder 的公開庫存與車系占比，供對照各店庫存、調整新車折扣。">
+  <meta name="theme-color" content="#111214">
+  <style>
+    :root {
+      --bg: #111214;
+      --bg-elev: #18191d;
+      --card: #1c1d22;
+      --line: #2e2f36;
+      --text: #f3efe6;
+      --muted: #9c978c;
+      --accent: #e6313c;
+      --accent-soft: rgba(230, 49, 60, 0.14);
+      --good: #3fa66b;
+      --warn: #c9a227;
+      --radius: 14px;
+      --shadow: 0 8px 28px rgba(0,0,0,.28);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+    body {
+      font-family: "Noto Sans TC", "PingFang TC", "Hiragino Sans CNS", "Microsoft JhengHei", system-ui, sans-serif;
+      line-height: 1.55;
+      font-size: 16px;
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    a[href^="http"] { color: #f0c9cb; text-underline-offset: 3px; }
+    header {
+      padding: 28px 20px 18px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(1200px 280px at 10% -20%, var(--accent-soft), transparent 60%),
+        var(--bg);
+    }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px 64px; }
+    .kicker { color: var(--accent); letter-spacing: .16em; font-size: 12px; font-weight: 700; text-transform: uppercase; margin: 0 0 8px; }
+    h1 { font-size: clamp(26px, 4vw, 38px); margin: 0 0 8px; letter-spacing: .02em; font-weight: 700; }
+    .lede { color: var(--muted); margin: 0; max-width: 46em; }
+    .meta { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 14px; color: var(--muted); font-size: 14px; }
+    .meta strong { color: var(--text); font-weight: 600; }
+    .filters {
+      position: sticky; top: 0; z-index: 8;
+      background: rgba(17,18,20,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 0;
+    }
+    .filter-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .seg { display: flex; flex-wrap: wrap; gap: 6px; }
+    .seg button, .select-wrap select, .search input, .btn-link {
+      appearance: none; border: 1px solid var(--line); background: var(--card);
+      color: var(--text); border-radius: 999px; padding: 8px 14px; font: inherit; cursor: pointer;
+    }
+    .seg button[aria-pressed="true"] {
+      background: var(--text); color: var(--bg); border-color: var(--text); font-weight: 700;
+    }
+    .select-wrap { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14px; }
+    .search input { border-radius: 10px; min-width: min(100%, 240px); }
+    .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 22px 0; }
+    .metric {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 16px 16px 14px; box-shadow: var(--shadow);
+    }
+    .metric .v { font-size: 28px; font-weight: 700; letter-spacing: .01em; line-height: 1.15; }
+    .metric .l { color: var(--muted); font-size: 13px; margin-top: 4px; }
+    .metric .d { color: var(--muted); font-size: 12px; margin-top: 6px; }
+    section { margin: 32px 0; }
+    h2 { font-size: 20px; margin: 0 0 6px; }
+    .cap { color: var(--muted); font-size: 14px; margin: 0 0 14px; }
+    .callout {
+      background: var(--accent-soft); border: 1px solid rgba(230,49,60,.3);
+      border-radius: var(--radius); padding: 16px 18px; margin: 16px 0 0;
+    }
+    .callout strong { display: block; margin-bottom: 6px; font-size: 17px; }
+    .bars { display: grid; gap: 8px; margin: 0 0 18px; }
+    .bar { display: grid; grid-template-columns: 92px 1fr 64px 52px; gap: 10px; align-items: center; font-size: 14px; }
+    .bar .track { height: 10px; background: #2a2b31; border-radius: 99px; overflow: hidden; }
+    .bar .fill { height: 100%; background: linear-gradient(90deg, #8c1d24, var(--accent)); border-radius: 99px; }
+    .bar .n { font-variant-numeric: tabular-nums; text-align: right; }
+    .bar .p { color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); }
+    table { width: 100%; border-collapse: collapse; min-width: 640px; }
+    th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; font-variant-numeric: tabular-nums; }
+    th { font-size: 13px; color: var(--muted); font-weight: 600; background: var(--bg-elev); position: sticky; top: 0; }
+    th.sortable { cursor: pointer; }
+    th.sortable:hover, th.sorted { color: var(--text); }
+    tbody tr:hover { background: rgba(255,255,255,.03); }
+    td.num, th.num { text-align: right; }
+    .dash { color: var(--muted); }
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; border: 1px solid var(--line); }
+    .pill.new { background: rgba(63,166,107,.12); border-color: rgba(63,166,107,.35); }
+    .pill.appr { background: rgba(201,162,39,.12); border-color: rgba(201,162,39,.35); }
+    .pill.used { background: rgba(156,151,140,.12); }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin: 0 0 12px; }
+    footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 22px; }
+    footer ul { padding-left: 1.2em; margin: 8px 0 0; }
+    footer li { margin: 4px 0; }
+    .error { padding: 24px; color: #ffb4b8; }
+    .gone { color: #e8b4b6; }
+    .arrived { color: #9ad4b3; }
+    @media (max-width: 640px) {
+      .bar { grid-template-columns: 72px 1fr 44px 44px; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      table { min-width: 560px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap" style="padding-bottom:0">
+      <p class="kicker">Porsche Finder Taiwan</p>
+      <h1>保時捷台灣庫存儀表板</h1>
+      <p class="lede">全台各保時捷中心掛在 Porsche Finder 的公開庫存與車系占比，用來對照各店庫存壓力、調整新車折扣。</p>
+      <p class="meta" id="meta">讀取資料中…</p>
+    </div>
+  </header>
+  <div class="filters">
+    <div class="wrap" style="padding-bottom:0">
+      <div class="filter-row">
+        <div class="seg" id="condSeg" role="group" aria-label="車況"></div>
+        <div class="seg" id="lineSeg" role="group" aria-label="車系"></div>
+      </div>
+    </div>
+  </div>
+  <main class="wrap">
+    <div id="error" class="error" hidden></div>
+    <section id="summary"></section>
+    <section id="lines"></section>
+    <section id="matrix"></section>
+    <section id="dealers"></section>
+    <section id="variants"></section>
+    <section id="changes" hidden></section>
+    <section id="vehicles"></section>
+    <footer>
+      <p id="foot-meta"></p>
+      <ul>
+        <li>只含各保時捷中心掛在 Porsche Finder 公開頁上的庫存，不是全省每台實體車，也不是 8891 等外部中古車網站。</li>
+        <li>庫存比例＝該經銷商該車系台數 ÷ 全台該車系台數；也可切換成該車系占該店自己庫存的比例。</li>
+        <li>從列表消失的車輛視為疑似售出或已分配，不一定已經交車。</li>
+        <li>價格為網站標示之含稅建議售價，實際成交與折扣請仍以各中心為準。</li>
+        <li>此網站與程式碼公開在 GitHub，任何人都可以看到這裡的彙整資料。</li>
+      </ul>
+    </footer>
+  </main>
+  <script>
+    const LINES = ["911", "718", "Cayenne", "Macan", "Panamera", "Taycan"];
+    const DEALER_ORDER = ["台北保時捷中心", "新北保時捷中心", "桃園保時捷中心", "新竹保時捷中心", "台中保時捷中心", "台南保時捷中心", "高雄保時捷中心"];
+    const COND_LABEL = { all: "全部車況", new: "新車", porsche_approved: "認證中古車", used: "中古車" };
+    const state = { cond: "all", line: "all", pctMode: "national", sortKey: "total", varSort: "count", listSort: "dealer", q: "" };
+    let DATA = null;
+
+    const $ = (id) => document.getElementById(id);
+    const shortDealer = (n) => (n || "").replace("保時捷中心", "");
+    const fmtN = (n) => (n == null ? "—" : Number(n).toLocaleString("zh-Hant-TW"));
+    const fmtPct = (n, d) => (d ? (n / d * 100).toFixed(1).replace(/\.0$/, "") + "%" : "—");
+    const fmtPrice = (n) => (n == null ? "—" : "$" + fmtN(n));
+    const fmtKm = (n) => (n == null || n === 0 ? "—" : fmtN(n) + " 公里");
+    const fmtVar = (s) => (s || "").replace(/([^\s])\(/g, "$1 (");
+    function capturedLabel(iso) {
+      const m = (iso || "").match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+      if (!m) return (iso || "—") + "（台北時間）";
+      return `${m[1]}/${m[2]}/${m[3]} ${m[4]}:${m[5]}（台北時間）`;
+    }
+    const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[c]));
+
+    function filtered() {
+      return DATA.vehicles.filter((v) =>
+        (state.cond === "all" || v.condition === state.cond) &&
+        (state.line === "all" || v.model_line === state.line)
+      );
+    }
+
+    function buttonSeg(el, options, current, onPick) {
+      el.innerHTML = options.map(([value, label]) =>
+        `<button type="button" aria-pressed="${value === current}">${esc(label)}</button>`
+      ).join("");
+      [...el.querySelectorAll("button")].forEach((btn, i) => {
+        btn.addEventListener("click", () => onPick(options[i][0]));
+      });
+    }
+
+    function renderMeta() {
+      const src = DATA.source || "https://finder.porsche.com/tw/zh-TW";
+      const search = DATA.source_search || "https://finder.porsche.com/tw/zh-TW/search";
+      $("meta").innerHTML = `<span>資料擷取於 <strong>${esc(capturedLabel(DATA.captured_at))}</strong></span>
+        <span>共 <strong>${fmtN(DATA.total)}</strong> 輛</span>
+        <span><a href="${esc(src)}" target="_blank" rel="noopener">Porsche Finder Taiwan</a> · <a href="${esc(search)}" target="_blank" rel="noopener">全台搜尋結果</a></span>`;
+      $("foot-meta").innerHTML = `資料日期：${esc(capturedLabel(DATA.captured_at))}　來源：<a href="${esc(src)}" target="_blank" rel="noopener">Porsche Finder Taiwan</a>`;
+    }
+
+    function renderSummary() {
+      const all = DATA.vehicles;
+      const byCond = { new: 0, porsche_approved: 0, used: 0 };
+      const byDealer = {};
+      const dealerLine = {};
+      const byLine = {};
+      for (const v of all) {
+        byCond[v.condition] = (byCond[v.condition] || 0) + 1;
+        byDealer[v.dealer_name] = (byDealer[v.dealer_name] || 0) + 1;
+        byLine[v.model_line] = (byLine[v.model_line] || 0) + 1;
+        dealerLine[v.dealer_name] = dealerLine[v.dealer_name] || {};
+        dealerLine[v.dealer_name][v.model_line] = (dealerLine[v.dealer_name][v.model_line] || 0) + 1;
+      }
+      const ranked = Object.entries(byDealer).sort((a, b) => b[1] - a[1]);
+      const top = ranked[0] || ["—", 0];
+      const topMacan = (dealerLine[top[0]] || {}).Macan || 0;
+      const tainan911 = (dealerLine["台南保時捷中心"] || {})["911"] || 0;
+      $("summary").innerHTML = `
+        <div class="callout">
+          <strong>${fmtN(all.length)} 輛掛在 Porsche Finder 台灣公開庫存（${esc(capturedLabel(DATA.captured_at))}）</strong>
+          新車 ${fmtN(byCond.new)} 輛、認證中古車 ${fmtN(byCond.porsche_approved)} 輛、一般中古車 ${fmtN(byCond.used)} 輛。
+          庫存最多的是${esc(shortDealer(top[0]))}保時捷中心 ${fmtN(top[1])} 輛（占全台 ${fmtPct(top[1], all.length)}），
+          其中 Macan ${fmtN(topMacan)} 輛，等於全台 Macan 的 ${fmtPct(topMacan, byLine.Macan || 0)}。
+          台南保時捷中心有 ${fmtN(tainan911)} 輛 911，占全台 911 的 ${fmtPct(tainan911, byLine["911"] || 0)}。
+        </div>
+        <div class="metrics">
+          <div class="metric"><div class="v">${fmtN(all.length)}</div><div class="l">全台庫存</div><div class="d">Finder 公開上架</div></div>
+          <div class="metric"><div class="v">${fmtN(byCond.new)}</div><div class="l">新車</div><div class="d">${fmtPct(byCond.new, all.length)}</div></div>
+          <div class="metric"><div class="v">${fmtN(byCond.porsche_approved)}</div><div class="l">認證中古車</div><div class="d">${fmtPct(byCond.porsche_approved, all.length)}</div></div>
+          <div class="metric"><div class="v">${fmtN(byCond.used)}</div><div class="l">中古車</div><div class="d">非認證</div></div>
+          <div class="metric"><div class="v">${esc(shortDealer(top[0]))} ${fmtN(top[1])}</div><div class="l">庫存最多的中心</div><div class="d">${ranked[1] && ranked[2] ? `其次${esc(shortDealer(ranked[1][0]))} ${fmtN(ranked[1][1])}、${esc(shortDealer(ranked[2][0]))} ${fmtN(ranked[2][1])}` : ""}</div></div>
+        </div>
+        <p class="cap">篩選條件會套用到下方表格與圖。上方重點數字固定顯示全台全車況，不受篩選影響。</p>`;
+    }
+
+    function statsOf(rows) {
+      const byLine = Object.fromEntries(LINES.map((l) => [l, 0]));
+      const byCond = { new: 0, porsche_approved: 0, used: 0 };
+      const byDealer = {};
+      const lineCond = Object.fromEntries(LINES.map((l) => [l, { new: 0, porsche_approved: 0, used: 0 }]));
+      const matrix = {};
+      for (const v of rows) {
+        byLine[v.model_line] = (byLine[v.model_line] || 0) + 1;
+        byCond[v.condition] = (byCond[v.condition] || 0) + 1;
+        byDealer[v.dealer_name] = (byDealer[v.dealer_name] || 0) + 1;
+        if (!lineCond[v.model_line]) lineCond[v.model_line] = { new: 0, porsche_approved: 0, used: 0 };
+        lineCond[v.model_line][v.condition] += 1;
+        if (!matrix[v.dealer_name]) matrix[v.dealer_name] = Object.fromEntries(LINES.map((l) => [l, 0]));
+        matrix[v.dealer_name][v.model_line] = (matrix[v.dealer_name][v.model_line] || 0) + 1;
+      }
+      return { total: rows.length, byLine, byCond, byDealer, lineCond, matrix };
+    }
+
+    function filterCaption() {
+      return (COND_LABEL[state.cond] || "全部車況") + "／" + (state.line === "all" ? "全部車系" : state.line);
+    }
+
+    function renderLines() {
+      const s = statsOf(filtered());
+      const max = Math.max(1, ...LINES.map((l) => s.byLine[l] || 0));
+      const bars = LINES.map((l) => {
+        const n = s.byLine[l] || 0;
+        return `<div class="bar"><div>${esc(l)}</div><div class="track"><div class="fill" style="width:${(n / max * 100).toFixed(1)}%"></div></div><div class="n">${fmtN(n)}</div><div class="p">${fmtPct(n, s.total)}</div></div>`;
+      }).join("");
+      const rows = LINES.map((l) => {
+        const n = s.byLine[l] || 0;
+        const bc = s.lineCond[l] || { new: 0, porsche_approved: 0, used: 0 };
+        return `<tr><td>${esc(l)}</td><td class="num">${fmtN(n)}</td><td class="num">${fmtN(bc.new || 0)}</td><td class="num">${fmtN(bc.porsche_approved || 0)}</td><td class="num">${fmtN(bc.used || 0)}</td><td class="num">${fmtPct(n, s.total)}</td></tr>`;
+      }).join("");
+      $("lines").innerHTML = `
+        <h2>全台車系</h2>
+        <p class="cap">${esc(filterCaption())}</p>
+        <div class="bars">${bars}</div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>車系</th><th class="num">合計</th><th class="num">新車</th><th class="num">認證中古車</th><th class="num">中古車</th><th class="num">占篩選後庫存</th></tr></thead>
+          <tbody>${rows}
+            <tr><td>合計</td><td class="num">${fmtN(s.total)}</td><td class="num">${fmtN(s.byCond.new || 0)}</td><td class="num">${fmtN(s.byCond.porsche_approved || 0)}</td><td class="num">${fmtN(s.byCond.used || 0)}</td><td class="num">100%</td></tr>
+          </tbody>
+        </table></div>`;
+    }
+
+    function renderMatrix() {
+      const s = statsOf(filtered());
+      const lineIdx = state.line === "all" ? -1 : LINES.indexOf(state.line);
+      let names = DEALER_ORDER.filter((d) => {
+        const n = lineIdx < 0 ? (s.byDealer[d] || 0) : ((s.matrix[d] || {})[state.line] || 0);
+        return n > 0;
+      });
+      names.sort((a, b) => {
+        if (state.sortKey === "dealer") return DEALER_ORDER.indexOf(a) - DEALER_ORDER.indexOf(b);
+        if (state.sortKey === "total") {
+          const ta = lineIdx < 0 ? (s.byDealer[a] || 0) : ((s.matrix[a] || {})[state.line] || 0);
+          const tb = lineIdx < 0 ? (s.byDealer[b] || 0) : ((s.matrix[b] || {})[state.line] || 0);
+          return tb - ta;
+        }
+        const ta = (s.matrix[a] || {})[state.sortKey] || 0;
+        const tb = (s.matrix[b] || {})[state.sortKey] || 0;
+        return tb - ta || (s.byDealer[b] || 0) - (s.byDealer[a] || 0);
+      });
+      const body = names.map((d) => {
+        const dealerTotal = lineIdx < 0 ? (s.byDealer[d] || 0) : ((s.matrix[d] || {})[state.line] || 0);
+        const cells = LINES.map((l) => {
+          if (lineIdx >= 0 && l !== state.line) return `<td class="num dash">—</td>`;
+          const n = (s.matrix[d] || {})[l] || 0;
+          if (!n) return `<td class="num dash">—</td>`;
+          const den = state.pctMode === "national" ? (s.byLine[l] || 0) : (s.byDealer[d] || 0);
+          return `<td class="num">${fmtN(n)}（${fmtPct(n, den)}）</td>`;
+        }).join("");
+        return `<tr><td>${esc(shortDealer(d))}</td><td class="num">${fmtN(dealerTotal)}</td>${cells}</tr>`;
+      }).join("");
+      const sortOpts = [["total","依庫存總數"],["dealer","依北到南"],...LINES.map((l) => [l, "依 " + l])]
+        .map(([v, l]) => `<option value="${v}" ${state.sortKey === v ? "selected" : ""}>${l}</option>`).join("");
+      $("matrix").innerHTML = `
+        <h2>經銷商 × 車系矩陣</h2>
+        <p class="cap">儲存格為台數與占比。目前：${esc(filterCaption())}。</p>
+        <div class="toolbar">
+          <div class="seg" id="pctSeg"></div>
+          <label class="select-wrap">排序
+            <select id="sortKey">${sortOpts}</select>
+          </label>
+        </div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>保時捷中心</th><th class="num">合計</th>${LINES.map((l) => `<th class="num">${esc(l)}</th>`).join("")}</tr></thead>
+          <tbody>${body || `<tr><td colspan="8">沒有符合篩選的庫存。</td></tr>`}</tbody>
+        </table></div>
+        <p class="cap" style="margin-top:10px">${state.pctMode === "national"
+          ? "括號內是庫存比例＝該店該車系台數 ÷ 全台該車系台數。數字愈高，代表這個車系比較集中在那一家中心。"
+          : "括號內是該車系占這家中心自己庫存的比例，用來看出各店自己的車系結構。"}</p>`;
+      buttonSeg($("pctSeg"), [["national","占全台該車系比例"],["dealer","占該店庫存比例"]], state.pctMode, (v) => { state.pctMode = v; render(); });
+      $("sortKey").addEventListener("change", (e) => { state.sortKey = e.target.value; render(); });
+    }
+
+    function renderDealers() {
+      const s = statsOf(filtered());
+      const lineIdx = state.line === "all" ? -1 : LINES.indexOf(state.line);
+      const rows = DEALER_ORDER.map((d) => {
+        const n = lineIdx < 0 ? (s.byDealer[d] || 0) : ((s.matrix[d] || {})[state.line] || 0);
+        if (!n && lineIdx >= 0) return "";
+        const den = lineIdx < 0 ? s.total : (s.byLine[state.line] || 0);
+        const dcNew = filtered().filter((v) => v.dealer_name === d && v.condition === "new").length;
+        const dcAp = filtered().filter((v) => v.dealer_name === d && v.condition === "porsche_approved").length;
+        const dcUsed = filtered().filter((v) => v.dealer_name === d && v.condition === "used").length;
+        const condCells = lineIdx >= 0
+          ? `<td class="num dash">—</td><td class="num dash">—</td><td class="num dash">—</td>`
+          : `<td class="num">${fmtN(dcNew)}</td><td class="num">${fmtN(dcAp)}</td><td class="num">${fmtN(dcUsed)}</td>`;
+        return `<tr><td>${esc(shortDealer(d))}</td><td class="num">${fmtN(n)}</td><td class="num">${fmtPct(n, den)}</td>${condCells}</tr>`;
+      }).join("");
+      $("dealers").innerHTML = `
+        <h2>各店庫存結構</h2>
+        <p class="cap">${esc(filterCaption())}</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>保時捷中心</th><th class="num">合計</th><th class="num">占篩選後全台</th><th class="num">新車</th><th class="num">認證中古車</th><th class="num">中古車</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table></div>`;
+    }
+
+    function renderVariants() {
+      const rows = filtered();
+      const map = new Map();
+      for (const v of rows) {
+        const key = (v.model_variant || v.model_line) + "\t" + v.model_line;
+        if (!map.has(key)) map.set(key, { var: v.model_variant || v.model_line, line: v.model_line, n: 0, d: Object.fromEntries(DEALER_ORDER.map((x) => [x, 0])) });
+        const rec = map.get(key);
+        rec.n += 1;
+        rec.d[v.dealer_name] = (rec.d[v.dealer_name] || 0) + 1;
+      }
+      let list = [...map.values()];
+      const denom = list.reduce((a, v) => a + v.n, 0);
+      list.sort((a, b) => {
+        if (state.varSort === "name") return a.var.localeCompare(b.var, "zh-Hant") || b.n - a.n;
+        if (state.varSort === "line") return LINES.indexOf(a.line) - LINES.indexOf(b.line) || b.n - a.n;
+        return b.n - a.n || a.var.localeCompare(b.var, "zh-Hant");
+      });
+      const body = list.map((v) => `<tr>
+        <td>${esc(v.line)}</td><td>${esc(fmtVar(v.var))}</td><td class="num">${fmtN(v.n)}</td><td class="num">${fmtPct(v.n, denom)}</td>
+        ${DEALER_ORDER.map((d) => `<td class="num">${v.d[d] ? fmtN(v.d[d]) : '<span class="dash">—</span>'}</td>`).join("")}
+      </tr>`).join("");
+      $("variants").innerHTML = `
+        <h2>車型細項</h2>
+        <p class="cap">${esc(filterCaption())}，共 ${fmtN(list.length)} 種車型。</p>
+        <div class="toolbar"><label class="select-wrap">排序
+          <select id="varSort">
+            <option value="count"${state.varSort === "count" ? " selected" : ""}>依台數</option>
+            <option value="line"${state.varSort === "line" ? " selected" : ""}>依車系</option>
+            <option value="name"${state.varSort === "name" ? " selected" : ""}>依車型名稱</option>
+          </select></label></div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>車系</th><th>車型</th><th class="num">合計</th><th class="num">占比</th>${DEALER_ORDER.map((d) => `<th class="num">${esc(shortDealer(d))}</th>`).join("")}</tr></thead>
+          <tbody>${body}</tbody>
+        </table></div>`;
+      $("varSort").addEventListener("change", (e) => { state.varSort = e.target.value; render(); });
+    }
+
+    function vehicleRow(v, extraClass) {
+      const pill = v.condition === "new" ? "new" : v.condition === "porsche_approved" ? "appr" : "used";
+      const url = v.listing_url ? `<a href="${esc(v.listing_url)}" target="_blank" rel="noopener">${esc(v.id)}</a>` : esc(v.id);
+      return `<tr class="${extraClass || ""}">
+        <td>${esc(shortDealer(v.dealer_name))}</td>
+        <td>${esc(v.model_line || "")}</td>
+        <td>${esc(fmtVar(v.model_variant))}</td>
+        <td class="num">${v.model_year == null ? "—" : esc(v.model_year)}</td>
+        <td><span class="pill ${pill}">${esc(v.condition_label || COND_LABEL[v.condition] || "")}</span></td>
+        <td class="num">${fmtPrice(v.price_twd)}</td>
+        <td class="num">${fmtKm(v.mileage_km)}</td>
+        <td>${url}</td>
+      </tr>`;
+    }
+
+    function renderChanges() {
+      const ch = DATA.changes;
+      if (!ch || (!ch.arrived_count && !ch.gone_count)) {
+        $("changes").hidden = true;
+        $("changes").innerHTML = "";
+        return;
+      }
+      const table = (title, items, cls) => `
+        <h3 style="font-size:16px;margin:16px 0 8px">${esc(title)}（${fmtN(items.length)}）</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>中心</th><th>車系</th><th>車型</th><th class="num">年式</th><th>車況</th><th class="num">價格</th><th>編號</th></tr></thead>
+          <tbody>${(items || []).map((v) => vehicleRow(v, cls)).join("") || `<tr><td colspan="7">沒有車輛</td></tr>`}</tbody>
+        </table></div>`;
+      $("changes").hidden = false;
+      $("changes").innerHTML = `
+        <h2>日週期變化</h2>
+        <p class="cap">與 ${esc(ch.compared_to || "前一份快照")} 相比：新進 <strong class="arrived">${fmtN(ch.arrived_count || 0)}</strong> 輛，從列表消失 <strong class="gone">${fmtN(ch.gone_count || 0)}</strong> 輛。${esc(ch.note || "從列表消失的車輛視為疑似售出或已分配，不一定已經交車。")}</p>
+        ${table("新進車輛", ch.arrived || [], "arrived")}
+        ${table("疑似售出或已分配", ch.gone || [], "gone")}`;
+    }
+
+    function renderVehicles() {
+      let rows = filtered();
+      const q = state.q.trim().toLowerCase();
+      if (q) {
+        rows = rows.filter((v) =>
+          [v.id, v.dealer_name, v.model_line, v.model_variant, v.condition_label, String(v.model_year || ""), String(v.price_twd || "")]
+            .join(" ").toLowerCase().includes(q)
+        );
+      }
+      rows = rows.slice().sort((a, b) => {
+        if (state.listSort === "price_desc") return (b.price_twd || 0) - (a.price_twd || 0);
+        if (state.listSort === "price_asc") return (a.price_twd || 0) - (b.price_twd || 0);
+        if (state.listSort === "year_desc") return (b.model_year || 0) - (a.model_year || 0);
+        if (state.listSort === "line") return LINES.indexOf(a.model_line) - LINES.indexOf(b.model_line) || fmtVar(a.model_variant).localeCompare(fmtVar(b.model_variant), "zh-Hant");
+        return (DEALER_ORDER.indexOf(a.dealer_name) - DEALER_ORDER.indexOf(b.dealer_name))
+          || LINES.indexOf(a.model_line) - LINES.indexOf(b.model_line)
+          || fmtVar(a.model_variant).localeCompare(fmtVar(b.model_variant), "zh-Hant");
+      });
+      $("vehicles").innerHTML = `
+        <h2>逐車明細</h2>
+        <p class="cap">目前顯示 ${fmtN(rows.length)} 輛。編號可連到 Porsche Finder 車輛頁。</p>
+        <div class="toolbar">
+          <label class="select-wrap">排序
+            <select id="listSort">
+              <option value="dealer"${state.listSort === "dealer" ? " selected" : ""}>依據點／車系</option>
+              <option value="line"${state.listSort === "line" ? " selected" : ""}>依車系／車型</option>
+              <option value="price_desc"${state.listSort === "price_desc" ? " selected" : ""}>價格高到低</option>
+              <option value="price_asc"${state.listSort === "price_asc" ? " selected" : ""}>價格低到高</option>
+              <option value="year_desc"${state.listSort === "year_desc" ? " selected" : ""}>年式新到舊</option>
+            </select>
+          </label>
+          <label class="search"><input id="q" type="search" placeholder="搜尋車型、中心、編號…" value="${esc(state.q)}"></label>
+        </div>
+        <div class="table-wrap" style="max-height:640px">
+          <table>
+            <thead><tr><th>中心</th><th>車系</th><th>車型</th><th class="num">年式</th><th>車況</th><th class="num">價格</th><th class="num">里程</th><th>編號</th></tr></thead>
+            <tbody>${rows.map((v) => vehicleRow(v)).join("") || `<tr><td colspan="8">沒有符合的車輛。</td></tr>`}</tbody>
+          </table>
+        </div>`;
+      $("listSort").addEventListener("change", (e) => { state.listSort = e.target.value; render(); });
+      $("q").addEventListener("input", (e) => {
+        state.q = e.target.value;
+        const pos = e.target.selectionStart;
+        render();
+        const box = $("q");
+        if (box) { box.focus(); try { box.setSelectionRange(pos, pos); } catch (err) {} }
+      });
+    }
+
+    function render() {
+      if (!DATA) return;
+      buttonSeg($("condSeg"), Object.entries(COND_LABEL), state.cond, (v) => { state.cond = v; render(); });
+      buttonSeg($("lineSeg"), [["all","全部車系"], ...LINES.map((l) => [l, l])], state.line, (v) => { state.line = v; render(); });
+      renderMeta();
+      renderSummary();
+      renderLines();
+      renderMatrix();
+      renderDealers();
+      renderVariants();
+      renderChanges();
+      renderVehicles();
+    }
+
+    async function boot() {
+      try {
+        const res = await fetch("data.json?t=" + Date.now(), { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        DATA = await res.json();
+        if (!DATA || !Array.isArray(DATA.vehicles)) throw new Error("資料格式不正確");
+        document.title = `保時捷台灣庫存儀表板（${DATA.total} 輛 · ${DATA.date}）`;
+        render();
+      } catch (err) {
+        $("error").hidden = false;
+        $("error").textContent = "無法載入庫存資料：" + err.message;
+        $("meta").textContent = "資料載入失敗";
+      }
+    }
+    boot();
+  </script>
+</body>
+</html>
