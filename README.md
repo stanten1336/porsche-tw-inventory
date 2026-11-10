@@ -11,7 +11,7 @@
 在資料機上執行：
 
 ```bash
-python3 /workspace/porsche-finder/publish.sh
+/workspace/porsche-finder/publish.sh
 ```
 
 腳本會重新抓取當天庫存、寫入 `data.json`，若資料或頁面有變更就提交並推送到 `main`，GitHub Pages 會自動更新網站。
