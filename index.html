@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>保時捷台灣庫存儀表板</title>
-  <meta name="description" content="台灣各保時捷中心在 Porsche Finder 的公開庫存與車系占比，供對照各店庫存、調整新車折扣。">
+  <title>保時捷台灣新車庫存儀表板</title>
+  <meta name="description" content="台灣各保時捷中心在 Porsche Finder 的公開新車庫存與車系占比，供對照各店庫存、調整新車折扣。不含認證中古車與中古車。">
   <meta name="theme-color" content="#111214">
   <style>
     :root {
@@ -53,7 +53,7 @@
     }
     .filter-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
     .seg { display: flex; flex-wrap: wrap; gap: 6px; }
-    .seg button, .select-wrap select, .search input, .btn-link {
+    .seg button, .select-wrap select, .search input {
       appearance: none; border: 1px solid var(--line); background: var(--card);
       color: var(--text); border-radius: 999px; padding: 8px 14px; font: inherit; cursor: pointer;
     }
@@ -88,15 +88,9 @@
     table { width: 100%; border-collapse: collapse; min-width: 640px; }
     th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; font-variant-numeric: tabular-nums; }
     th { font-size: 13px; color: var(--muted); font-weight: 600; background: var(--bg-elev); position: sticky; top: 0; }
-    th.sortable { cursor: pointer; }
-    th.sortable:hover, th.sorted { color: var(--text); }
     tbody tr:hover { background: rgba(255,255,255,.03); }
     td.num, th.num { text-align: right; }
     .dash { color: var(--muted); }
-    .pill { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; border: 1px solid var(--line); }
-    .pill.new { background: rgba(63,166,107,.12); border-color: rgba(63,166,107,.35); }
-    .pill.appr { background: rgba(201,162,39,.12); border-color: rgba(201,162,39,.35); }
-    .pill.used { background: rgba(156,151,140,.12); }
     .toolbar { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin: 0 0 12px; }
     footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 22px; }
     footer ul { padding-left: 1.2em; margin: 8px 0 0; }
@@ -107,23 +101,22 @@
     @media (max-width: 640px) {
       .bar { grid-template-columns: 72px 1fr 44px 44px; }
       .metrics { grid-template-columns: repeat(2, 1fr); }
-      table { min-width: 560px; }
+      table { min-width: 520px; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="wrap" style="padding-bottom:0">
-      <p class="kicker">Porsche Finder Taiwan</p>
-      <h1>保時捷台灣庫存儀表板</h1>
-      <p class="lede">全台各保時捷中心掛在 Porsche Finder 的公開庫存與車系占比，用來對照各店庫存壓力、調整新車折扣。</p>
+      <p class="kicker">Porsche Finder Taiwan · 新車</p>
+      <h1>保時捷台灣新車庫存儀表板</h1>
+      <p class="lede">全台各保時捷中心掛在 Porsche Finder 的公開新車庫存與車系占比，用來對照各店庫存壓力、調整新車折扣。不含認證中古車與中古車。</p>
       <p class="meta" id="meta">讀取資料中…</p>
     </div>
   </header>
   <div class="filters">
     <div class="wrap" style="padding-bottom:0">
       <div class="filter-row">
-        <div class="seg" id="condSeg" role="group" aria-label="車況"></div>
         <div class="seg" id="lineSeg" role="group" aria-label="車系"></div>
       </div>
     </div>
@@ -140,9 +133,9 @@
     <footer>
       <p id="foot-meta"></p>
       <ul>
-        <li>只含各保時捷中心掛在 Porsche Finder 公開頁上的庫存，不是全省每台實體車，也不是 8891 等外部中古車網站。</li>
-        <li>庫存比例＝該經銷商該車系台數 ÷ 全台該車系台數；也可切換成該車系占該店自己庫存的比例。</li>
-        <li>從列表消失的車輛視為疑似售出或已分配，不一定已經交車。</li>
+        <li>只含各保時捷中心掛在 Porsche Finder 公開新車頁上的庫存，不含認證中古車與中古車，也不是全省每台實體車或 8891 等外部網站。</li>
+        <li>庫存比例＝該經銷商該車系台數 ÷ 全台該車系新車台數；也可切換成該車系占該店自己新車庫存的比例。</li>
+        <li>從列表消失的車輛視為疑似售出或已分配，不一定已經交車。日週期變化只比對新車。</li>
         <li>價格為網站標示之含稅建議售價，實際成交與折扣請仍以各中心為準。</li>
         <li>此網站與程式碼公開在 GitHub，任何人都可以看到這裡的彙整資料。</li>
       </ul>
@@ -151,8 +144,7 @@
   <script>
     const LINES = ["911", "718", "Cayenne", "Macan", "Panamera", "Taycan"];
     const DEALER_ORDER = ["台北保時捷中心", "新北保時捷中心", "桃園保時捷中心", "新竹保時捷中心", "台中保時捷中心", "台南保時捷中心", "高雄保時捷中心"];
-    const COND_LABEL = { all: "全部車況", new: "新車", porsche_approved: "認證中古車", used: "中古車" };
-    const state = { cond: "all", line: "all", pctMode: "national", sortKey: "total", varSort: "count", listSort: "dealer", q: "" };
+    const state = { line: "all", pctMode: "national", sortKey: "total", varSort: "count", listSort: "dealer", q: "" };
     let DATA = null;
 
     const $ = (id) => document.getElementById(id);
@@ -169,11 +161,11 @@
     }
     const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[c]));
 
+    function allNew() {
+      return (DATA.vehicles || []).filter((v) => v.condition === "new");
+    }
     function filtered() {
-      return DATA.vehicles.filter((v) =>
-        (state.cond === "all" || v.condition === state.cond) &&
-        (state.line === "all" || v.model_line === state.line)
-      );
+      return allNew().filter((v) => state.line === "all" || v.model_line === state.line);
     }
 
     function buttonSeg(el, options, current, onPick) {
@@ -187,21 +179,19 @@
 
     function renderMeta() {
       const src = DATA.source || "https://finder.porsche.com/tw/zh-TW";
-      const search = DATA.source_search || "https://finder.porsche.com/tw/zh-TW/search";
+      const search = DATA.source_search || "https://finder.porsche.com/tw/zh-TW/search?condition=new";
       $("meta").innerHTML = `<span>資料擷取於 <strong>${esc(capturedLabel(DATA.captured_at))}</strong></span>
-        <span>共 <strong>${fmtN(DATA.total)}</strong> 輛</span>
-        <span><a href="${esc(src)}" target="_blank" rel="noopener">Porsche Finder Taiwan</a> · <a href="${esc(search)}" target="_blank" rel="noopener">全台搜尋結果</a></span>`;
-      $("foot-meta").innerHTML = `資料日期：${esc(capturedLabel(DATA.captured_at))}　來源：<a href="${esc(src)}" target="_blank" rel="noopener">Porsche Finder Taiwan</a>`;
+        <span>共 <strong>${fmtN(allNew().length)}</strong> 輛新車</span>
+        <span><a href="${esc(src)}" target="_blank" rel="noopener">Porsche Finder Taiwan</a> · <a href="${esc(search)}" target="_blank" rel="noopener">新車搜尋結果</a></span>`;
+      $("foot-meta").innerHTML = `資料日期：${esc(capturedLabel(DATA.captured_at))}　來源：<a href="${esc(search)}" target="_blank" rel="noopener">Porsche Finder 台灣新車</a>`;
     }
 
     function renderSummary() {
-      const all = DATA.vehicles;
-      const byCond = { new: 0, porsche_approved: 0, used: 0 };
+      const all = allNew();
       const byDealer = {};
       const dealerLine = {};
       const byLine = {};
       for (const v of all) {
-        byCond[v.condition] = (byCond[v.condition] || 0) + 1;
         byDealer[v.dealer_name] = (byDealer[v.dealer_name] || 0) + 1;
         byLine[v.model_line] = (byLine[v.model_line] || 0) + 1;
         dealerLine[v.dealer_name] = dealerLine[v.dealer_name] || {};
@@ -209,46 +199,40 @@
       }
       const ranked = Object.entries(byDealer).sort((a, b) => b[1] - a[1]);
       const top = ranked[0] || ["—", 0];
+      const lineRanked = Object.entries(byLine).sort((a, b) => b[1] - a[1]);
+      const topLine = lineRanked[0] || ["—", 0];
       const topMacan = (dealerLine[top[0]] || {}).Macan || 0;
       const tainan911 = (dealerLine["台南保時捷中心"] || {})["911"] || 0;
       $("summary").innerHTML = `
         <div class="callout">
-          <strong>${fmtN(all.length)} 輛掛在 Porsche Finder 台灣公開庫存（${esc(capturedLabel(DATA.captured_at))}）</strong>
-          新車 ${fmtN(byCond.new)} 輛、認證中古車 ${fmtN(byCond.porsche_approved)} 輛、一般中古車 ${fmtN(byCond.used)} 輛。
-          庫存最多的是${esc(shortDealer(top[0]))}保時捷中心 ${fmtN(top[1])} 輛（占全台 ${fmtPct(top[1], all.length)}），
-          其中 Macan ${fmtN(topMacan)} 輛，等於全台 Macan 的 ${fmtPct(topMacan, byLine.Macan || 0)}。
-          台南保時捷中心有 ${fmtN(tainan911)} 輛 911，占全台 911 的 ${fmtPct(tainan911, byLine["911"] || 0)}。
+          <strong>${fmtN(all.length)} 輛新車掛在 Porsche Finder 台灣公開庫存（${esc(capturedLabel(DATA.captured_at))}）</strong>
+          庫存最多的是${esc(shortDealer(top[0]))}保時捷中心 ${fmtN(top[1])} 輛（占全台新車 ${fmtPct(top[1], all.length)}），
+          其中 Macan ${fmtN(topMacan)} 輛，等於全台新車 Macan 的 ${fmtPct(topMacan, byLine.Macan || 0)}。
+          台南保時捷中心有 ${fmtN(tainan911)} 輛 911，占全台新車 911 的 ${fmtPct(tainan911, byLine["911"] || 0)}。
         </div>
         <div class="metrics">
-          <div class="metric"><div class="v">${fmtN(all.length)}</div><div class="l">全台庫存</div><div class="d">Finder 公開上架</div></div>
-          <div class="metric"><div class="v">${fmtN(byCond.new)}</div><div class="l">新車</div><div class="d">${fmtPct(byCond.new, all.length)}</div></div>
-          <div class="metric"><div class="v">${fmtN(byCond.porsche_approved)}</div><div class="l">認證中古車</div><div class="d">${fmtPct(byCond.porsche_approved, all.length)}</div></div>
-          <div class="metric"><div class="v">${fmtN(byCond.used)}</div><div class="l">中古車</div><div class="d">非認證</div></div>
+          <div class="metric"><div class="v">${fmtN(all.length)}</div><div class="l">全台新車</div><div class="d">Finder 公開上架</div></div>
+          <div class="metric"><div class="v">${esc(topLine[0])} ${fmtN(topLine[1])}</div><div class="l">庫存最多的車系</div><div class="d">${fmtPct(topLine[1], all.length)}</div></div>
           <div class="metric"><div class="v">${esc(shortDealer(top[0]))} ${fmtN(top[1])}</div><div class="l">庫存最多的中心</div><div class="d">${ranked[1] && ranked[2] ? `其次${esc(shortDealer(ranked[1][0]))} ${fmtN(ranked[1][1])}、${esc(shortDealer(ranked[2][0]))} ${fmtN(ranked[2][1])}` : ""}</div></div>
         </div>
-        <p class="cap">篩選條件會套用到下方表格與圖。上方重點數字固定顯示全台全車況，不受篩選影響。</p>`;
+        <p class="cap">下方表格與圖可依車系篩選。上方重點數字固定顯示全台新車，不受篩選影響。</p>`;
     }
 
     function statsOf(rows) {
       const byLine = Object.fromEntries(LINES.map((l) => [l, 0]));
-      const byCond = { new: 0, porsche_approved: 0, used: 0 };
       const byDealer = {};
-      const lineCond = Object.fromEntries(LINES.map((l) => [l, { new: 0, porsche_approved: 0, used: 0 }]));
       const matrix = {};
       for (const v of rows) {
         byLine[v.model_line] = (byLine[v.model_line] || 0) + 1;
-        byCond[v.condition] = (byCond[v.condition] || 0) + 1;
         byDealer[v.dealer_name] = (byDealer[v.dealer_name] || 0) + 1;
-        if (!lineCond[v.model_line]) lineCond[v.model_line] = { new: 0, porsche_approved: 0, used: 0 };
-        lineCond[v.model_line][v.condition] += 1;
         if (!matrix[v.dealer_name]) matrix[v.dealer_name] = Object.fromEntries(LINES.map((l) => [l, 0]));
         matrix[v.dealer_name][v.model_line] = (matrix[v.dealer_name][v.model_line] || 0) + 1;
       }
-      return { total: rows.length, byLine, byCond, byDealer, lineCond, matrix };
+      return { total: rows.length, byLine, byDealer, matrix };
     }
 
     function filterCaption() {
-      return (COND_LABEL[state.cond] || "全部車況") + "／" + (state.line === "all" ? "全部車系" : state.line);
+      return state.line === "all" ? "全部車系" : state.line;
     }
 
     function renderLines() {
@@ -260,17 +244,16 @@
       }).join("");
       const rows = LINES.map((l) => {
         const n = s.byLine[l] || 0;
-        const bc = s.lineCond[l] || { new: 0, porsche_approved: 0, used: 0 };
-        return `<tr><td>${esc(l)}</td><td class="num">${fmtN(n)}</td><td class="num">${fmtN(bc.new || 0)}</td><td class="num">${fmtN(bc.porsche_approved || 0)}</td><td class="num">${fmtN(bc.used || 0)}</td><td class="num">${fmtPct(n, s.total)}</td></tr>`;
+        return `<tr><td>${esc(l)}</td><td class="num">${fmtN(n)}</td><td class="num">${fmtPct(n, s.total)}</td></tr>`;
       }).join("");
       $("lines").innerHTML = `
         <h2>全台車系</h2>
-        <p class="cap">${esc(filterCaption())}</p>
+        <p class="cap">${esc(filterCaption())} · 僅新車</p>
         <div class="bars">${bars}</div>
         <div class="table-wrap"><table>
-          <thead><tr><th>車系</th><th class="num">合計</th><th class="num">新車</th><th class="num">認證中古車</th><th class="num">中古車</th><th class="num">占篩選後庫存</th></tr></thead>
+          <thead><tr><th>車系</th><th class="num">合計</th><th class="num">占篩選後新車</th></tr></thead>
           <tbody>${rows}
-            <tr><td>合計</td><td class="num">${fmtN(s.total)}</td><td class="num">${fmtN(s.byCond.new || 0)}</td><td class="num">${fmtN(s.byCond.porsche_approved || 0)}</td><td class="num">${fmtN(s.byCond.used || 0)}</td><td class="num">100%</td></tr>
+            <tr><td>合計</td><td class="num">${fmtN(s.total)}</td><td class="num">100%</td></tr>
           </tbody>
         </table></div>`;
     }
@@ -308,7 +291,7 @@
         .map(([v, l]) => `<option value="${v}" ${state.sortKey === v ? "selected" : ""}>${l}</option>`).join("");
       $("matrix").innerHTML = `
         <h2>經銷商 × 車系矩陣</h2>
-        <p class="cap">儲存格為台數與占比。目前：${esc(filterCaption())}。</p>
+        <p class="cap">儲存格為新車台數與占比。目前：${esc(filterCaption())}。</p>
         <div class="toolbar">
           <div class="seg" id="pctSeg"></div>
           <label class="select-wrap">排序
@@ -317,11 +300,11 @@
         </div>
         <div class="table-wrap"><table>
           <thead><tr><th>保時捷中心</th><th class="num">合計</th>${LINES.map((l) => `<th class="num">${esc(l)}</th>`).join("")}</tr></thead>
-          <tbody>${body || `<tr><td colspan="8">沒有符合篩選的庫存。</td></tr>`}</tbody>
+          <tbody>${body || `<tr><td colspan="8">沒有符合篩選的新車。</td></tr>`}</tbody>
         </table></div>
         <p class="cap" style="margin-top:10px">${state.pctMode === "national"
-          ? "括號內是庫存比例＝該店該車系台數 ÷ 全台該車系台數。數字愈高，代表這個車系比較集中在那一家中心。"
-          : "括號內是該車系占這家中心自己庫存的比例，用來看出各店自己的車系結構。"}</p>`;
+          ? "括號內是庫存比例＝該店該車系新車台數 ÷ 全台該車系新車台數。數字愈高，代表這個車系比較集中在那一家中心。"
+          : "括號內是該車系占這家中心自己新車庫存的比例，用來看出各店自己的車系結構。"}</p>`;
       buttonSeg($("pctSeg"), [["national","占全台該車系比例"],["dealer","占該店庫存比例"]], state.pctMode, (v) => { state.pctMode = v; render(); });
       $("sortKey").addEventListener("change", (e) => { state.sortKey = e.target.value; render(); });
     }
@@ -333,19 +316,13 @@
         const n = lineIdx < 0 ? (s.byDealer[d] || 0) : ((s.matrix[d] || {})[state.line] || 0);
         if (!n && lineIdx >= 0) return "";
         const den = lineIdx < 0 ? s.total : (s.byLine[state.line] || 0);
-        const dcNew = filtered().filter((v) => v.dealer_name === d && v.condition === "new").length;
-        const dcAp = filtered().filter((v) => v.dealer_name === d && v.condition === "porsche_approved").length;
-        const dcUsed = filtered().filter((v) => v.dealer_name === d && v.condition === "used").length;
-        const condCells = lineIdx >= 0
-          ? `<td class="num dash">—</td><td class="num dash">—</td><td class="num dash">—</td>`
-          : `<td class="num">${fmtN(dcNew)}</td><td class="num">${fmtN(dcAp)}</td><td class="num">${fmtN(dcUsed)}</td>`;
-        return `<tr><td>${esc(shortDealer(d))}</td><td class="num">${fmtN(n)}</td><td class="num">${fmtPct(n, den)}</td>${condCells}</tr>`;
+        return `<tr><td>${esc(shortDealer(d))}</td><td class="num">${fmtN(n)}</td><td class="num">${fmtPct(n, den)}</td></tr>`;
       }).join("");
       $("dealers").innerHTML = `
-        <h2>各店庫存結構</h2>
+        <h2>各店新車庫存</h2>
         <p class="cap">${esc(filterCaption())}</p>
         <div class="table-wrap"><table>
-          <thead><tr><th>保時捷中心</th><th class="num">合計</th><th class="num">占篩選後全台</th><th class="num">新車</th><th class="num">認證中古車</th><th class="num">中古車</th></tr></thead>
+          <thead><tr><th>保時捷中心</th><th class="num">合計</th><th class="num">占篩選後全台</th></tr></thead>
           <tbody>${rows}</tbody>
         </table></div>`;
     }
@@ -373,7 +350,7 @@
       </tr>`).join("");
       $("variants").innerHTML = `
         <h2>車型細項</h2>
-        <p class="cap">${esc(filterCaption())}，共 ${fmtN(list.length)} 種車型。</p>
+        <p class="cap">${esc(filterCaption())}，共 ${fmtN(list.length)} 種新車車型。</p>
         <div class="toolbar"><label class="select-wrap">排序
           <select id="varSort">
             <option value="count"${state.varSort === "count" ? " selected" : ""}>依台數</option>
@@ -388,14 +365,12 @@
     }
 
     function vehicleRow(v, extraClass) {
-      const pill = v.condition === "new" ? "new" : v.condition === "porsche_approved" ? "appr" : "used";
       const url = v.listing_url ? `<a href="${esc(v.listing_url)}" target="_blank" rel="noopener">${esc(v.id)}</a>` : esc(v.id);
       return `<tr class="${extraClass || ""}">
         <td>${esc(shortDealer(v.dealer_name))}</td>
         <td>${esc(v.model_line || "")}</td>
         <td>${esc(fmtVar(v.model_variant))}</td>
         <td class="num">${v.model_year == null ? "—" : esc(v.model_year)}</td>
-        <td><span class="pill ${pill}">${esc(v.condition_label || COND_LABEL[v.condition] || "")}</span></td>
         <td class="num">${fmtPrice(v.price_twd)}</td>
         <td class="num">${fmtKm(v.mileage_km)}</td>
         <td>${url}</td>
@@ -412,13 +387,13 @@
       const table = (title, items, cls) => `
         <h3 style="font-size:16px;margin:16px 0 8px">${esc(title)}（${fmtN(items.length)}）</h3>
         <div class="table-wrap"><table>
-          <thead><tr><th>中心</th><th>車系</th><th>車型</th><th class="num">年式</th><th>車況</th><th class="num">價格</th><th>編號</th></tr></thead>
-          <tbody>${(items || []).map((v) => vehicleRow(v, cls)).join("") || `<tr><td colspan="7">沒有車輛</td></tr>`}</tbody>
+          <thead><tr><th>中心</th><th>車系</th><th>車型</th><th class="num">年式</th><th class="num">價格</th><th>編號</th></tr></thead>
+          <tbody>${(items || []).map((v) => vehicleRow(v, cls)).join("") || `<tr><td colspan="6">沒有車輛</td></tr>`}</tbody>
         </table></div>`;
       $("changes").hidden = false;
       $("changes").innerHTML = `
         <h2>日週期變化</h2>
-        <p class="cap">與 ${esc(ch.compared_to || "前一份快照")} 相比：新進 <strong class="arrived">${fmtN(ch.arrived_count || 0)}</strong> 輛，從列表消失 <strong class="gone">${fmtN(ch.gone_count || 0)}</strong> 輛。${esc(ch.note || "從列表消失的車輛視為疑似售出或已分配，不一定已經交車。")}</p>
+        <p class="cap">僅比對新車。與 ${esc(ch.compared_to || "前一份快照")} 相比：新進 <strong class="arrived">${fmtN(ch.arrived_count || 0)}</strong> 輛，從列表消失 <strong class="gone">${fmtN(ch.gone_count || 0)}</strong> 輛。${esc(ch.note || "從列表消失的車輛視為疑似售出或已分配，不一定已經交車。")}</p>
         ${table("新進車輛", ch.arrived || [], "arrived")}
         ${table("疑似售出或已分配", ch.gone || [], "gone")}`;
     }
@@ -428,7 +403,7 @@
       const q = state.q.trim().toLowerCase();
       if (q) {
         rows = rows.filter((v) =>
-          [v.id, v.dealer_name, v.model_line, v.model_variant, v.condition_label, String(v.model_year || ""), String(v.price_twd || "")]
+          [v.id, v.dealer_name, v.model_line, v.model_variant, String(v.model_year || ""), String(v.price_twd || "")]
             .join(" ").toLowerCase().includes(q)
         );
       }
@@ -443,7 +418,7 @@
       });
       $("vehicles").innerHTML = `
         <h2>逐車明細</h2>
-        <p class="cap">目前顯示 ${fmtN(rows.length)} 輛。編號可連到 Porsche Finder 車輛頁。</p>
+        <p class="cap">目前顯示 ${fmtN(rows.length)} 輛新車。編號可連到 Porsche Finder 車輛頁。</p>
         <div class="toolbar">
           <label class="select-wrap">排序
             <select id="listSort">
@@ -458,8 +433,8 @@
         </div>
         <div class="table-wrap" style="max-height:640px">
           <table>
-            <thead><tr><th>中心</th><th>車系</th><th>車型</th><th class="num">年式</th><th>車況</th><th class="num">價格</th><th class="num">里程</th><th>編號</th></tr></thead>
-            <tbody>${rows.map((v) => vehicleRow(v)).join("") || `<tr><td colspan="8">沒有符合的車輛。</td></tr>`}</tbody>
+            <thead><tr><th>中心</th><th>車系</th><th>車型</th><th class="num">年式</th><th class="num">價格</th><th class="num">里程</th><th>編號</th></tr></thead>
+            <tbody>${rows.map((v) => vehicleRow(v)).join("") || `<tr><td colspan="7">沒有符合的車輛。</td></tr>`}</tbody>
           </table>
         </div>`;
       $("listSort").addEventListener("change", (e) => { state.listSort = e.target.value; render(); });
@@ -474,7 +449,6 @@
 
     function render() {
       if (!DATA) return;
-      buttonSeg($("condSeg"), Object.entries(COND_LABEL), state.cond, (v) => { state.cond = v; render(); });
       buttonSeg($("lineSeg"), [["all","全部車系"], ...LINES.map((l) => [l, l])], state.line, (v) => { state.line = v; render(); });
       renderMeta();
       renderSummary();
@@ -492,7 +466,7 @@
         if (!res.ok) throw new Error("HTTP " + res.status);
         DATA = await res.json();
         if (!DATA || !Array.isArray(DATA.vehicles)) throw new Error("資料格式不正確");
-        document.title = `保時捷台灣庫存儀表板（${DATA.total} 輛 · ${DATA.date}）`;
+        document.title = `保時捷台灣新車庫存儀表板（${allNew().length} 輛 · ${DATA.date}）`;
         render();
       } catch (err) {
         $("error").hidden = false;
