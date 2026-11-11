@@ -98,6 +98,28 @@
     .error { padding: 24px; color: #ffb4b8; }
     .gone { color: #e8b4b6; }
     .arrived { color: #9ad4b3; }
+
+    .io-hero {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0;
+    }
+    .io-card {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 18px 18px 16px; box-shadow: var(--shadow);
+    }
+    .io-card.in { border-color: rgba(63,166,107,.4); }
+    .io-card.out { border-color: rgba(230,49,60,.4); }
+    .io-card .k { color: var(--muted); font-size: 13px; }
+    .io-card .v { font-size: clamp(32px, 6vw, 48px); font-weight: 700; line-height: 1.1; margin-top: 4px; }
+    .io-card.in .v { color: var(--good); }
+    .io-card.out .v { color: #f0a3a8; }
+    .chart-box {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 16px 16px 12px; margin: 0 0 18px; box-shadow: var(--shadow);
+    }
+    .chart-box svg { width: 100%; height: auto; display: block; overflow: visible; }
+    .chart-legend { display: flex; flex-wrap: wrap; gap: 12px 18px; margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+    .chart-legend i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+    @media (max-width: 640px) { .io-hero { grid-template-columns: 1fr; } }
     @media (max-width: 640px) {
       .bar { grid-template-columns: 72px 1fr 44px 44px; }
       .metrics { grid-template-columns: repeat(2, 1fr); }
@@ -124,11 +146,13 @@
   <main class="wrap">
     <div id="error" class="error" hidden></div>
     <section id="summary"></section>
+    <section id="io"></section>
+    <section id="stockChart"></section>
+    <section id="salesChart"></section>
     <section id="lines"></section>
     <section id="matrix"></section>
     <section id="dealers"></section>
     <section id="variants"></section>
-    <section id="changes" hidden></section>
     <section id="vehicles"></section>
     <footer>
       <p id="foot-meta"></p>
@@ -144,8 +168,9 @@
   <script>
     const LINES = ["911", "718", "Cayenne", "Macan", "Panamera", "Taycan"];
     const DEALER_ORDER = ["台北保時捷中心", "新北保時捷中心", "桃園保時捷中心", "新竹保時捷中心", "台中保時捷中心", "台南保時捷中心", "高雄保時捷中心"];
-    const state = { line: "all", pctMode: "national", sortKey: "total", varSort: "count", listSort: "dealer", q: "" };
+    const state = { line: "all", pctMode: "national", sortKey: "total", varSort: "count", listSort: "dealer", q: "", stockDealer: "all", stockLine: "all", salesDealer: "all", salesLine: "all" };
     let DATA = null;
+    let HISTORY = null;
 
     const $ = (id) => document.getElementById(id);
     const shortDealer = (n) => (n || "").replace("保時捷中心", "");
@@ -377,50 +402,190 @@
       </tr>`;
     }
 
-    function countBars(items, keyFn, labels) {
-      const counts = {};
-      for (const v of items || []) {
-        const k = keyFn(v) || "—";
-        counts[k] = (counts[k] || 0) + 1;
-      }
-      const keys = labels ? labels.filter((l) => counts[l]) : Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
-      const max = Math.max(1, ...keys.map((k) => counts[k] || 0));
-      if (!keys.length) return `<p class="cap">今日沒有${esc(SALES_LABEL)}。</p>`;
-      return `<div class="bars">${keys.map((k) => {
-        const n = counts[k] || 0;
-        return `<div class="bar"><div>${esc(k)}</div><div class="track"><div class="fill" style="width:${(n / max * 100).toFixed(1)}%"></div></div><div class="n">${fmtN(n)}</div><div class="p">${fmtPct(n, (items || []).length)}</div></div>`;
-      }).join("")}</div>`;
-    }
-
     const SALES_LABEL = "銷售（以下架計）";
 
-    function renderChanges() {
-      const ch = DATA.changes;
-      if (!ch) {
-        $("changes").hidden = true;
-        $("changes").innerHTML = "";
-        return;
+    function ioCounts(items) {
+      const byDealer = Object.fromEntries(DEALER_ORDER.map((d) => [d, 0]));
+      const byLine = Object.fromEntries(LINES.map((l) => [l, 0]));
+      for (const v of items || []) {
+        const d = v.dealer_name || "未標示經銷商";
+        const l = v.model_line || "其他";
+        byDealer[d] = (byDealer[d] || 0) + 1;
+        byLine[l] = (byLine[l] || 0) + 1;
       }
-      const sales = ch.gone || [];
-      const salesLabel = ch.gone_label || SALES_LABEL;
-      const table = (title, items, cls) => `
+      return { byDealer, byLine };
+    }
+
+    function renderIO() {
+      const ch = DATA.changes;
+      const salesLabel = (ch && ch.gone_label) || SALES_LABEL;
+      const arrived = (ch && ch.arrived) || [];
+      const gone = (ch && ch.gone) || [];
+      const arrivedN = ch && ch.arrived_count != null ? ch.arrived_count : arrived.length;
+      const goneN = ch && ch.gone_count != null ? ch.gone_count : gone.length;
+      const hasCompare = !!(ch && ch.compared_to);
+      const fromLabel = hasCompare
+        ? (ch.compared_to + (ch.compared_to_captured_at ? " " + capturedLabel(ch.compared_to_captured_at) : ""))
+        : "尚無前一日快照";
+      const toLabel = capturedLabel(DATA.captured_at);
+      const a = ioCounts(arrived);
+      const g = ioCounts(gone);
+      const dealerRows = DEALER_ORDER.map((d) =>
+        `<tr><td>${esc(shortDealer(d))}</td><td class="num">${fmtN(a.byDealer[d] || 0)}</td><td class="num">${fmtN(g.byDealer[d] || 0)}</td></tr>`
+      ).join("");
+      const lineRows = LINES.map((l) =>
+        `<tr><td>${esc(l)}</td><td class="num">${fmtN(a.byLine[l] || 0)}</td><td class="num">${fmtN(g.byLine[l] || 0)}</td></tr>`
+      ).join("");
+      const table = (title, items, emptyText, cls) => `
         <h3 style="font-size:16px;margin:16px 0 8px">${esc(title)}（${fmtN(items.length)}）</h3>
         <div class="table-wrap"><table>
-          <thead><tr><th>中心</th><th>車系</th><th>車型</th><th class="num">年式</th><th class="num">價格</th><th>編號</th></tr></thead>
-          <tbody>${(items || []).map((v) => vehicleRow(v, cls)).join("") || `<tr><td colspan="6">沒有車輛</td></tr>`}</tbody>
+          <thead><tr><th>中心</th><th>車系</th><th>車型</th><th class="num">價格</th><th>編號</th></tr></thead>
+          <tbody>${(items || []).length
+            ? items.map((v) => `<tr class="${cls || ""}">
+                <td>${esc(shortDealer(v.dealer_name))}</td>
+                <td>${esc(v.model_line || "")}</td>
+                <td>${esc(fmtVar(v.model_variant))}</td>
+                <td class="num">${fmtPrice(v.price_twd)}</td>
+                <td>${v.listing_url ? `<a href="${esc(v.listing_url)}" target="_blank" rel="noopener">${esc(v.id)}</a>` : esc(v.id || "—")}</td>
+              </tr>`).join("")
+            : `<tr><td colspan="5">${esc(emptyText)}</td></tr>`}</tbody>
         </table></div>`;
-      $("changes").hidden = false;
-      $("changes").innerHTML = `
-        <h2>日週期變化</h2>
-        <p class="cap">僅比對新車。與 ${esc(ch.compared_to || "前一份快照")} 相比：新進 <strong class="arrived">${fmtN(ch.arrived_count || 0)}</strong> 輛，${esc(salesLabel)} <strong class="gone">${fmtN(ch.gone_count || 0)}</strong> 輛。${esc(ch.note || "從列表下架的車輛暫定為銷售（以下架計），不一定已經交車。")}</p>
-        <h3 style="font-size:16px;margin:16px 0 8px">${esc(salesLabel)}圖</h3>
-        <p class="cap">依車系</p>
-        ${countBars(sales, (v) => v.model_line, LINES)}
-        <p class="cap">依保時捷中心</p>
-        ${countBars(sales, (v) => shortDealer(v.dealer_name), DEALER_ORDER.map(shortDealer))}
-        ${table("新進車輛", ch.arrived || [], "arrived")}
-        ${table(salesLabel, sales, "gone")}`;
+      $("io").innerHTML = `
+        <h2>昨日進出車輛</h2>
+        <p class="cap">${hasCompare
+          ? `比較 ${esc(fromLabel)} → ${esc(toLabel)}。僅比對新車。下架暫定為${esc(salesLabel)}，不一定已經交車。`
+          : "尚無前一日快照可比較，進與銷售（以下架計）以 0 顯示。"}</p>
+        <div class="io-hero">
+          <div class="io-card in"><div class="k">進</div><div class="v">${fmtN(hasCompare ? arrivedN : 0)}</div></div>
+          <div class="io-card out"><div class="k">${esc(salesLabel)}</div><div class="v">${fmtN(hasCompare ? goneN : 0)}</div></div>
+        </div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>保時捷中心</th><th class="num">進</th><th class="num">${esc(salesLabel)}</th></tr></thead>
+          <tbody>${dealerRows}
+            <tr><td>合計</td><td class="num">${fmtN(hasCompare ? arrivedN : 0)}</td><td class="num">${fmtN(hasCompare ? goneN : 0)}</td></tr>
+          </tbody>
+        </table></div>
+        <div class="table-wrap" style="margin-top:12px"><table>
+          <thead><tr><th>車系</th><th class="num">進</th><th class="num">${esc(salesLabel)}</th></tr></thead>
+          <tbody>${lineRows}
+            <tr><td>合計</td><td class="num">${fmtN(hasCompare ? arrivedN : 0)}</td><td class="num">${fmtN(hasCompare ? goneN : 0)}</td></tr>
+          </tbody>
+        </table></div>
+        ${table("新進車輛", hasCompare ? arrived : [], "今日沒有新進車輛（0）。", "arrived")}
+        ${table(salesLabel, hasCompare ? gone : [], "今日沒有銷售（以下架計）的車輛（0）。", "gone")}`;
     }
+
+    function historyFilters(prefix, dealerKey, lineKey) {
+      const dealers = (HISTORY && HISTORY.dealers) || DEALER_ORDER;
+      const lines = (HISTORY && HISTORY.lines) || LINES;
+      const dealerOpts = [["all", "全部中心"], ...dealers.map((d) => [d, shortDealer(d)])]
+        .map(([v, l]) => `<option value="${esc(v)}" ${state[dealerKey] === v ? "selected" : ""}>${esc(l)}</option>`).join("");
+      const lineOpts = [["all", "全部車系"], ...lines.map((l) => [l, l])]
+        .map(([v, l]) => `<option value="${esc(v)}" ${state[lineKey] === v ? "selected" : ""}>${esc(l)}</option>`).join("");
+      return `<div class="toolbar">
+        <label class="select-wrap">保時捷中心 <select id="${prefix}Dealer">${dealerOpts}</select></label>
+        <label class="select-wrap">車系 <select id="${prefix}Line">${lineOpts}</select></label>
+      </div>`;
+    }
+
+    function historyValue(day, dealer, line, kind) {
+      if (kind !== "stock" && day.arrived_count == null && day.gone_count == null) return null;
+      const bucket = kind === "stock" ? "" : kind === "arrived" ? "arrived_" : "gone_";
+      if (kind === "stock") {
+        if (dealer === "all" && line === "all") return day.total;
+        if (dealer === "all") return (day.by_model_line || {})[line] || 0;
+        if (line === "all") return (day.by_dealer || {})[dealer] || 0;
+        return ((day.by_dealer_line || {})[dealer] || {})[line] || 0;
+      }
+      if (dealer === "all" && line === "all") return kind === "arrived" ? day.arrived_count : day.gone_count;
+      if (dealer === "all") return ((day[bucket + "by_model_line"] || {})[line]) || 0;
+      if (line === "all") return ((day[bucket + "by_dealer"] || {})[dealer]) || 0;
+      return ((day[bucket + "by_dealer_line"] || {})[dealer] || {})[line] || 0;
+    }
+
+    function lineChartSVG(series, dates, { height = 260 } = {}) {
+      const width = 720, padL = 44, padR = 16, padT = 16, padB = 36;
+      const innerW = width - padL - padR, innerH = height - padT - padB;
+      const nums = series.flatMap((s) => s.values.filter((v) => v != null));
+      const yMax = Math.max(4, ...(nums.length ? nums : [0]));
+      const n = dates.length;
+      const xAt = (i) => padL + (n <= 1 ? innerW / 2 : (i / (n - 1)) * innerW);
+      const yAt = (v) => padT + innerH - (v / yMax) * innerH;
+      const ticks = 4;
+      let grid = "";
+      for (let i = 0; i <= ticks; i++) {
+        const val = Math.round(yMax * (i / ticks));
+        const y = yAt(val);
+        grid += `<line x1="${padL}" y1="${y}" x2="${width - padR}" y2="${y}" stroke="#2e2f36" />`;
+        grid += `<text x="${padL - 8}" y="${y + 4}" fill="#9c978c" font-size="11" text-anchor="end">${val}</text>`;
+      }
+      const xLabels = dates.map((d, i) =>
+        `<text x="${xAt(i)}" y="${height - 10}" fill="#9c978c" font-size="11" text-anchor="middle">${esc(d.slice(5))}</text>`
+      ).join("");
+      const plots = series.map((s) => {
+        const pts = [];
+        s.values.forEach((v, i) => { if (v != null) pts.push({ i, v }); });
+        if (!pts.length) return "";
+        const path = pts.length >= 2
+          ? `<polyline fill="none" stroke="${s.color}" stroke-width="2.5" points="${pts.map((p) => `${xAt(p.i)},${yAt(p.v)}`).join(" ")}" />`
+          : "";
+        const dots = pts.map((p) =>
+          `<circle cx="${xAt(p.i)}" cy="${yAt(p.v)}" r="5" fill="${s.color}" />
+           <text x="${xAt(p.i)}" y="${yAt(p.v) - 10}" fill="${s.color}" font-size="11" text-anchor="middle">${fmtN(p.v)}</text>`
+        ).join("");
+        return path + dots;
+      }).join("");
+      return `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="折線圖">${grid}${xLabels}${plots}</svg>`;
+    }
+
+    function bindHistoryFilters(prefix, dealerKey, lineKey) {
+      const d = $(prefix + "Dealer");
+      const l = $(prefix + "Line");
+      if (d) d.addEventListener("change", (e) => { state[dealerKey] = e.target.value; renderCharts(); });
+      if (l) l.addEventListener("change", (e) => { state[lineKey] = e.target.value; renderCharts(); });
+    }
+
+    function filterCaptionFor(dealer, line) {
+      const d = dealer === "all" ? "全部中心" : shortDealer(dealer);
+      const l = line === "all" ? "全部車系" : line;
+      return d + "／" + l;
+    }
+
+    function renderCharts() {
+      const days = (HISTORY && HISTORY.days) || [];
+      if (!days.length) {
+        $("stockChart").innerHTML = `<h2>在庫曲線圖</h2><p class="cap">尚無歷史資料。每日更新後會累積在此。</p>`;
+        $("salesChart").innerHTML = `<h2>銷售曲線圖</h2><p class="cap">尚無歷史資料。每日更新後會累積在此。</p>`;
+        return;
+      }
+      const dates = days.map((d) => d.date);
+      const stockVals = days.map((d) => historyValue(d, state.stockDealer, state.stockLine, "stock"));
+      const goneVals = days.map((d) => historyValue(d, state.salesDealer, state.salesLine, "gone"));
+      const arrivedVals = days.map((d) => historyValue(d, state.salesDealer, state.salesLine, "arrived"));
+      $("stockChart").innerHTML = `
+        <h2>在庫曲線圖</h2>
+        <p class="cap">每日新車在庫。目前：${esc(filterCaptionFor(state.stockDealer, state.stockLine))}。共 ${fmtN(dates.length)} 個資料日。</p>
+        ${historyFilters("stock", "stockDealer", "stockLine")}
+        <div class="chart-box">${lineChartSVG([{ label: "在庫", color: "#e6313c", values: stockVals }], dates)}</div>`;
+      $("salesChart").innerHTML = `
+        <h2>銷售曲線圖</h2>
+        <p class="cap">每日${esc(SALES_LABEL)}（下架），並以新進為第二條線。第一天若沒有前一日快照則不計算進出。目前：${esc(filterCaptionFor(state.salesDealer, state.salesLine))}。</p>
+        ${historyFilters("sales", "salesDealer", "salesLine")}
+        <div class="chart-box">
+          ${lineChartSVG([
+            { label: SALES_LABEL, color: "#e6313c", values: goneVals },
+            { label: "新進", color: "#3fa66b", values: arrivedVals },
+          ], dates)}
+          <div class="chart-legend">
+            <span><i style="background:#e6313c"></i>${esc(SALES_LABEL)}</span>
+            <span><i style="background:#3fa66b"></i>新進</span>
+          </div>
+        </div>`;
+      bindHistoryFilters("stock", "stockDealer", "stockLine");
+      bindHistoryFilters("sales", "salesDealer", "salesLine");
+    }
+
+    function renderChanges() { renderIO(); }
 
     function renderVehicles() {
       let rows = filtered();
@@ -480,7 +645,8 @@
       renderMatrix();
       renderDealers();
       renderVariants();
-      renderChanges();
+      renderIO();
+      renderCharts();
       renderVehicles();
     }
 
@@ -490,6 +656,12 @@
         if (!res.ok) throw new Error("HTTP " + res.status);
         DATA = await res.json();
         if (!DATA || !Array.isArray(DATA.vehicles)) throw new Error("資料格式不正確");
+        try {
+          const hres = await fetch("history.json?t=" + Date.now(), { cache: "no-store" });
+          if (hres.ok) HISTORY = await hres.json();
+        } catch (err) {
+          HISTORY = null;
+        }
         document.title = `保時捷台灣新車庫存儀表板（${allNew().length} 輛 · ${DATA.date}）`;
         render();
       } catch (err) {

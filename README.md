@@ -14,4 +14,4 @@
 /workspace/porsche-finder/publish.sh
 ```
 
-腳本會重新抓取當天新車庫存、寫入 `data.json`，若資料或頁面有變更就提交並推送到 `main`，GitHub Pages 會自動更新網站。
+腳本會重新抓取當天新車庫存、寫入 `data.json`、把當日彙整附加到 `history.json`，若資料或頁面有變更就提交並推送到 `main`，GitHub Pages 會自動更新網站。
