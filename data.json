@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-10",
-  "captured_at": "2026-11-10T21:32:31+08:00",
+  "date": "2026-11-11",
+  "captured_at": "2026-11-11T09:00:46+08:00",
   "source": "https://finder.porsche.com/tw/zh-TW?int_ref=globalnav&int_medium=link&int_id=inventory",
   "scope": "new",
   "source_search": "https://finder.porsche.com/tw/zh-TW/search?condition=new",
@@ -8,43 +8,44 @@
   "stats": {
     "total": 212,
     "national_by_model_line": {
-      "Macan": 71,
+      "Macan": 72,
       "718": 54,
       "Cayenne": 48,
-      "911": 16,
+      "911": 15,
       "Panamera": 14,
       "Taycan": 9
     },
     "national_by_variant": {
       "Macan Macan": 52,
       "Cayenne Cayenne Coupé": 33,
-      "718 718 Cayman GT4 RS": 30,
+      "718 718 Cayman GT4 RS(982)": 30,
       "Macan Macan T": 15,
       "Panamera Panamera": 12,
-      "718 718 Spyder RS": 11,
+      "718 718 Spyder RS(982)": 11,
       "Cayenne Cayenne Coupé Black Edition": 8,
-      "911 911 Carrera GTS": 5,
-      "911 911 Carrera": 4,
+      "911 911 Carrera GTS(992 II)": 4,
+      "911 911 Carrera(992 II)": 4,
       "Taycan Taycan": 4,
-      "718 718 Cayman Style Edition": 3,
-      "911 911 Carrera 4 GTS": 3,
-      "911 911 Carrera T": 3,
+      "718 718 Cayman Style Edition(982)": 3,
+      "911 911 Carrera 4 GTS(992 II)": 3,
+      "911 911 Carrera T(992 II)": 3,
       "Macan Macan 4": 3,
       "Taycan Taycan Black Edition": 3,
-      "718 718 Boxster": 2,
-      "718 718 Boxster Style Edition": 2,
-      "718 718 Cayman": 2,
-      "718 718 Cayman GTS 4.0": 2,
+      "718 718 Boxster Style Edition(982)": 2,
+      "718 718 Boxster(982)": 2,
+      "718 718 Cayman GTS 4.0(982)": 2,
+      "718 718 Cayman(982)": 2,
       "Cayenne Cayenne": 2,
       "Cayenne Cayenne Black Edition": 2,
       "Panamera Panamera 4": 2,
-      "718 718 Boxster GTS 4.0": 1,
-      "718 718 Boxster S": 1,
-      "911 911 GT3": 1,
+      "718 718 Boxster GTS 4.0(982)": 1,
+      "718 718 Boxster S(982)": 1,
+      "911 911 GT3(992 II)": 1,
       "Cayenne Cayenne Electric": 1,
       "Cayenne Cayenne GTS Coupé": 1,
       "Cayenne Cayenne Turbo E-Hybrid Coupé": 1,
       "Macan Macan GTS": 1,
+      "Macan 保時捷中心": 1,
       "Taycan Taycan 4S": 1,
       "Taycan Taycan Turbo GT with Weissach Package": 1
     },
@@ -57,12 +58,13 @@
       "高雄保時捷中心": 24,
       "新竹保時捷中心": 23,
       "台中保時捷中心": 15,
-      "台北保時捷中心": 12,
-      "桃園保時捷中心": 5
+      "台北保時捷中心": 11,
+      "桃園保時捷中心": 5,
+      "未標示經銷商": 1
     },
     "dealer_by_model_line": {
       "台北保時捷中心": {
-        "911": 2,
+        "911": 1,
         "718": 6,
         "Cayenne": 1,
         "Panamera": 3
@@ -109,11 +111,14 @@
         "Cayenne": 11,
         "Macan": 8,
         "Panamera": 2
+      },
+      "未標示經銷商": {
+        "Macan": 1
       }
     },
     "dealer_by_condition": {
       "台北保時捷中心": {
-        "new": 12
+        "new": 11
       },
       "新北保時捷中心": {
         "new": 88
@@ -132,11 +137,14 @@
       },
       "高雄保時捷中心": {
         "new": 24
+      },
+      "未標示經銷商": {
+        "new": 1
       }
     },
     "model_line_by_condition": {
       "911": {
-        "new": 16
+        "new": 15
       },
       "718": {
         "new": 54
@@ -148,7 +156,7 @@
         "new": 14
       },
       "Macan": {
-        "new": 71
+        "new": 72
       },
       "Taycan": {
         "new": 9
@@ -157,9 +165,9 @@
     "dealer_share_of_national": {
       "台北保時捷中心": {
         "911": {
-          "count": 2,
-          "national": 16,
-          "share": 0.125
+          "count": 1,
+          "national": 15,
+          "share": 0.066667
         },
         "718": {
           "count": 6,
@@ -180,8 +188,8 @@
       "新北保時捷中心": {
         "911": {
           "count": 2,
-          "national": 16,
-          "share": 0.125
+          "national": 15,
+          "share": 0.133333
         },
         "718": {
           "count": 16,
@@ -195,8 +203,8 @@
         },
         "Macan": {
           "count": 43,
-          "national": 71,
-          "share": 0.605634
+          "national": 72,
+          "share": 0.597222
         },
         "Panamera": {
           "count": 5,
@@ -212,8 +220,8 @@
       "桃園保時捷中心": {
         "911": {
           "count": 1,
-          "national": 16,
-          "share": 0.0625
+          "national": 15,
+          "share": 0.066667
         },
         "718": {
           "count": 2,
@@ -222,15 +230,15 @@
         },
         "Macan": {
           "count": 2,
-          "national": 71,
-          "share": 0.028169
+          "national": 72,
+          "share": 0.027778
         }
       },
       "新竹保時捷中心": {
         "911": {
           "count": 2,
-          "national": 16,
-          "share": 0.125
+          "national": 15,
+          "share": 0.133333
         },
         "718": {
           "count": 11,
@@ -244,8 +252,8 @@
         },
         "Macan": {
           "count": 4,
-          "national": 71,
-          "share": 0.056338
+          "national": 72,
+          "share": 0.055556
         },
         "Panamera": {
           "count": 1,
@@ -261,8 +269,8 @@
       "台中保時捷中心": {
         "911": {
           "count": 3,
-          "national": 16,
-          "share": 0.1875
+          "national": 15,
+          "share": 0.2
         },
         "718": {
           "count": 3,
@@ -276,8 +284,8 @@
         },
         "Macan": {
           "count": 3,
-          "national": 71,
-          "share": 0.042254
+          "national": 72,
+          "share": 0.041667
         },
         "Panamera": {
           "count": 1,
@@ -293,8 +301,8 @@
       "台南保時捷中心": {
         "911": {
           "count": 6,
-          "national": 16,
-          "share": 0.375
+          "national": 15,
+          "share": 0.4
         },
         "718": {
           "count": 13,
@@ -308,8 +316,8 @@
         },
         "Macan": {
           "count": 11,
-          "national": 71,
-          "share": 0.15493
+          "national": 72,
+          "share": 0.152778
         },
         "Panamera": {
           "count": 2,
@@ -335,37 +343,44 @@
         },
         "Macan": {
           "count": 8,
-          "national": 71,
-          "share": 0.112676
+          "national": 72,
+          "share": 0.111111
         },
         "Panamera": {
           "count": 2,
           "national": 14,
           "share": 0.142857
         }
+      },
+      "未標示經銷商": {
+        "Macan": {
+          "count": 1,
+          "national": 72,
+          "share": 0.013889
+        }
       }
     },
     "model_share_within_dealer": {
       "台北保時捷中心": {
         "911": {
-          "count": 2,
-          "dealer_total": 12,
-          "share": 0.166667
+          "count": 1,
+          "dealer_total": 11,
+          "share": 0.090909
         },
         "718": {
           "count": 6,
-          "dealer_total": 12,
-          "share": 0.5
+          "dealer_total": 11,
+          "share": 0.545455
         },
         "Cayenne": {
           "count": 1,
-          "dealer_total": 12,
-          "share": 0.083333
+          "dealer_total": 11,
+          "share": 0.090909
         },
         "Panamera": {
           "count": 3,
-          "dealer_total": 12,
-          "share": 0.25
+          "dealer_total": 11,
+          "share": 0.272727
         }
       },
       "新北保時捷中心": {
@@ -534,117 +549,98 @@
           "dealer_total": 24,
           "share": 0.083333
         }
+      },
+      "未標示經銷商": {
+        "Macan": {
+          "count": 1,
+          "dealer_total": 1,
+          "share": 1.0
+        }
       }
     }
   },
-  "changes": null,
+  "changes": {
+    "compared_to": "2026-11-10",
+    "arrived_count": 0,
+    "gone_count": 0,
+    "arrived": [],
+    "gone": [],
+    "note": "僅比對新車。從列表消失的車輛視為疑似售出或已分配，不一定已交車。"
+  },
   "dealers": [
     {
-      "value": "17749",
-      "label": "台中保時捷中心"
-    },
-    {
-      "value": "17744",
       "label": "台北保時捷中心"
     },
     {
-      "value": "19737",
-      "label": "台南保時捷中心"
-    },
-    {
-      "value": "18222",
       "label": "新北保時捷中心"
     },
     {
-      "value": "19732",
-      "label": "新竹保時捷中心"
-    },
-    {
-      "value": "17747",
       "label": "桃園保時捷中心"
     },
     {
-      "value": "17752",
+      "label": "新竹保時捷中心"
+    },
+    {
+      "label": "台中保時捷中心"
+    },
+    {
+      "label": "台南保時捷中心"
+    },
+    {
       "label": "高雄保時捷中心"
     }
   ],
   "vehicles": [
     {
-      "id": "MEMMN8",
-      "condition": "new",
-      "condition_label": "新車",
-      "model_line": "911",
-      "model_variant": "911 Carrera GTS",
-      "model_year": 2026,
-      "price_twd": 10893400,
-      "dealer_name": "台北保時捷中心",
-      "first_registration": null,
-      "mileage_km": 0,
-      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-gts-MEMMN8"
-    },
-    {
       "id": "OL69KM",
       "condition": "new",
       "condition_label": "新車",
       "model_line": "911",
-      "model_variant": "911 Carrera T",
+      "model_variant": "911 Carrera T(992 II)",
       "model_year": 2026,
       "price_twd": 8530100,
       "dealer_name": "台北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-t-OL69KM"
-    },
-    {
-      "id": "EP08R5",
-      "condition": "new",
-      "condition_label": "新車",
-      "model_line": "718",
-      "model_variant": "718 Boxster",
-      "model_year": 2025,
-      "price_twd": 5120000,
-      "dealer_name": "台北保時捷中心",
-      "first_registration": null,
-      "mileage_km": 0,
-      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-boxster-EP08R5"
     },
     {
       "id": "38GV5M",
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Boxster S",
+      "model_variant": "718 Boxster S(982)",
       "model_year": 2025,
       "price_twd": 5502500,
       "dealer_name": "台北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-boxster-s-38GV5M"
     },
     {
-      "id": "38E200",
+      "id": "EP08R5",
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman",
+      "model_variant": "718 Boxster(982)",
       "model_year": 2025,
-      "price_twd": 4655600,
+      "price_twd": 5120000,
       "dealer_name": "台北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
-      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-38E200"
+      "mileage_km": null,
+      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-boxster-EP08R5"
     },
     {
       "id": "2OWE0P",
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 8688200,
       "dealer_name": "台北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-2OWE0P"
     },
     {
@@ -652,25 +648,38 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 8325700,
       "dealer_name": "台北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-4W98EE"
+    },
+    {
+      "id": "38E200",
+      "condition": "new",
+      "condition_label": "新車",
+      "model_line": "718",
+      "model_variant": "718 Cayman(982)",
+      "model_year": 2025,
+      "price_twd": 4655600,
+      "dealer_name": "台北保時捷中心",
+      "first_registration": null,
+      "mileage_km": null,
+      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-38E200"
     },
     {
       "id": "7WRRLW",
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Spyder RS",
+      "model_variant": "718 Spyder RS(982)",
       "model_year": 2025,
       "price_twd": 9200000,
       "dealer_name": "台北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-spyder-rs-7WRRLW"
     },
     {
@@ -683,7 +692,7 @@
       "price_twd": 4643300,
       "dealer_name": "台北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-V3KMLK"
     },
     {
@@ -696,7 +705,7 @@
       "price_twd": 6523900,
       "dealer_name": "台北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-panamera-GE2354"
     },
     {
@@ -709,7 +718,7 @@
       "price_twd": 6523900,
       "dealer_name": "台北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-panamera-M72GZ8"
     },
     {
@@ -722,7 +731,7 @@
       "price_twd": 6781700,
       "dealer_name": "台北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-panamera-4-K7K47M"
     },
     {
@@ -730,12 +739,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "911",
-      "model_variant": "911 Carrera 4 GTS",
+      "model_variant": "911 Carrera 4 GTS(992 II)",
       "model_year": 2026,
       "price_twd": 11055500,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-4-gts-M2GVQD"
     },
     {
@@ -743,12 +752,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "911",
-      "model_variant": "911 Carrera GTS",
+      "model_variant": "911 Carrera GTS(992 II)",
       "model_year": 2026,
       "price_twd": 10504500,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-gts-RG74KL"
     },
     {
@@ -756,12 +765,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 9277800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-2OV5Z5"
     },
     {
@@ -769,12 +778,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 9231500,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-4W08O3"
     },
     {
@@ -782,12 +791,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 9060000,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-5733M0"
     },
     {
@@ -795,12 +804,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 9237000,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-7933M6"
     },
     {
@@ -808,12 +817,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 9259000,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-79XME4"
     },
     {
@@ -821,12 +830,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 9169500,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-G8KLR8"
     },
     {
@@ -834,12 +843,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 10466800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-G8M2NW"
     },
     {
@@ -847,12 +856,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 9285200,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-KQX8ZN"
     },
     {
@@ -860,12 +869,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 9848000,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-L94M4X"
     },
     {
@@ -873,12 +882,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 9266000,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-QW5E86"
     },
     {
@@ -886,12 +895,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 9110500,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-XPXXMO"
     },
     {
@@ -899,12 +908,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GTS 4.0",
+      "model_variant": "718 Cayman GTS 4.0(982)",
       "model_year": 2025,
       "price_twd": 5788800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gts-40-382OZ8"
     },
     {
@@ -912,12 +921,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GTS 4.0",
+      "model_variant": "718 Cayman GTS 4.0(982)",
       "model_year": 2025,
       "price_twd": 5221700,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gts-40-NQNVVN"
     },
     {
@@ -925,12 +934,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman Style Edition",
+      "model_variant": "718 Cayman Style Edition(982)",
       "model_year": 2025,
       "price_twd": 4242400,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-style-edition-9ZWX42"
     },
     {
@@ -938,12 +947,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman Style Edition",
+      "model_variant": "718 Cayman Style Edition(982)",
       "model_year": 2025,
       "price_twd": 4242400,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-style-edition-VX2LQK"
     },
     {
@@ -951,12 +960,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Spyder RS",
+      "model_variant": "718 Spyder RS(982)",
       "model_year": 2025,
       "price_twd": 8930000,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-spyder-rs-673GL6"
     },
     {
@@ -969,7 +978,7 @@
       "price_twd": 4519400,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-0O0KPD"
     },
     {
@@ -982,7 +991,7 @@
       "price_twd": 4430000,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-25GMO2"
     },
     {
@@ -995,7 +1004,7 @@
       "price_twd": 4519400,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-36X7WM"
     },
     {
@@ -1008,7 +1017,7 @@
       "price_twd": 4519400,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-5KZOMM"
     },
     {
@@ -1021,7 +1030,7 @@
       "price_twd": 4430000,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-707MO6"
     },
     {
@@ -1034,7 +1043,7 @@
       "price_twd": 4519400,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-8OW8DL"
     },
     {
@@ -1047,7 +1056,7 @@
       "price_twd": 4519400,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-9P5K5D"
     },
     {
@@ -1060,7 +1069,7 @@
       "price_twd": 4585700,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-9P9L77"
     },
     {
@@ -1073,7 +1082,7 @@
       "price_twd": 4519400,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-EX52L0"
     },
     {
@@ -1086,7 +1095,7 @@
       "price_twd": 4519400,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-EXEOP6"
     },
     {
@@ -1099,7 +1108,7 @@
       "price_twd": 4519400,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-G74KL8"
     },
     {
@@ -1112,7 +1121,7 @@
       "price_twd": 4585700,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-G79NPQ"
     },
     {
@@ -1125,7 +1134,7 @@
       "price_twd": 4430000,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-G79NWN"
     },
     {
@@ -1138,7 +1147,7 @@
       "price_twd": 4430000,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-L84QW6"
     },
     {
@@ -1151,7 +1160,7 @@
       "price_twd": 4519400,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-NP7Z6P"
     },
     {
@@ -1164,7 +1173,7 @@
       "price_twd": 4519400,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-PV93KO"
     },
     {
@@ -1177,7 +1186,7 @@
       "price_twd": 4430000,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-PVO26E"
     },
     {
@@ -1190,7 +1199,7 @@
       "price_twd": 4519400,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-QV25X2"
     },
     {
@@ -1203,7 +1212,7 @@
       "price_twd": 4519400,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-W32OLL"
     },
     {
@@ -1216,7 +1225,7 @@
       "price_twd": 4519400,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-XZOD9G"
     },
     {
@@ -1229,7 +1238,7 @@
       "price_twd": 3555800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-258NR9"
     },
     {
@@ -1242,7 +1251,7 @@
       "price_twd": 3705900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-25G96Z"
     },
     {
@@ -1255,7 +1264,7 @@
       "price_twd": 3555800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-4479DE"
     },
     {
@@ -1268,7 +1277,7 @@
       "price_twd": 3693500,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-5KNEE7"
     },
     {
@@ -1281,7 +1290,7 @@
       "price_twd": 3555800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-5KWP27"
     },
     {
@@ -1294,7 +1303,7 @@
       "price_twd": 3555800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-6G9V5D"
     },
     {
@@ -1307,7 +1316,7 @@
       "price_twd": 3610900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-702Z67"
     },
     {
@@ -1320,7 +1329,7 @@
       "price_twd": 3555800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-9P63KO"
     },
     {
@@ -1333,7 +1342,7 @@
       "price_twd": 3610900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-9P63M2"
     },
     {
@@ -1346,7 +1355,7 @@
       "price_twd": 3410800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-9PV9ZW"
     },
     {
@@ -1359,7 +1368,7 @@
       "price_twd": 3692800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-EX522W"
     },
     {
@@ -1372,7 +1381,7 @@
       "price_twd": 3610900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-G74KQ8"
     },
     {
@@ -1385,7 +1394,7 @@
       "price_twd": 3610900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-G74KZ0"
     },
     {
@@ -1398,7 +1407,7 @@
       "price_twd": 3693500,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-G79VW0"
     },
     {
@@ -1411,7 +1420,7 @@
       "price_twd": 3410800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-G7W984"
     },
     {
@@ -1424,7 +1433,7 @@
       "price_twd": 3686500,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-KP6GWP"
     },
     {
@@ -1437,7 +1446,7 @@
       "price_twd": 3555800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-L8NPPX"
     },
     {
@@ -1450,7 +1459,7 @@
       "price_twd": 3555800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-MEXVWW"
     },
     {
@@ -1463,7 +1472,7 @@
       "price_twd": 3610900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-NP7Z4E"
     },
     {
@@ -1476,7 +1485,7 @@
       "price_twd": 3610900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-NP7Z9P"
     },
     {
@@ -1489,7 +1498,7 @@
       "price_twd": 3686500,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-NPGVWE"
     },
     {
@@ -1502,7 +1511,7 @@
       "price_twd": 3650900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-OP0EZ3"
     },
     {
@@ -1515,7 +1524,7 @@
       "price_twd": 3555800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-PV93PO"
     },
     {
@@ -1528,7 +1537,7 @@
       "price_twd": 3410800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-R9E547"
     },
     {
@@ -1541,7 +1550,7 @@
       "price_twd": 3610900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-W30QNM"
     },
     {
@@ -1554,7 +1563,7 @@
       "price_twd": 3679900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-XZ577O"
     },
     {
@@ -1567,7 +1576,7 @@
       "price_twd": 3554400,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-XZ57EO"
     },
     {
@@ -1580,7 +1589,7 @@
       "price_twd": 3610900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-XZOD6G"
     },
     {
@@ -1593,7 +1602,7 @@
       "price_twd": 3610900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-XZODQO"
     },
     {
@@ -1606,7 +1615,7 @@
       "price_twd": 3555800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-Z5XRWP"
     },
     {
@@ -1619,7 +1628,7 @@
       "price_twd": 3677800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-t-25G99Z"
     },
     {
@@ -1632,7 +1641,7 @@
       "price_twd": 3656900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-t-44ORV5"
     },
     {
@@ -1645,7 +1654,7 @@
       "price_twd": 3677800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-t-5KNE97"
     },
     {
@@ -1658,7 +1667,7 @@
       "price_twd": 3677800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-t-707OO7"
     },
     {
@@ -1671,7 +1680,7 @@
       "price_twd": 3677800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-t-L84WWX"
     },
     {
@@ -1684,7 +1693,7 @@
       "price_twd": 3677800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-t-MEXVV8"
     },
     {
@@ -1697,7 +1706,7 @@
       "price_twd": 3656900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-t-PV93GK"
     },
     {
@@ -1710,7 +1719,7 @@
       "price_twd": 3677800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-t-PVOZZK"
     },
     {
@@ -1723,7 +1732,7 @@
       "price_twd": 3656900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-t-R95444"
     },
     {
@@ -1736,7 +1745,7 @@
       "price_twd": 3677800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-t-R9XKK4"
     },
     {
@@ -1749,7 +1758,7 @@
       "price_twd": 3656900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-t-V9GW82"
     },
     {
@@ -1762,7 +1771,7 @@
       "price_twd": 3656900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-t-XZ575E"
     },
     {
@@ -1775,7 +1784,7 @@
       "price_twd": 3656900,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-t-Z5499D"
     },
     {
@@ -1788,7 +1797,7 @@
       "price_twd": 6646800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-panamera-08DP74"
     },
     {
@@ -1801,7 +1810,7 @@
       "price_twd": 6860400,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-panamera-647Z0X"
     },
     {
@@ -1814,7 +1823,7 @@
       "price_twd": 6900200,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-panamera-7K9PE6"
     },
     {
@@ -1827,7 +1836,7 @@
       "price_twd": 6752200,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-panamera-7KW3WD"
     },
     {
@@ -1840,7 +1849,7 @@
       "price_twd": 6788800,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-panamera-K7G6LG"
     },
     {
@@ -1853,7 +1862,7 @@
       "price_twd": 5276500,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-taycan-black-edition-PL7VKK"
     },
     {
@@ -1866,7 +1875,7 @@
       "price_twd": 5246600,
       "dealer_name": "新北保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-taycan-black-edition-V3ZVK2"
     },
     {
@@ -1874,12 +1883,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "911",
-      "model_variant": "911 Carrera T",
+      "model_variant": "911 Carrera T(992 II)",
       "model_year": 2026,
       "price_twd": 8776000,
       "dealer_name": "桃園保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-t-ZEK48D"
     },
     {
@@ -1887,12 +1896,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 9997000,
       "dealer_name": "桃園保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-PXM4W4"
     },
     {
@@ -1900,12 +1909,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Spyder RS",
+      "model_variant": "718 Spyder RS(982)",
       "model_year": 2025,
       "price_twd": 8668600,
       "dealer_name": "桃園保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-spyder-rs-07PPR4"
     },
     {
@@ -1918,7 +1927,7 @@
       "price_twd": 3587500,
       "dealer_name": "桃園保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-0O3Z8D"
     },
     {
@@ -1931,7 +1940,7 @@
       "price_twd": 3823900,
       "dealer_name": "桃園保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-W30QQ4"
     },
     {
@@ -1939,12 +1948,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "911",
-      "model_variant": "911 Carrera 4 GTS",
+      "model_variant": "911 Carrera 4 GTS(992 II)",
       "model_year": 2025,
       "price_twd": 11358100,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 20,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-4-gts-25RRD9"
     },
     {
@@ -1952,12 +1961,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "911",
-      "model_variant": "911 Carrera 4 GTS",
+      "model_variant": "911 Carrera 4 GTS(992 II)",
       "model_year": 2025,
       "price_twd": 11466300,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-4-gts-5K2259"
     },
     {
@@ -1965,38 +1974,25 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Boxster",
+      "model_variant": "718 Boxster(982)",
       "model_year": 2025,
       "price_twd": 4736400,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-boxster-07PPMN"
-    },
-    {
-      "id": "795QK6",
-      "condition": "new",
-      "condition_label": "新車",
-      "model_line": "718",
-      "model_variant": "718 Cayman",
-      "model_year": 2025,
-      "price_twd": 4671100,
-      "dealer_name": "新竹保時捷中心",
-      "first_registration": null,
-      "mileage_km": 0,
-      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-795QK6"
     },
     {
       "id": "57VVD7",
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 9036300,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-57VVD7"
     },
     {
@@ -2004,12 +2000,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 9644000,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-E64XDK"
     },
     {
@@ -2017,12 +2013,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 9869800,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-L9OLG6"
     },
     {
@@ -2030,12 +2026,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 9218600,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-PX54WO"
     },
     {
@@ -2043,25 +2039,38 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman Style Edition",
+      "model_variant": "718 Cayman Style Edition(982)",
       "model_year": 2025,
       "price_twd": 4743800,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-style-edition-VXWX55"
+    },
+    {
+      "id": "795QK6",
+      "condition": "new",
+      "condition_label": "新車",
+      "model_line": "718",
+      "model_variant": "718 Cayman(982)",
+      "model_year": 2025,
+      "price_twd": 4671100,
+      "dealer_name": "新竹保時捷中心",
+      "first_registration": null,
+      "mileage_km": null,
+      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-795QK6"
     },
     {
       "id": "57WR9V",
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Spyder RS",
+      "model_variant": "718 Spyder RS(982)",
       "model_year": 2024,
       "price_twd": 8759200,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-spyder-rs-57WR9V"
     },
     {
@@ -2069,12 +2078,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Spyder RS",
+      "model_variant": "718 Spyder RS(982)",
       "model_year": 2025,
       "price_twd": 9717500,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-spyder-rs-E64X75"
     },
     {
@@ -2082,12 +2091,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Spyder RS",
+      "model_variant": "718 Spyder RS(982)",
       "model_year": 2024,
       "price_twd": 8764500,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-spyder-rs-KQ6G9P"
     },
     {
@@ -2095,12 +2104,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Spyder RS",
+      "model_variant": "718 Spyder RS(982)",
       "model_year": 2025,
       "price_twd": 9556200,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-spyder-rs-PXW7R4"
     },
     {
@@ -2113,7 +2122,7 @@
       "price_twd": 4399900,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-6W536W"
     },
     {
@@ -2126,7 +2135,7 @@
       "price_twd": 4598600,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-LG527N"
     },
     {
@@ -2139,7 +2148,7 @@
       "price_twd": 5721000,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-electric-WK7O4Q"
     },
     {
@@ -2152,7 +2161,7 @@
       "price_twd": 7834200,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-gts-coupe-DO98E3"
     },
     {
@@ -2165,7 +2174,7 @@
       "price_twd": 3719300,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-XZ2E4P"
     },
     {
@@ -2178,7 +2187,7 @@
       "price_twd": 4183300,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-4-M7GOKM"
     },
     {
@@ -2191,7 +2200,7 @@
       "price_twd": 4183300,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-4-RL7P5Q"
     },
     {
@@ -2204,7 +2213,7 @@
       "price_twd": 5536400,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-gts-7KEXL7"
     },
     {
@@ -2217,7 +2226,7 @@
       "price_twd": 6624600,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-panamera-56Z36W"
     },
     {
@@ -2230,7 +2239,7 @@
       "price_twd": 7700000,
       "dealer_name": "新竹保時捷中心",
       "first_registration": null,
-      "mileage_km": 1828,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-taycan-turbo-gt-with-weissach-package-Z8MZ5V"
     },
     {
@@ -2238,12 +2247,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "911",
-      "model_variant": "911 Carrera GTS",
+      "model_variant": "911 Carrera GTS(992 II)",
       "model_year": 2025,
       "price_twd": 10181000,
       "dealer_name": "台中保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-gts-898PPG"
     },
     {
@@ -2251,12 +2260,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "911",
-      "model_variant": "911 Carrera GTS",
+      "model_variant": "911 Carrera GTS(992 II)",
       "model_year": 2026,
       "price_twd": 11520600,
       "dealer_name": "台中保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-gts-9Z38VP"
     },
     {
@@ -2264,12 +2273,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "911",
-      "model_variant": "911 Carrera T",
+      "model_variant": "911 Carrera T(992 II)",
       "model_year": 2025,
       "price_twd": 8286200,
       "dealer_name": "台中保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-t-KK7V0M"
     },
     {
@@ -2277,12 +2286,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 8333700,
       "dealer_name": "台中保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-3DEE38"
     },
     {
@@ -2290,12 +2299,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 8415200,
       "dealer_name": "台中保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-QWXXM6"
     },
     {
@@ -2303,12 +2312,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 8306200,
       "dealer_name": "台中保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-VZOXO2"
     },
     {
@@ -2321,7 +2330,7 @@
       "price_twd": 4542000,
       "dealer_name": "台中保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-LV63MX"
     },
     {
@@ -2334,7 +2343,7 @@
       "price_twd": 5008900,
       "dealer_name": "台中保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-black-edition-252Q29"
     },
     {
@@ -2347,7 +2356,7 @@
       "price_twd": 3536400,
       "dealer_name": "台中保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-EXZEOW"
     },
     {
@@ -2360,7 +2369,7 @@
       "price_twd": 3713700,
       "dealer_name": "台中保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-PLNW2E"
     },
     {
@@ -2373,7 +2382,7 @@
       "price_twd": 4000400,
       "dealer_name": "台中保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-4-9PG622"
     },
     {
@@ -2386,7 +2395,7 @@
       "price_twd": 6855500,
       "dealer_name": "台中保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-panamera-QLWQPZ"
     },
     {
@@ -2399,7 +2408,7 @@
       "price_twd": 4924500,
       "dealer_name": "台中保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-taycan-0O3G7D"
     },
     {
@@ -2412,7 +2421,7 @@
       "price_twd": 4964300,
       "dealer_name": "台中保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-taycan-QV74L2"
     },
     {
@@ -2425,20 +2434,33 @@
       "price_twd": 6128700,
       "dealer_name": "台中保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-taycan-4s-NPVN29"
+    },
+    {
+      "id": "5ZP39V",
+      "condition": "new",
+      "condition_label": "新車",
+      "model_line": "911",
+      "model_variant": "911 Carrera GTS(992 II)",
+      "model_year": 2026,
+      "price_twd": 10899900,
+      "dealer_name": "台南保時捷中心",
+      "first_registration": null,
+      "mileage_km": null,
+      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-gts-5ZP39V"
     },
     {
       "id": "0O4G34",
       "condition": "new",
       "condition_label": "新車",
       "model_line": "911",
-      "model_variant": "911 Carrera",
+      "model_variant": "911 Carrera(992 II)",
       "model_year": 2026,
       "price_twd": 8554900,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-0O4G34"
     },
     {
@@ -2446,12 +2468,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "911",
-      "model_variant": "911 Carrera",
+      "model_variant": "911 Carrera(992 II)",
       "model_year": 2026,
       "price_twd": 8197300,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-0O4G94"
     },
     {
@@ -2459,12 +2481,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "911",
-      "model_variant": "911 Carrera",
+      "model_variant": "911 Carrera(992 II)",
       "model_year": 2026,
       "price_twd": 8542700,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-OP0EX7"
     },
     {
@@ -2472,38 +2494,25 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "911",
-      "model_variant": "911 Carrera",
+      "model_variant": "911 Carrera(992 II)",
       "model_year": 2026,
       "price_twd": 8604200,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-Z54932"
-    },
-    {
-      "id": "5ZP39V",
-      "condition": "new",
-      "condition_label": "新車",
-      "model_line": "911",
-      "model_variant": "911 Carrera GTS",
-      "model_year": 2026,
-      "price_twd": 10899900,
-      "dealer_name": "台南保時捷中心",
-      "first_registration": null,
-      "mileage_km": 0,
-      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-gts-5ZP39V"
     },
     {
       "id": "N59GPL",
       "condition": "new",
       "condition_label": "新車",
       "model_line": "911",
-      "model_variant": "911 GT3",
+      "model_variant": "911 GT3(992 II)",
       "model_year": 2026,
       "price_twd": 12515900,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-gt3-N59GPL"
     },
     {
@@ -2511,12 +2520,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Boxster GTS 4.0",
+      "model_variant": "718 Boxster GTS 4.0(982)",
       "model_year": 2025,
       "price_twd": 5768800,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-boxster-gts-40-7WK43D"
     },
     {
@@ -2524,12 +2533,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Boxster Style Edition",
+      "model_variant": "718 Boxster Style Edition(982)",
       "model_year": 2025,
       "price_twd": 4849800,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-boxster-style-edition-M26R2W"
     },
     {
@@ -2537,12 +2546,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Boxster Style Edition",
+      "model_variant": "718 Boxster Style Edition(982)",
       "model_year": 2025,
       "price_twd": 4911200,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-boxster-style-edition-WX5E0M"
     },
     {
@@ -2550,12 +2559,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 8879500,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-57PP69"
     },
     {
@@ -2563,12 +2572,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 8898900,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-79ZDQ4"
     },
     {
@@ -2576,12 +2585,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2024,
       "price_twd": 8780200,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-NO309E"
     },
     {
@@ -2589,12 +2598,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 8655000,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-NOM5ME"
     },
     {
@@ -2602,12 +2611,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 8845300,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-PXP2QO"
     },
     {
@@ -2615,12 +2624,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2024,
       "price_twd": 8848800,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-RRDGZ4"
     },
     {
@@ -2628,12 +2637,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Spyder RS",
+      "model_variant": "718 Spyder RS(982)",
       "model_year": 2025,
       "price_twd": 8704500,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-spyder-rs-64W34X"
     },
     {
@@ -2641,12 +2650,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Spyder RS",
+      "model_variant": "718 Spyder RS(982)",
       "model_year": 2024,
       "price_twd": 8471900,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-spyder-rs-8EPE66"
     },
     {
@@ -2654,12 +2663,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Spyder RS",
+      "model_variant": "718 Spyder RS(982)",
       "model_year": 2025,
       "price_twd": 8787100,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-spyder-rs-KQ446D"
     },
     {
@@ -2667,12 +2676,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Spyder RS",
+      "model_variant": "718 Spyder RS(982)",
       "model_year": 2025,
       "price_twd": 8712400,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-spyder-rs-VZWW5R"
     },
     {
@@ -2685,7 +2694,7 @@
       "price_twd": 4689900,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-0O4GZL"
     },
     {
@@ -2698,7 +2707,7 @@
       "price_twd": 4592900,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-0OLLOD"
     },
     {
@@ -2711,7 +2720,7 @@
       "price_twd": 4663300,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-32EN6Z"
     },
     {
@@ -2724,7 +2733,7 @@
       "price_twd": 4533800,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-70K9N4"
     },
     {
@@ -2737,7 +2746,7 @@
       "price_twd": 4519400,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-8OKKG3"
     },
     {
@@ -2750,7 +2759,7 @@
       "price_twd": 4688000,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-9PGGP2"
     },
     {
@@ -2763,7 +2772,7 @@
       "price_twd": 4663000,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-NPQOKP"
     },
     {
@@ -2776,7 +2785,7 @@
       "price_twd": 4519400,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-PVRRLR"
     },
     {
@@ -2789,7 +2798,7 @@
       "price_twd": 4689900,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-QVN4Z8"
     },
     {
@@ -2802,7 +2811,7 @@
       "price_twd": 4688000,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-W3VV3M"
     },
     {
@@ -2815,7 +2824,7 @@
       "price_twd": 3529700,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-253Q7P"
     },
     {
@@ -2828,7 +2837,7 @@
       "price_twd": 3696200,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-362DQV"
     },
     {
@@ -2841,7 +2850,7 @@
       "price_twd": 3466600,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-707OV7"
     },
     {
@@ -2854,7 +2863,7 @@
       "price_twd": 3636000,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-L84WE9"
     },
     {
@@ -2867,7 +2876,7 @@
       "price_twd": 3852100,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-MEK8OO"
     },
     {
@@ -2880,7 +2889,7 @@
       "price_twd": 3719000,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-NPGV8L"
     },
     {
@@ -2893,7 +2902,7 @@
       "price_twd": 3681300,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-QVRRR2"
     },
     {
@@ -2906,7 +2915,7 @@
       "price_twd": 3505700,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-W3VVKM"
     },
     {
@@ -2919,7 +2928,7 @@
       "price_twd": 3719000,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-XZ572N"
     },
     {
@@ -2932,7 +2941,7 @@
       "price_twd": 3585500,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-XZ855E"
     },
     {
@@ -2945,7 +2954,7 @@
       "price_twd": 3712000,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-t-G79VP4"
     },
     {
@@ -2958,7 +2967,7 @@
       "price_twd": 7878600,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-panamera-PVRR8O"
     },
     {
@@ -2971,7 +2980,7 @@
       "price_twd": 7189200,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-panamera-4-NQOZNE"
     },
     {
@@ -2984,7 +2993,7 @@
       "price_twd": 4850200,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-taycan-362DLV"
     },
     {
@@ -2997,7 +3006,7 @@
       "price_twd": 4821100,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-taycan-V9NLXR"
     },
     {
@@ -3010,7 +3019,7 @@
       "price_twd": 5491700,
       "dealer_name": "台南保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-taycan-black-edition-MELL3W"
     },
     {
@@ -3018,12 +3027,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 8305800,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-7988R7"
     },
     {
@@ -3031,12 +3040,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2024,
       "price_twd": 9688600,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-9NMOX2"
     },
     {
@@ -3044,12 +3053,12 @@
       "condition": "new",
       "condition_label": "新車",
       "model_line": "718",
-      "model_variant": "718 Cayman GT4 RS",
+      "model_variant": "718 Cayman GT4 RS(982)",
       "model_year": 2025,
       "price_twd": 8289800,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-G83754"
     },
     {
@@ -3062,7 +3071,7 @@
       "price_twd": 4892300,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-black-edition-M7ZMXD"
     },
     {
@@ -3075,7 +3084,7 @@
       "price_twd": 4790000,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-black-edition-NQ8DQL"
     },
     {
@@ -3088,7 +3097,7 @@
       "price_twd": 4519400,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-QV7ZPO"
     },
     {
@@ -3101,7 +3110,7 @@
       "price_twd": 4983500,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-black-edition-20EMZZ"
     },
     {
@@ -3114,7 +3123,7 @@
       "price_twd": 4974400,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-black-edition-3K4RQW"
     },
     {
@@ -3127,7 +3136,7 @@
       "price_twd": 5258900,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-black-edition-445249"
     },
     {
@@ -3140,7 +3149,7 @@
       "price_twd": 4974400,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-black-edition-50EG5V"
     },
     {
@@ -3153,7 +3162,7 @@
       "price_twd": 4974400,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-black-edition-6O8LR5"
     },
     {
@@ -3166,7 +3175,7 @@
       "price_twd": 4974400,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-black-edition-82NQPM"
     },
     {
@@ -3179,7 +3188,7 @@
       "price_twd": 4974400,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-black-edition-G0V548"
     },
     {
@@ -3192,7 +3201,7 @@
       "price_twd": 9605000,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-turbo-ehybrid-coupe-E68VVE"
     },
     {
@@ -3205,7 +3214,7 @@
       "price_twd": 3519600,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-0OL04D"
     },
     {
@@ -3218,7 +3227,7 @@
       "price_twd": 3754200,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-0OW2ZN"
     },
     {
@@ -3231,11 +3240,11 @@
       "price_twd": 3687300,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-44DKV3"
     },
     {
-      "id": "5KVL9W",
+      "id": "MEMMN8",
       "condition": "new",
       "condition_label": "新車",
       "model_line": "Macan",
@@ -3244,8 +3253,8 @@
       "price_twd": 3754200,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
-      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-5KVL9W"
+      "mileage_km": null,
+      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-gts-MEMMN8"
     },
     {
       "id": "NPM2W9",
@@ -3257,7 +3266,7 @@
       "price_twd": 3687300,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-NPM2W9"
     },
     {
@@ -3270,7 +3279,7 @@
       "price_twd": 3477400,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-QL3DNO"
     },
     {
@@ -3283,7 +3292,7 @@
       "price_twd": 3515700,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-R9ZK34"
     },
     {
@@ -3296,7 +3305,7 @@
       "price_twd": 3699400,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-t-LGPQXZ"
     },
     {
@@ -3309,7 +3318,7 @@
       "price_twd": 6891800,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-panamera-209W22"
     },
     {
@@ -3322,8 +3331,21 @@
       "price_twd": 6380800,
       "dealer_name": "高雄保時捷中心",
       "first_registration": null,
-      "mileage_km": 0,
+      "mileage_km": null,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-panamera-XZWR3G"
+    },
+    {
+      "id": "5KVL9W",
+      "condition": "new",
+      "condition_label": "新車",
+      "model_line": "Macan",
+      "model_variant": "保時捷中心",
+      "model_year": null,
+      "price_twd": null,
+      "dealer_name": "未標示經銷商",
+      "first_registration": null,
+      "mileage_km": null,
+      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-5KVL9W"
     }
   ]
 }
