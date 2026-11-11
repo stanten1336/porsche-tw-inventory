@@ -135,7 +135,7 @@
       <ul>
         <li>只含各保時捷中心掛在 Porsche Finder 公開新車頁上的庫存，不含認證中古車與中古車，也不是全省每台實體車或 8891 等外部網站。</li>
         <li>庫存比例＝該經銷商該車系台數 ÷ 全台該車系新車台數；也可切換成該車系占該店自己新車庫存的比例。</li>
-        <li>從列表消失的車輛視為疑似售出或已分配，不一定已經交車。日週期變化只比對新車。</li>
+        <li>從列表下架的車輛暫定為銷售（以下架計），不一定已經交車。日週期變化只比對新車。</li>
         <li>價格為網站標示之含稅建議售價，實際成交與折扣請仍以各中心為準。</li>
         <li>此網站與程式碼公開在 GitHub，任何人都可以看到這裡的彙整資料。</li>
       </ul>
@@ -377,13 +377,32 @@
       </tr>`;
     }
 
+    function countBars(items, keyFn, labels) {
+      const counts = {};
+      for (const v of items || []) {
+        const k = keyFn(v) || "—";
+        counts[k] = (counts[k] || 0) + 1;
+      }
+      const keys = labels ? labels.filter((l) => counts[l]) : Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+      const max = Math.max(1, ...keys.map((k) => counts[k] || 0));
+      if (!keys.length) return `<p class="cap">今日沒有${esc(SALES_LABEL)}。</p>`;
+      return `<div class="bars">${keys.map((k) => {
+        const n = counts[k] || 0;
+        return `<div class="bar"><div>${esc(k)}</div><div class="track"><div class="fill" style="width:${(n / max * 100).toFixed(1)}%"></div></div><div class="n">${fmtN(n)}</div><div class="p">${fmtPct(n, (items || []).length)}</div></div>`;
+      }).join("")}</div>`;
+    }
+
+    const SALES_LABEL = "銷售（以下架計）";
+
     function renderChanges() {
       const ch = DATA.changes;
-      if (!ch || (!ch.arrived_count && !ch.gone_count)) {
+      if (!ch) {
         $("changes").hidden = true;
         $("changes").innerHTML = "";
         return;
       }
+      const sales = ch.gone || [];
+      const salesLabel = ch.gone_label || SALES_LABEL;
       const table = (title, items, cls) => `
         <h3 style="font-size:16px;margin:16px 0 8px">${esc(title)}（${fmtN(items.length)}）</h3>
         <div class="table-wrap"><table>
@@ -393,9 +412,14 @@
       $("changes").hidden = false;
       $("changes").innerHTML = `
         <h2>日週期變化</h2>
-        <p class="cap">僅比對新車。與 ${esc(ch.compared_to || "前一份快照")} 相比：新進 <strong class="arrived">${fmtN(ch.arrived_count || 0)}</strong> 輛，從列表消失 <strong class="gone">${fmtN(ch.gone_count || 0)}</strong> 輛。${esc(ch.note || "從列表消失的車輛視為疑似售出或已分配，不一定已經交車。")}</p>
+        <p class="cap">僅比對新車。與 ${esc(ch.compared_to || "前一份快照")} 相比：新進 <strong class="arrived">${fmtN(ch.arrived_count || 0)}</strong> 輛，${esc(salesLabel)} <strong class="gone">${fmtN(ch.gone_count || 0)}</strong> 輛。${esc(ch.note || "從列表下架的車輛暫定為銷售（以下架計），不一定已經交車。")}</p>
+        <h3 style="font-size:16px;margin:16px 0 8px">${esc(salesLabel)}圖</h3>
+        <p class="cap">依車系</p>
+        ${countBars(sales, (v) => v.model_line, LINES)}
+        <p class="cap">依保時捷中心</p>
+        ${countBars(sales, (v) => shortDealer(v.dealer_name), DEALER_ORDER.map(shortDealer))}
         ${table("新進車輛", ch.arrived || [], "arrived")}
-        ${table("疑似售出或已分配", ch.gone || [], "gone")}`;
+        ${table(salesLabel, sales, "gone")}`;
     }
 
     function renderVehicles() {
