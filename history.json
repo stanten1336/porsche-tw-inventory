@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T09:17:06+08:00",
+  "generated_at": "2026-11-12T09:05:50+08:00",
   "timezone": "Asia/Taipei",
   "scope": "new",
   "dealers": [
@@ -189,6 +189,239 @@
         }
       },
       "compared_to": "2026-11-10",
+      "arrived_count": 0,
+      "gone_count": 0,
+      "arrived_by_dealer": {
+        "台北保時捷中心": 0,
+        "新北保時捷中心": 0,
+        "桃園保時捷中心": 0,
+        "新竹保時捷中心": 0,
+        "台中保時捷中心": 0,
+        "台南保時捷中心": 0,
+        "高雄保時捷中心": 0
+      },
+      "arrived_by_model_line": {
+        "911": 0,
+        "718": 0,
+        "Cayenne": 0,
+        "Macan": 0,
+        "Panamera": 0,
+        "Taycan": 0
+      },
+      "arrived_by_dealer_line": {
+        "台北保時捷中心": {
+          "911": 0,
+          "718": 0,
+          "Cayenne": 0,
+          "Macan": 0,
+          "Panamera": 0,
+          "Taycan": 0
+        },
+        "新北保時捷中心": {
+          "911": 0,
+          "718": 0,
+          "Cayenne": 0,
+          "Macan": 0,
+          "Panamera": 0,
+          "Taycan": 0
+        },
+        "桃園保時捷中心": {
+          "911": 0,
+          "718": 0,
+          "Cayenne": 0,
+          "Macan": 0,
+          "Panamera": 0,
+          "Taycan": 0
+        },
+        "新竹保時捷中心": {
+          "911": 0,
+          "718": 0,
+          "Cayenne": 0,
+          "Macan": 0,
+          "Panamera": 0,
+          "Taycan": 0
+        },
+        "台中保時捷中心": {
+          "911": 0,
+          "718": 0,
+          "Cayenne": 0,
+          "Macan": 0,
+          "Panamera": 0,
+          "Taycan": 0
+        },
+        "台南保時捷中心": {
+          "911": 0,
+          "718": 0,
+          "Cayenne": 0,
+          "Macan": 0,
+          "Panamera": 0,
+          "Taycan": 0
+        },
+        "高雄保時捷中心": {
+          "911": 0,
+          "718": 0,
+          "Cayenne": 0,
+          "Macan": 0,
+          "Panamera": 0,
+          "Taycan": 0
+        }
+      },
+      "gone_by_dealer": {
+        "台北保時捷中心": 0,
+        "新北保時捷中心": 0,
+        "桃園保時捷中心": 0,
+        "新竹保時捷中心": 0,
+        "台中保時捷中心": 0,
+        "台南保時捷中心": 0,
+        "高雄保時捷中心": 0
+      },
+      "gone_by_model_line": {
+        "911": 0,
+        "718": 0,
+        "Cayenne": 0,
+        "Macan": 0,
+        "Panamera": 0,
+        "Taycan": 0
+      },
+      "gone_by_dealer_line": {
+        "台北保時捷中心": {
+          "911": 0,
+          "718": 0,
+          "Cayenne": 0,
+          "Macan": 0,
+          "Panamera": 0,
+          "Taycan": 0
+        },
+        "新北保時捷中心": {
+          "911": 0,
+          "718": 0,
+          "Cayenne": 0,
+          "Macan": 0,
+          "Panamera": 0,
+          "Taycan": 0
+        },
+        "桃園保時捷中心": {
+          "911": 0,
+          "718": 0,
+          "Cayenne": 0,
+          "Macan": 0,
+          "Panamera": 0,
+          "Taycan": 0
+        },
+        "新竹保時捷中心": {
+          "911": 0,
+          "718": 0,
+          "Cayenne": 0,
+          "Macan": 0,
+          "Panamera": 0,
+          "Taycan": 0
+        },
+        "台中保時捷中心": {
+          "911": 0,
+          "718": 0,
+          "Cayenne": 0,
+          "Macan": 0,
+          "Panamera": 0,
+          "Taycan": 0
+        },
+        "台南保時捷中心": {
+          "911": 0,
+          "718": 0,
+          "Cayenne": 0,
+          "Macan": 0,
+          "Panamera": 0,
+          "Taycan": 0
+        },
+        "高雄保時捷中心": {
+          "911": 0,
+          "718": 0,
+          "Cayenne": 0,
+          "Macan": 0,
+          "Panamera": 0,
+          "Taycan": 0
+        }
+      }
+    },
+    {
+      "date": "2026-11-12",
+      "captured_at": "2026-11-12T09:04:49+08:00",
+      "total": 212,
+      "by_dealer": {
+        "台北保時捷中心": 12,
+        "新北保時捷中心": 88,
+        "桃園保時捷中心": 5,
+        "新竹保時捷中心": 23,
+        "台中保時捷中心": 15,
+        "台南保時捷中心": 45,
+        "高雄保時捷中心": 24
+      },
+      "by_model_line": {
+        "911": 16,
+        "718": 54,
+        "Cayenne": 48,
+        "Macan": 71,
+        "Panamera": 14,
+        "Taycan": 9
+      },
+      "by_dealer_line": {
+        "台北保時捷中心": {
+          "911": 2,
+          "718": 6,
+          "Cayenne": 1,
+          "Macan": 0,
+          "Panamera": 3,
+          "Taycan": 0
+        },
+        "新北保時捷中心": {
+          "911": 2,
+          "718": 16,
+          "Cayenne": 20,
+          "Macan": 43,
+          "Panamera": 5,
+          "Taycan": 2
+        },
+        "桃園保時捷中心": {
+          "911": 1,
+          "718": 2,
+          "Cayenne": 0,
+          "Macan": 2,
+          "Panamera": 0,
+          "Taycan": 0
+        },
+        "新竹保時捷中心": {
+          "911": 2,
+          "718": 11,
+          "Cayenne": 4,
+          "Macan": 4,
+          "Panamera": 1,
+          "Taycan": 1
+        },
+        "台中保時捷中心": {
+          "911": 3,
+          "718": 3,
+          "Cayenne": 2,
+          "Macan": 3,
+          "Panamera": 1,
+          "Taycan": 3
+        },
+        "台南保時捷中心": {
+          "911": 6,
+          "718": 13,
+          "Cayenne": 10,
+          "Macan": 11,
+          "Panamera": 2,
+          "Taycan": 3
+        },
+        "高雄保時捷中心": {
+          "911": 0,
+          "718": 3,
+          "Cayenne": 11,
+          "Macan": 8,
+          "Panamera": 2,
+          "Taycan": 0
+        }
+      },
+      "compared_to": "2026-11-11",
       "arrived_count": 0,
       "gone_count": 0,
       "arrived_by_dealer": {
