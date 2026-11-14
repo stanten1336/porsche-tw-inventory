@@ -1,30 +1,30 @@
 {
-  "date": "2026-11-13",
-  "captured_at": "2026-11-13T09:06:26+08:00",
+  "date": "2026-11-14",
+  "captured_at": "2026-11-14T09:07:10+08:00",
   "source": "https://finder.porsche.com/tw/zh-TW?int_ref=globalnav&int_medium=link&int_id=inventory",
   "scope": "new",
   "source_search": "https://finder.porsche.com/tw/zh-TW/search?condition=new",
-  "total": 211,
+  "total": 214,
   "stats": {
-    "total": 211,
+    "total": 214,
     "national_by_model_line": {
       "Macan": 70,
-      "718": 54,
+      "718": 56,
       "Cayenne": 47,
-      "911": 16,
+      "911": 17,
       "Panamera": 14,
       "Taycan": 10
     },
     "national_by_variant": {
       "Macan Macan": 51,
+      "718 718 Cayman GT4 RS": 31,
       "Cayenne Cayenne Coupé": 31,
-      "718 718 Cayman GT4 RS": 30,
       "Macan Macan T": 15,
+      "718 718 Spyder RS": 12,
       "Panamera Panamera": 12,
-      "718 718 Spyder RS": 11,
       "Cayenne Cayenne Coupé Black Edition": 8,
+      "911 911 Carrera": 5,
       "911 911 Carrera GTS": 5,
-      "911 911 Carrera": 4,
       "Taycan Taycan": 4,
       "Taycan Taycan Black Edition": 4,
       "718 718 Cayman Style Edition": 3,
@@ -50,28 +50,28 @@
       "Taycan Taycan Turbo GT with Weissach Package": 1
     },
     "national_by_condition": {
-      "new": 211
+      "new": 214
     },
     "dealer_totals": {
-      "新北保時捷中心": 88,
-      "台南保時捷中心": 45,
+      "新北保時捷中心": 87,
+      "台南保時捷中心": 46,
       "新竹保時捷中心": 23,
       "高雄保時捷中心": 23,
       "台中保時捷中心": 15,
-      "台北保時捷中心": 12,
+      "台北保時捷中心": 15,
       "桃園保時捷中心": 5
     },
     "dealer_by_model_line": {
       "台北保時捷中心": {
-        "911": 2,
-        "718": 6,
+        "911": 3,
+        "718": 8,
         "Cayenne": 1,
         "Panamera": 3
       },
       "新北保時捷中心": {
         "911": 2,
         "718": 16,
-        "Cayenne": 20,
+        "Cayenne": 19,
         "Macan": 42,
         "Panamera": 5,
         "Taycan": 3
@@ -100,7 +100,7 @@
       "台南保時捷中心": {
         "911": 6,
         "718": 13,
-        "Cayenne": 10,
+        "Cayenne": 11,
         "Macan": 11,
         "Panamera": 2,
         "Taycan": 3
@@ -114,10 +114,10 @@
     },
     "dealer_by_condition": {
       "台北保時捷中心": {
-        "new": 12
+        "new": 15
       },
       "新北保時捷中心": {
-        "new": 88
+        "new": 87
       },
       "桃園保時捷中心": {
         "new": 5
@@ -129,7 +129,7 @@
         "new": 15
       },
       "台南保時捷中心": {
-        "new": 45
+        "new": 46
       },
       "高雄保時捷中心": {
         "new": 23
@@ -137,10 +137,10 @@
     },
     "model_line_by_condition": {
       "911": {
-        "new": 16
+        "new": 17
       },
       "718": {
-        "new": 54
+        "new": 56
       },
       "Cayenne": {
         "new": 47
@@ -158,14 +158,14 @@
     "dealer_share_of_national": {
       "台北保時捷中心": {
         "911": {
-          "count": 2,
-          "national": 16,
-          "share": 0.125
+          "count": 3,
+          "national": 17,
+          "share": 0.176471
         },
         "718": {
-          "count": 6,
-          "national": 54,
-          "share": 0.111111
+          "count": 8,
+          "national": 56,
+          "share": 0.142857
         },
         "Cayenne": {
           "count": 1,
@@ -181,18 +181,18 @@
       "新北保時捷中心": {
         "911": {
           "count": 2,
-          "national": 16,
-          "share": 0.125
+          "national": 17,
+          "share": 0.117647
         },
         "718": {
           "count": 16,
-          "national": 54,
-          "share": 0.296296
+          "national": 56,
+          "share": 0.285714
         },
         "Cayenne": {
-          "count": 20,
+          "count": 19,
           "national": 47,
-          "share": 0.425532
+          "share": 0.404255
         },
         "Macan": {
           "count": 42,
@@ -213,13 +213,13 @@
       "桃園保時捷中心": {
         "911": {
           "count": 1,
-          "national": 16,
-          "share": 0.0625
+          "national": 17,
+          "share": 0.058824
         },
         "718": {
           "count": 2,
-          "national": 54,
-          "share": 0.037037
+          "national": 56,
+          "share": 0.035714
         },
         "Macan": {
           "count": 2,
@@ -230,13 +230,13 @@
       "新竹保時捷中心": {
         "911": {
           "count": 2,
-          "national": 16,
-          "share": 0.125
+          "national": 17,
+          "share": 0.117647
         },
         "718": {
           "count": 11,
-          "national": 54,
-          "share": 0.203704
+          "national": 56,
+          "share": 0.196429
         },
         "Cayenne": {
           "count": 4,
@@ -262,13 +262,13 @@
       "台中保時捷中心": {
         "911": {
           "count": 3,
-          "national": 16,
-          "share": 0.1875
+          "national": 17,
+          "share": 0.176471
         },
         "718": {
           "count": 3,
-          "national": 54,
-          "share": 0.055556
+          "national": 56,
+          "share": 0.053571
         },
         "Cayenne": {
           "count": 2,
@@ -294,18 +294,18 @@
       "台南保時捷中心": {
         "911": {
           "count": 6,
-          "national": 16,
-          "share": 0.375
+          "national": 17,
+          "share": 0.352941
         },
         "718": {
           "count": 13,
-          "national": 54,
-          "share": 0.240741
+          "national": 56,
+          "share": 0.232143
         },
         "Cayenne": {
-          "count": 10,
+          "count": 11,
           "national": 47,
-          "share": 0.212766
+          "share": 0.234043
         },
         "Macan": {
           "count": 11,
@@ -326,8 +326,8 @@
       "高雄保時捷中心": {
         "718": {
           "count": 3,
-          "national": 54,
-          "share": 0.055556
+          "national": 56,
+          "share": 0.053571
         },
         "Cayenne": {
           "count": 10,
@@ -349,56 +349,56 @@
     "model_share_within_dealer": {
       "台北保時捷中心": {
         "911": {
-          "count": 2,
-          "dealer_total": 12,
-          "share": 0.166667
+          "count": 3,
+          "dealer_total": 15,
+          "share": 0.2
         },
         "718": {
-          "count": 6,
-          "dealer_total": 12,
-          "share": 0.5
+          "count": 8,
+          "dealer_total": 15,
+          "share": 0.533333
         },
         "Cayenne": {
           "count": 1,
-          "dealer_total": 12,
-          "share": 0.083333
+          "dealer_total": 15,
+          "share": 0.066667
         },
         "Panamera": {
           "count": 3,
-          "dealer_total": 12,
-          "share": 0.25
+          "dealer_total": 15,
+          "share": 0.2
         }
       },
       "新北保時捷中心": {
         "911": {
           "count": 2,
-          "dealer_total": 88,
-          "share": 0.022727
+          "dealer_total": 87,
+          "share": 0.022989
         },
         "718": {
           "count": 16,
-          "dealer_total": 88,
-          "share": 0.181818
+          "dealer_total": 87,
+          "share": 0.183908
         },
         "Cayenne": {
-          "count": 20,
-          "dealer_total": 88,
-          "share": 0.227273
+          "count": 19,
+          "dealer_total": 87,
+          "share": 0.218391
         },
         "Macan": {
           "count": 42,
-          "dealer_total": 88,
-          "share": 0.477273
+          "dealer_total": 87,
+          "share": 0.482759
         },
         "Panamera": {
           "count": 5,
-          "dealer_total": 88,
-          "share": 0.056818
+          "dealer_total": 87,
+          "share": 0.057471
         },
         "Taycan": {
           "count": 3,
-          "dealer_total": 88,
-          "share": 0.034091
+          "dealer_total": 87,
+          "share": 0.034483
         }
       },
       "桃園保時捷中心": {
@@ -485,33 +485,33 @@
       "台南保時捷中心": {
         "911": {
           "count": 6,
-          "dealer_total": 45,
-          "share": 0.133333
+          "dealer_total": 46,
+          "share": 0.130435
         },
         "718": {
           "count": 13,
-          "dealer_total": 45,
-          "share": 0.288889
+          "dealer_total": 46,
+          "share": 0.282609
         },
         "Cayenne": {
-          "count": 10,
-          "dealer_total": 45,
-          "share": 0.222222
+          "count": 11,
+          "dealer_total": 46,
+          "share": 0.23913
         },
         "Macan": {
           "count": 11,
-          "dealer_total": 45,
-          "share": 0.244444
+          "dealer_total": 46,
+          "share": 0.23913
         },
         "Panamera": {
           "count": 2,
-          "dealer_total": 45,
-          "share": 0.044444
+          "dealer_total": 46,
+          "share": 0.043478
         },
         "Taycan": {
           "count": 3,
-          "dealer_total": 45,
-          "share": 0.066667
+          "dealer_total": 46,
+          "share": 0.065217
         }
       },
       "高雄保時捷中心": {
@@ -539,48 +539,46 @@
     }
   },
   "changes": {
-    "compared_to": "2026-11-12",
-    "compared_to_captured_at": "2026-11-12T09:04:49+08:00",
-    "arrived_count": 2,
-    "gone_count": 3,
+    "compared_to": "2026-11-13",
+    "compared_to_captured_at": "2026-11-13T09:06:26+08:00",
+    "arrived_count": 5,
+    "gone_count": 2,
     "arrived": [
       {
-        "id": "PVZE4R",
+        "id": "7NL5O4",
         "condition": "new",
         "condition_label": "新車",
-        "model_line": "Taycan",
-        "model_variant": "Taycan Black Edition",
-        "model_year": 2026,
-        "price_twd": 5306100,
-        "dealer_name": "新北保時捷中心",
-        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-taycan-black-edition-PVZE4R"
+        "model_line": "718",
+        "model_variant": "718 Spyder RS",
+        "model_year": 2025,
+        "price_twd": 8527100,
+        "dealer_name": "台北保時捷中心",
+        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-spyder-rs-7NL5O4"
       },
       {
-        "id": "VX2QVE",
+        "id": "7NND84",
+        "condition": "new",
+        "condition_label": "新車",
+        "model_line": "911",
+        "model_variant": "911 Carrera",
+        "model_year": 2026,
+        "price_twd": 8119900,
+        "dealer_name": "台北保時捷中心",
+        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-7NND84"
+      },
+      {
+        "id": "DRGVMK",
         "condition": "new",
         "condition_label": "新車",
         "model_line": "Cayenne",
-        "model_variant": "Cayenne E-Hybrid Coupé",
+        "model_variant": "Cayenne Coupé Black Edition",
         "model_year": 2026,
-        "price_twd": 5458500,
-        "dealer_name": "新北保時捷中心",
-        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-ehybrid-coupe-VX2QVE"
-      }
-    ],
-    "gone": [
-      {
-        "id": "9P5K5D",
-        "condition": "new",
-        "condition_label": "新車",
-        "model_line": "Cayenne",
-        "model_variant": "Cayenne Coupé",
-        "model_year": 2026,
-        "price_twd": 4519400,
-        "dealer_name": "新北保時捷中心",
-        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-9P5K5D"
+        "price_twd": 4910000,
+        "dealer_name": "台南保時捷中心",
+        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-black-edition-DRGVMK"
       },
       {
-        "id": "QV7ZPO",
+        "id": "DRN0RK",
         "condition": "new",
         "condition_label": "新車",
         "model_line": "Cayenne",
@@ -588,18 +586,42 @@
         "model_year": 2026,
         "price_twd": 4519400,
         "dealer_name": "高雄保時捷中心",
-        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-QV7ZPO"
+        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-DRN0RK"
       },
       {
-        "id": "XZ577O",
+        "id": "QW6638",
         "condition": "new",
         "condition_label": "新車",
-        "model_line": "Macan",
-        "model_variant": "Macan",
+        "model_line": "718",
+        "model_variant": "718 Cayman GT4 RS",
+        "model_year": 2025,
+        "price_twd": 9953500,
+        "dealer_name": "台北保時捷中心",
+        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-QW6638"
+      }
+    ],
+    "gone": [
+      {
+        "id": "0O0KPD",
+        "condition": "new",
+        "condition_label": "新車",
+        "model_line": "Cayenne",
+        "model_variant": "Cayenne Coupé",
         "model_year": 2026,
-        "price_twd": 3679900,
+        "price_twd": 4519400,
         "dealer_name": "新北保時捷中心",
-        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-XZ577O"
+        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-0O0KPD"
+      },
+      {
+        "id": "445249",
+        "condition": "new",
+        "condition_label": "新車",
+        "model_line": "Cayenne",
+        "model_variant": "Cayenne Coupé Black Edition",
+        "model_year": 2026,
+        "price_twd": 5258900,
+        "dealer_name": "高雄保時捷中心",
+        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-black-edition-445249"
       }
     ],
     "gone_label": "銷售（以下架計）",
@@ -636,6 +658,19 @@
     }
   ],
   "vehicles": [
+    {
+      "id": "7NND84",
+      "condition": "new",
+      "condition_label": "新車",
+      "model_line": "911",
+      "model_variant": "911 Carrera",
+      "model_year": 2026,
+      "price_twd": 8119900,
+      "dealer_name": "台北保時捷中心",
+      "first_registration": null,
+      "mileage_km": 0,
+      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-7NND84"
+    },
     {
       "id": "MEMMN8",
       "condition": "new",
@@ -726,6 +761,32 @@
       "first_registration": null,
       "mileage_km": 0,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-4W98EE"
+    },
+    {
+      "id": "QW6638",
+      "condition": "new",
+      "condition_label": "新車",
+      "model_line": "718",
+      "model_variant": "718 Cayman GT4 RS",
+      "model_year": 2025,
+      "price_twd": 9953500,
+      "dealer_name": "台北保時捷中心",
+      "first_registration": null,
+      "mileage_km": 0,
+      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-QW6638"
+    },
+    {
+      "id": "7NL5O4",
+      "condition": "new",
+      "condition_label": "新車",
+      "model_line": "718",
+      "model_variant": "718 Spyder RS",
+      "model_year": 2025,
+      "price_twd": 8527100,
+      "dealer_name": "台北保時捷中心",
+      "first_registration": null,
+      "mileage_km": 0,
+      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-spyder-rs-7NL5O4"
     },
     {
       "id": "7WRRLW",
@@ -1025,19 +1086,6 @@
       "first_registration": null,
       "mileage_km": 0,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-spyder-rs-673GL6"
-    },
-    {
-      "id": "0O0KPD",
-      "condition": "new",
-      "condition_label": "新車",
-      "model_line": "Cayenne",
-      "model_variant": "Cayenne Coupé",
-      "model_year": 2026,
-      "price_twd": 4519400,
-      "dealer_name": "新北保時捷中心",
-      "first_registration": null,
-      "mileage_km": 0,
-      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-0O0KPD"
     },
     {
       "id": "25GMO2",
@@ -2873,6 +2921,19 @@
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-W3VV3M"
     },
     {
+      "id": "DRGVMK",
+      "condition": "new",
+      "condition_label": "新車",
+      "model_line": "Cayenne",
+      "model_variant": "Cayenne Coupé Black Edition",
+      "model_year": 2026,
+      "price_twd": 4910000,
+      "dealer_name": "台南保時捷中心",
+      "first_registration": null,
+      "mileage_km": 0,
+      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-black-edition-DRGVMK"
+    },
+    {
       "id": "253Q7P",
       "condition": "new",
       "condition_label": "新車",
@@ -3146,6 +3207,19 @@
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-black-edition-NQ8DQL"
     },
     {
+      "id": "DRN0RK",
+      "condition": "new",
+      "condition_label": "新車",
+      "model_line": "Cayenne",
+      "model_variant": "Cayenne Coupé",
+      "model_year": 2026,
+      "price_twd": 4519400,
+      "dealer_name": "高雄保時捷中心",
+      "first_registration": null,
+      "mileage_km": 0,
+      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-DRN0RK"
+    },
+    {
       "id": "20EMZZ",
       "condition": "new",
       "condition_label": "新車",
@@ -3170,19 +3244,6 @@
       "first_registration": null,
       "mileage_km": 0,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-black-edition-3K4RQW"
-    },
-    {
-      "id": "445249",
-      "condition": "new",
-      "condition_label": "新車",
-      "model_line": "Cayenne",
-      "model_variant": "Cayenne Coupé Black Edition",
-      "model_year": 2026,
-      "price_twd": 5258900,
-      "dealer_name": "高雄保時捷中心",
-      "first_registration": null,
-      "mileage_km": 0,
-      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-black-edition-445249"
     },
     {
       "id": "50EG5V",
