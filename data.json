@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-14",
-  "captured_at": "2026-11-14T09:07:10+08:00",
+  "date": "2026-11-15",
+  "captured_at": "2026-11-15T09:00:50+08:00",
   "source": "https://finder.porsche.com/tw/zh-TW?int_ref=globalnav&int_medium=link&int_id=inventory",
   "scope": "new",
   "source_search": "https://finder.porsche.com/tw/zh-TW/search?condition=new",
@@ -539,91 +539,12 @@
     }
   },
   "changes": {
-    "compared_to": "2026-11-13",
-    "compared_to_captured_at": "2026-11-13T09:06:26+08:00",
-    "arrived_count": 5,
-    "gone_count": 2,
-    "arrived": [
-      {
-        "id": "7NL5O4",
-        "condition": "new",
-        "condition_label": "新車",
-        "model_line": "718",
-        "model_variant": "718 Spyder RS",
-        "model_year": 2025,
-        "price_twd": 8527100,
-        "dealer_name": "台北保時捷中心",
-        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-spyder-rs-7NL5O4"
-      },
-      {
-        "id": "7NND84",
-        "condition": "new",
-        "condition_label": "新車",
-        "model_line": "911",
-        "model_variant": "911 Carrera",
-        "model_year": 2026,
-        "price_twd": 8119900,
-        "dealer_name": "台北保時捷中心",
-        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-911-carrera-7NND84"
-      },
-      {
-        "id": "DRGVMK",
-        "condition": "new",
-        "condition_label": "新車",
-        "model_line": "Cayenne",
-        "model_variant": "Cayenne Coupé Black Edition",
-        "model_year": 2026,
-        "price_twd": 4910000,
-        "dealer_name": "台南保時捷中心",
-        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-black-edition-DRGVMK"
-      },
-      {
-        "id": "DRN0RK",
-        "condition": "new",
-        "condition_label": "新車",
-        "model_line": "Cayenne",
-        "model_variant": "Cayenne Coupé",
-        "model_year": 2026,
-        "price_twd": 4519400,
-        "dealer_name": "高雄保時捷中心",
-        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-DRN0RK"
-      },
-      {
-        "id": "QW6638",
-        "condition": "new",
-        "condition_label": "新車",
-        "model_line": "718",
-        "model_variant": "718 Cayman GT4 RS",
-        "model_year": 2025,
-        "price_twd": 9953500,
-        "dealer_name": "台北保時捷中心",
-        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-718-cayman-gt4-rs-QW6638"
-      }
-    ],
-    "gone": [
-      {
-        "id": "0O0KPD",
-        "condition": "new",
-        "condition_label": "新車",
-        "model_line": "Cayenne",
-        "model_variant": "Cayenne Coupé",
-        "model_year": 2026,
-        "price_twd": 4519400,
-        "dealer_name": "新北保時捷中心",
-        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-0O0KPD"
-      },
-      {
-        "id": "445249",
-        "condition": "new",
-        "condition_label": "新車",
-        "model_line": "Cayenne",
-        "model_variant": "Cayenne Coupé Black Edition",
-        "model_year": 2026,
-        "price_twd": 5258900,
-        "dealer_name": "高雄保時捷中心",
-        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-black-edition-445249"
-      }
-    ],
+    "compared_to": "2026-11-14",
+    "compared_to_captured_at": "2026-11-14T09:07:10+08:00",
+    "arrived_count": 0,
+    "gone_count": 0,
+    "arrived": [],
+    "gone": [],
     "gone_label": "銷售（以下架計）",
     "note": "僅比對新車。從列表下架的車輛暫定為銷售（以下架計），不一定已經交車。"
   },
