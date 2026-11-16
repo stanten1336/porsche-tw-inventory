@@ -130,6 +130,7 @@
     .pct.up, .score.up { color: #8fd4a8; font-weight: 700; }
     .pct.down, .score.down { color: #f0a3a8; font-weight: 700; }
     .pct.flat, .score.flat { color: var(--muted); font-weight: 600; }
+    .count-cmp { color: var(--text); font-variant-numeric: tabular-nums; font-size: 13px; }
     .formula {
       background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
       padding: 14px 16px; color: var(--muted); font-size: 14px; margin: 0 0 16px;
@@ -697,7 +698,7 @@
     }
     function trendClass(label) {
       if (!label) return "flat";
-      if (label === "持平" || label === "接近均衡") return "flat";
+      if (label === "持平" || label === "接近均衡" || label === "樣本太少" || label === "量少，僅供參考") return "flat";
       const bullish = ["升溫", "供給緊縮（偏多）", "庫存減少（偏多）", "去化快於進貨"];
       const bearish = ["降溫", "供給增加（偏空）", "庫存增加（偏空）", "進貨快於去化"];
       if (bullish.includes(label)) return "up";
@@ -731,9 +732,28 @@
     }
     function fmtPressure(p) {
       if (!p) return "—";
+      if (p.thin) {
+        const text = p.display || "量少，僅供參考";
+        return `<span class="count-cmp">${esc(text)}</span> ${trendBadge("樣本太少")}<small>量少，僅供參考</small>`;
+      }
       if (p.ratio == null) return `<span class="dash">${esc(p.label || "資料不足")}</span>`;
       const n = Number(p.ratio).toLocaleString("zh-Hant-TW", { maximumFractionDigits: 3, minimumFractionDigits: 2 });
       return `${n} ${trendBadge(p.label)}`;
+    }
+
+    function fmtMomSide(side, invert) {
+      if (!side) return "—";
+      if (side.thin_short) {
+        const text = side.short_display || "量少，僅供參考";
+        return `<span class="count-cmp">${esc(text)}</span><small>量少，僅供參考</small> ${trendBadge("樣本太少")}`;
+      }
+      return `${fmtPctGap(side.short_pct, invert)} ${trendBadge(side.short_label || side.trend)}`;
+    }
+    function fmtMediumSpread(row) {
+      if (row && row.medium_spread != null) return fmtPctGap(row.medium_spread, false);
+      const label = (row && row.medium_spread_label) || "資料不足";
+      if (label === "樣本太少") return `${trendBadge("樣本太少")}<small>量少，僅供參考</small>`;
+      return `<span class="dash">${esc(label)}</span>`;
     }
     function maRow(label, metric, withChange) {
       if (!metric) return "";
@@ -742,7 +762,7 @@
         <td class="num">${fmtTodayVal(metric, withChange)}</td>
         <td class="num">${fmtAvg(metric.ma5)}</td>
         <td class="num">${fmtAvg(metric.ma20)}</td>
-        <td>${trendBadge(metric.trend)}</td>
+        <td>${trendBadge(metric.trend)}${metric.thin_short ? "<small>量少，僅供參考</small>" : ""}</td>
       </tr>`;
     }
     function renderIndicators() {
@@ -768,7 +788,7 @@
         </tr>`).join("");
       el.innerHTML = `
         <h2>今日／5日／20日</h2>
-        <p class="cap">像看均線一樣，每個指標並陳今日、5日平均與20日平均。資料自 ${esc(start || "—")} 起累積，目前共 ${fmtN(ind.history_days)} 天；庫存平均有 ${fmtN(ind.stock_days)} 天，進車／下架平均有 ${fmtN(ind.flow_days)} 天（第一天沒有前日可比）。視窗未滿期時以現有天數計算並在格子標示，不會回補缺日。庫存差距未滿 1 台或未滿 1%、進車／下架差距未滿 10% 時標示為持平。下架高於均線為升溫、低於為降溫；進車減少為供給緊縮（偏多），增加為供給增加（偏空）；庫存減少為庫存減少（偏多），增加為庫存增加（偏空）。動向看今日對5日、以及5日對20日（資料夠長才比較）。下架暫定為銷售（以下架計）。</p>
+        <p class="cap">像看均線一樣，每個指標並陳今日、5日平均與20日平均。資料自 ${esc(start || "—")} 起累積，目前共 ${fmtN(ind.history_days)} 天；庫存平均有 ${fmtN(ind.stock_days)} 天，進車／下架平均有 ${fmtN(ind.flow_days)} 天（第一天沒有前日可比）。視窗未滿期時以現有天數計算並在格子標示，不會回補缺日。庫存差距未滿 1 台或未滿 1%、進車／下架差距未滿 10% 時標示為持平。下架高於均線為升溫、低於為降溫；進車減少為供給緊縮（偏多），增加為供給增加（偏空）；庫存減少為庫存減少（偏多），增加為庫存增加（偏空）。動向看今日對5日、以及5日對20日（資料夠長才比較）。五日或二十日平均未滿 3 台時改列台數，動向標示樣本太少，不顯示百分比與偏多／偏空。下架暫定為銷售（以下架計）。</p>
         <div class="ma-block">
           <h3>全台新車</h3>
           <div class="table-wrap"><table class="ma-table">
@@ -816,11 +836,11 @@
         <div class="k">${esc(title)}</div>
         <div class="v">${fmtScore(row.score)} <span class="k">分</span></div>
         <div class="rows">
-          <div class="row"><span>下架動能</span><span>${fmtPctGap((row.gone || {}).short_pct, false)} ${trendBadge((row.gone || {}).short_label || (row.gone || {}).trend)}</span></div>
-          <div class="row"><span>進車動能</span><span>${fmtPctGap((row.arrived || {}).short_pct, true)} ${trendBadge((row.arrived || {}).short_label || (row.arrived || {}).trend)}</span></div>
-          <div class="row"><span>庫存動能</span><span>${fmtPctGap((row.inventory || {}).short_pct, true)} ${trendBadge((row.inventory || {}).short_label || (row.inventory || {}).trend)}</span></div>
+          <div class="row"><span>下架動能</span><span>${fmtMomSide(row.gone, false)}</span></div>
+          <div class="row"><span>進車動能</span><span>${fmtMomSide(row.arrived, true)}</span></div>
+          <div class="row"><span>庫存動能</span><span>${fmtMomSide(row.inventory, true)}</span></div>
           <div class="row"><span>供需比</span><span>${fmtPressure(row.pressure)}</span></div>
-          <div class="row"><span>中期（5日對20日）</span><span>${row.medium_spread != null ? fmtPctGap(row.medium_spread, false) : `<span class="dash">資料不足</span>`}</span></div>
+          <div class="row"><span>中期（5日對20日）</span><span>${fmtMediumSpread(row)}</span></div>
         </div>
       </div>`;
     }
@@ -832,18 +852,18 @@
       const start = (mom.history_start || "").replace(/-/g, "/");
       const formula = mom.score_formula || "（下架短期動能％ − 進車短期動能％）＋（供需比 − 1）× 100";
       const modelRows = (mom.models || []).map((r) => `<tr>
-          <td>${esc(r.line)}${r.eligible ? "" : `<span class="tag warn">樣本偏少</span>`}</td>
+          <td>${esc(r.line)}${r.eligible ? "" : `<span class="tag warn">樣本太少</span>`}</td>
           <td class="num">${r.rank != null ? r.rank : "—"}</td>
           <td class="num">${fmtScore(r.score)}</td>
-          <td class="num">${fmtPctGap((r.gone || {}).short_pct, false)} ${trendBadge((r.gone || {}).short_label)}</td>
-          <td class="num">${fmtPctGap((r.arrived || {}).short_pct, true)} ${trendBadge((r.arrived || {}).short_label)}</td>
-          <td class="num">${fmtPctGap((r.inventory || {}).short_pct, true)} ${trendBadge((r.inventory || {}).short_label)}</td>
+          <td class="num">${fmtMomSide(r.gone, false)}</td>
+          <td class="num">${fmtMomSide(r.arrived, true)}</td>
+          <td class="num">${fmtMomSide(r.inventory, true)}</td>
           <td>${fmtPressure(r.pressure)}</td>
-          <td class="num">${r.medium_spread != null ? fmtPctGap(r.medium_spread, false) : `<span class="dash">資料不足</span>`}</td>
+          <td class="num">${fmtMediumSpread(r)}</td>
         </tr>`).join("");
       const topBlock = (mom.eligible_count > 0)
         ? `<div class="ma-block"><h3>動能最強／最弱車系</h3><p class="cap">目前有 ${fmtN(mom.eligible_count)} 個車系達到五日下架平均至少 ${esc(mom.min_sold_ma5)} 台的門檻。</p></div>`
-        : `<p class="cap">各車系五日下架平均目前都低於 ${esc(mom.min_sold_ma5)} 台門檻，因此不另列最強／最弱五名，以免小樣本噪音主導；以下仍列出各車系動能與供需比供參考。</p>`;
+        : `<p class="cap">各車系五日下架或進車平均目前都未滿 ${esc(mom.thin_base || mom.min_sold_ma5)} 台，因此不計算百分比與動能分數，也不另列最強／最弱五名；以下改列台數，僅供參考。</p>`;
       el.innerHTML = `
         <h2>動能比較</h2>
         <div class="formula">
@@ -851,7 +871,7 @@
           下架增加代表銷售升溫（偏多）；進車減少代表供給緊縮，也是偏多。兩者同向時，庫存比較容易去化。
           動能分數＝${esc(formula)}。
           短期動能％＝（今日 − 5日平均）÷ 5日平均 × 100%；中期用 5 日對 20 日，但 20 日視窗天數必須多於 5 日才計算，否則標示資料不足，不會回補缺日。
-          排名只列入五日下架平均至少 ${esc(mom.min_sold_ma5)} 台的車系。均線動向有持平門檻，分數使用實際百分比。資料自 ${esc(start || "—")} 起累積，目前共 ${fmtN(mom.history_days)} 天。下架暫定為銷售（以下架計）。
+          排名只列入五日下架與進車平均都至少 ${esc(mom.min_sold_ma5)} 台的車系。平均未滿 ${esc(mom.thin_base || 3)} 台時改列「今日 × 台 vs 5日均 × 台」，動向標示樣本太少，分數為 —，以免 0 對 1.4 這類小樣本算出誤導的 −100%。均線動向有持平門檻，達標後的分數使用實際百分比。資料自 ${esc(start || "—")} 起累積，目前共 ${fmtN(mom.history_days)} 天。下架暫定為銷售（以下架計）。
         </div>
         <div class="mom-grid">
           ${momCard("全台新車", mom.total)}
