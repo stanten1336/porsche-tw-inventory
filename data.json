@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-15",
-  "captured_at": "2026-11-15T09:00:50+08:00",
+  "date": "2026-11-16",
+  "captured_at": "2026-11-16T09:18:43+08:00",
   "source": "https://finder.porsche.com/tw/zh-TW?int_ref=globalnav&int_medium=link&int_id=inventory",
   "scope": "new",
   "source_search": "https://finder.porsche.com/tw/zh-TW/search?condition=new",
@@ -539,8 +539,8 @@
     }
   },
   "changes": {
-    "compared_to": "2026-11-14",
-    "compared_to_captured_at": "2026-11-14T09:07:10+08:00",
+    "compared_to": "2026-11-15",
+    "compared_to_captured_at": "2026-11-15T09:00:50+08:00",
     "arrived_count": 0,
     "gone_count": 0,
     "arrived": [],
