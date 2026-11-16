@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T23:33:36+08:00",
+  "generated_at": "2026-11-16T23:58:11+08:00",
   "timezone": "Asia/Taipei",
   "scope": "new",
   "dealers": [
@@ -1522,7 +1522,7 @@
     "threshold_flow": 0.1,
     "min_abs_stock": 1,
     "min_abs_flow": 0.5,
-    "note": "5日、20日平均只使用實際已有的每日資料，不會回補或推估缺日。視窗未滿期時，以目前天數計算並標示，例如「20日（目前僅7天資料）」。進車／下架平均不含沒有前日可比的第一天。庫存較均線差距未滿 1 台或未滿 1%、進車／下架差距未滿 10% 時標示為持平。升溫／降溫只表示數字相對均線的方向，不是好壞判斷。下架暫定為銷售（以下架計）。",
+    "note": "5日、20日平均只使用實際已有的每日資料，不會回補或推估缺日。視窗未滿期時，以目前天數計算並標示，例如「20日（目前僅7天資料）」。進車／下架平均不含沒有前日可比的第一天。庫存較均線差距未滿 1 台或未滿 1%、進車／下架差距未滿 10% 時標示為持平。下架（銷售以下架計）高於均線為升溫、低於為降溫；進車減少為供給緊縮（偏多），增加為供給增加（偏空）；庫存減少為庫存減少（偏多），增加為庫存增加（偏空）。下架暫定為銷售（以下架計）。",
     "total": {
       "inventory": {
         "today": 214,
@@ -1558,9 +1558,9 @@
           "complete": false,
           "label": "20日（目前僅6天資料）"
         },
-        "vs_ma5": "降溫",
+        "vs_ma5": "供給緊縮（偏多）",
         "ma5_vs_ma20": "持平",
-        "trend": "降溫"
+        "trend": "供給緊縮（偏多）"
       },
       "gone": {
         "today": 0,
@@ -1739,9 +1739,9 @@
             "complete": false,
             "label": "20日（目前僅6天資料）"
           },
-          "vs_ma5": "降溫",
+          "vs_ma5": "供給緊縮（偏多）",
           "ma5_vs_ma20": "持平",
-          "trend": "降溫"
+          "trend": "供給緊縮（偏多）"
         },
         "gone": {
           "today": 0,
@@ -1942,6 +1942,589 @@
           "ma5_vs_ma20": "持平",
           "trend": "持平"
         }
+      }
+    ]
+  },
+  "momentum": {
+    "primary": "score",
+    "rank_by": "score",
+    "score_formula": "（下架短期動能％ − 進車短期動能％）＋（供需比 − 1）× 100",
+    "min_sold_ma5": 3,
+    "pressure_eq_band": 0.02,
+    "history_days": 7,
+    "flow_days": 6,
+    "history_start": "2026-11-10",
+    "history_end": "2026-11-16",
+    "medium_available": true,
+    "eligible_count": 0,
+    "note": "動能比較以五日、二十日均線為基礎，只使用實際已有的每日資料，不會回補或推估缺日。短期動能＝（今日 − 5日平均）÷ 5日平均 × 100%；5日平均為 0 且今日也是 0 時記為 0%。中期動能＝（5日平均 − 20日平均）÷ 20日平均 × 100%；只有 20 日視窗的天數多於 5 日視窗時才計算，否則標示「資料不足」。下架增加為升溫（偏多）、減少為降溫；進車減少為供給緊縮（偏多），增加為供給增加（偏空）。動能分數＝（下架短期動能％ − 進車短期動能％）＋（供需比 − 1）× 100。下架動能越高、進車動能越低，分數越高（偏多）；供需比大於 1 也加分。車系排名依動能分數由高到低，且五日下架平均須至少 3 台，以免過小樣本主導。均線動向有持平門檻，分數使用實際百分比，不因持平門檻歸零。供需比＝五日下架平均 ÷ 五日進車平均；大於 1 代表去化快於進貨，小於 1 代表進貨快於去化，差距未滿 2% 標示為接近均衡。下架暫定為銷售（以下架計）。",
+    "total": {
+      "inventory": {
+        "today": 214,
+        "ma5": {
+          "value": 213.0,
+          "n": 5,
+          "complete": true,
+          "label": "5日"
+        },
+        "ma20": {
+          "value": 212.7,
+          "n": 7,
+          "complete": false,
+          "label": "20日（目前僅7天資料）"
+        },
+        "short_pct": 0.5,
+        "medium_pct": 0.1,
+        "medium_available": true,
+        "medium_label": null,
+        "short_label": "持平",
+        "medium_dir_label": "持平",
+        "trend": "持平"
+      },
+      "arrived": {
+        "today": 0,
+        "ma5": {
+          "value": 1.4,
+          "n": 5,
+          "complete": true,
+          "label": "5日"
+        },
+        "ma20": {
+          "value": 1.2,
+          "n": 6,
+          "complete": false,
+          "label": "20日（目前僅6天資料）"
+        },
+        "short_pct": -100.0,
+        "medium_pct": 16.7,
+        "medium_available": true,
+        "medium_label": null,
+        "short_label": "供給緊縮（偏多）",
+        "medium_dir_label": "持平",
+        "trend": "供給緊縮（偏多）"
+      },
+      "gone": {
+        "today": 0,
+        "ma5": {
+          "value": 1.0,
+          "n": 5,
+          "complete": true,
+          "label": "5日"
+        },
+        "ma20": {
+          "value": 0.8,
+          "n": 6,
+          "complete": false,
+          "label": "20日（目前僅6天資料）"
+        },
+        "short_pct": -100.0,
+        "medium_pct": 25.0,
+        "medium_available": true,
+        "medium_label": null,
+        "short_label": "降溫",
+        "medium_dir_label": "持平",
+        "trend": "降溫"
+      },
+      "pressure": {
+        "sold_ma5": 1.0,
+        "arrived_ma5": 1.4,
+        "ratio": 0.714,
+        "label": "進貨快於去化"
+      },
+      "spread": 0.0,
+      "pressure_term": -28.6,
+      "score": -28.6,
+      "medium_spread": 8.3,
+      "medium_spread_label": null
+    },
+    "top": [],
+    "bottom": [],
+    "models": [
+      {
+        "inventory": {
+          "today": 47,
+          "ma5": {
+            "value": 47.2,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 47.4,
+            "n": 7,
+            "complete": false,
+            "label": "20日（目前僅7天資料）"
+          },
+          "short_pct": -0.4,
+          "medium_pct": -0.4,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "持平",
+          "medium_dir_label": "持平",
+          "trend": "持平"
+        },
+        "arrived": {
+          "today": 0,
+          "ma5": {
+            "value": 0.6,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.5,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "short_pct": -100.0,
+          "medium_pct": 20.0,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "供給緊縮（偏多）",
+          "medium_dir_label": "持平",
+          "trend": "供給緊縮（偏多）"
+        },
+        "gone": {
+          "today": 0,
+          "ma5": {
+            "value": 0.8,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.7,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "short_pct": -100.0,
+          "medium_pct": 14.3,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "降溫",
+          "medium_dir_label": "持平",
+          "trend": "降溫"
+        },
+        "pressure": {
+          "sold_ma5": 0.8,
+          "arrived_ma5": 0.6,
+          "ratio": 1.333,
+          "label": "去化快於進貨"
+        },
+        "spread": 0.0,
+        "pressure_term": 33.3,
+        "score": 33.3,
+        "medium_spread": -5.7,
+        "medium_spread_label": null,
+        "line": "Cayenne",
+        "eligible": false
+      },
+      {
+        "inventory": {
+          "today": 56,
+          "ma5": {
+            "value": 55.2,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 54.9,
+            "n": 7,
+            "complete": false,
+            "label": "20日（目前僅7天資料）"
+          },
+          "short_pct": 1.4,
+          "medium_pct": 0.5,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "持平",
+          "medium_dir_label": "持平",
+          "trend": "持平"
+        },
+        "arrived": {
+          "today": 0,
+          "ma5": {
+            "value": 0.4,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.3,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "short_pct": -100.0,
+          "medium_pct": 33.3,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "持平",
+          "medium_dir_label": "持平",
+          "trend": "持平"
+        },
+        "gone": {
+          "today": 0,
+          "ma5": {
+            "value": 0.0,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.0,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "short_pct": 0.0,
+          "medium_pct": 0.0,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "持平",
+          "medium_dir_label": "持平",
+          "trend": "持平"
+        },
+        "pressure": {
+          "sold_ma5": 0.0,
+          "arrived_ma5": 0.4,
+          "ratio": 0.0,
+          "label": "進貨快於去化"
+        },
+        "spread": 100.0,
+        "pressure_term": -100.0,
+        "score": 0.0,
+        "medium_spread": -33.3,
+        "medium_spread_label": null,
+        "line": "718",
+        "eligible": false
+      },
+      {
+        "inventory": {
+          "today": 17,
+          "ma5": {
+            "value": 16.6,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 16.4,
+            "n": 7,
+            "complete": false,
+            "label": "20日（目前僅7天資料）"
+          },
+          "short_pct": 2.4,
+          "medium_pct": 1.2,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "持平",
+          "medium_dir_label": "持平",
+          "trend": "持平"
+        },
+        "arrived": {
+          "today": 0,
+          "ma5": {
+            "value": 0.2,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.2,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "short_pct": -100.0,
+          "medium_pct": 0.0,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "持平",
+          "medium_dir_label": "持平",
+          "trend": "持平"
+        },
+        "gone": {
+          "today": 0,
+          "ma5": {
+            "value": 0.0,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.0,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "short_pct": 0.0,
+          "medium_pct": 0.0,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "持平",
+          "medium_dir_label": "持平",
+          "trend": "持平"
+        },
+        "pressure": {
+          "sold_ma5": 0.0,
+          "arrived_ma5": 0.2,
+          "ratio": 0.0,
+          "label": "進貨快於去化"
+        },
+        "spread": 100.0,
+        "pressure_term": -100.0,
+        "score": 0.0,
+        "medium_spread": 0.0,
+        "medium_spread_label": null,
+        "line": "911",
+        "eligible": false
+      },
+      {
+        "inventory": {
+          "today": 14,
+          "ma5": {
+            "value": 14.0,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 14.0,
+            "n": 7,
+            "complete": false,
+            "label": "20日（目前僅7天資料）"
+          },
+          "short_pct": 0.0,
+          "medium_pct": 0.0,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "持平",
+          "medium_dir_label": "持平",
+          "trend": "持平"
+        },
+        "arrived": {
+          "today": 0,
+          "ma5": {
+            "value": 0.0,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.0,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "short_pct": 0.0,
+          "medium_pct": 0.0,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "持平",
+          "medium_dir_label": "持平",
+          "trend": "持平"
+        },
+        "gone": {
+          "today": 0,
+          "ma5": {
+            "value": 0.0,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.0,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "short_pct": 0.0,
+          "medium_pct": 0.0,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "持平",
+          "medium_dir_label": "持平",
+          "trend": "持平"
+        },
+        "pressure": {
+          "sold_ma5": 0.0,
+          "arrived_ma5": 0.0,
+          "ratio": null,
+          "label": "五日進貨平均為 0，無法計算供需比"
+        },
+        "spread": 0.0,
+        "pressure_term": null,
+        "score": 0.0,
+        "medium_spread": 0.0,
+        "medium_spread_label": null,
+        "line": "Panamera",
+        "eligible": false
+      },
+      {
+        "inventory": {
+          "today": 10,
+          "ma5": {
+            "value": 9.8,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 9.6,
+            "n": 7,
+            "complete": false,
+            "label": "20日（目前僅7天資料）"
+          },
+          "short_pct": 2.0,
+          "medium_pct": 2.1,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "持平",
+          "medium_dir_label": "持平",
+          "trend": "持平"
+        },
+        "arrived": {
+          "today": 0,
+          "ma5": {
+            "value": 0.2,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.2,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "short_pct": -100.0,
+          "medium_pct": 0.0,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "持平",
+          "medium_dir_label": "持平",
+          "trend": "持平"
+        },
+        "gone": {
+          "today": 0,
+          "ma5": {
+            "value": 0.0,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.0,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "short_pct": 0.0,
+          "medium_pct": 0.0,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "持平",
+          "medium_dir_label": "持平",
+          "trend": "持平"
+        },
+        "pressure": {
+          "sold_ma5": 0.0,
+          "arrived_ma5": 0.2,
+          "ratio": 0.0,
+          "label": "進貨快於去化"
+        },
+        "spread": 100.0,
+        "pressure_term": -100.0,
+        "score": 0.0,
+        "medium_spread": 0.0,
+        "medium_spread_label": null,
+        "line": "Taycan",
+        "eligible": false
+      },
+      {
+        "inventory": {
+          "today": 70,
+          "ma5": {
+            "value": 70.2,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 70.4,
+            "n": 7,
+            "complete": false,
+            "label": "20日（目前僅7天資料）"
+          },
+          "short_pct": -0.3,
+          "medium_pct": -0.3,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "持平",
+          "medium_dir_label": "持平",
+          "trend": "持平"
+        },
+        "arrived": {
+          "today": 0,
+          "ma5": {
+            "value": 0.0,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.0,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "short_pct": 0.0,
+          "medium_pct": 0.0,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "持平",
+          "medium_dir_label": "持平",
+          "trend": "持平"
+        },
+        "gone": {
+          "today": 0,
+          "ma5": {
+            "value": 0.2,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.2,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "short_pct": -100.0,
+          "medium_pct": 0.0,
+          "medium_available": true,
+          "medium_label": null,
+          "short_label": "持平",
+          "medium_dir_label": "持平",
+          "trend": "持平"
+        },
+        "pressure": {
+          "sold_ma5": 0.2,
+          "arrived_ma5": 0.0,
+          "ratio": null,
+          "label": "五日進貨平均為 0，無法計算供需比"
+        },
+        "spread": -100.0,
+        "pressure_term": null,
+        "score": -100.0,
+        "medium_spread": 0.0,
+        "medium_spread_label": null,
+        "line": "Macan",
+        "eligible": false
       }
     ]
   }
