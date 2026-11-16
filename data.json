@@ -3361,5 +3361,442 @@
       "mileage_km": 0,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-panamera-XZWR3G"
     }
-  ]
+  ],
+  "indicators": {
+    "windows": [
+      5,
+      20
+    ],
+    "history_days": 7,
+    "stock_days": 7,
+    "flow_days": 6,
+    "history_start": "2026-11-10",
+    "history_end": "2026-11-16",
+    "threshold_stock": 0.01,
+    "threshold_flow": 0.1,
+    "min_abs_stock": 1,
+    "min_abs_flow": 0.5,
+    "note": "5日、20日平均只使用實際已有的每日資料，不會回補或推估缺日。視窗未滿期時，以目前天數計算並標示，例如「20日（目前僅7天資料）」。進車／下架平均不含沒有前日可比的第一天。庫存較均線差距未滿 1 台或未滿 1%、進車／下架差距未滿 10% 時標示為持平。升溫／降溫只表示數字相對均線的方向，不是好壞判斷。下架暫定為銷售（以下架計）。",
+    "total": {
+      "inventory": {
+        "today": 214,
+        "change": 0,
+        "ma5": {
+          "value": 213.0,
+          "n": 5,
+          "complete": true,
+          "label": "5日"
+        },
+        "ma20": {
+          "value": 212.7,
+          "n": 7,
+          "complete": false,
+          "label": "20日（目前僅7天資料）"
+        },
+        "vs_ma5": "持平",
+        "ma5_vs_ma20": "持平",
+        "trend": "持平"
+      },
+      "arrived": {
+        "today": 0,
+        "change": null,
+        "ma5": {
+          "value": 1.4,
+          "n": 5,
+          "complete": true,
+          "label": "5日"
+        },
+        "ma20": {
+          "value": 1.2,
+          "n": 6,
+          "complete": false,
+          "label": "20日（目前僅6天資料）"
+        },
+        "vs_ma5": "降溫",
+        "ma5_vs_ma20": "持平",
+        "trend": "降溫"
+      },
+      "gone": {
+        "today": 0,
+        "change": null,
+        "ma5": {
+          "value": 1.0,
+          "n": 5,
+          "complete": true,
+          "label": "5日"
+        },
+        "ma20": {
+          "value": 0.8,
+          "n": 6,
+          "complete": false,
+          "label": "20日（目前僅6天資料）"
+        },
+        "vs_ma5": "降溫",
+        "ma5_vs_ma20": "持平",
+        "trend": "降溫"
+      }
+    },
+    "models": [
+      {
+        "line": "911",
+        "inventory": {
+          "today": 17,
+          "change": 0,
+          "ma5": {
+            "value": 16.6,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 16.4,
+            "n": 7,
+            "complete": false,
+            "label": "20日（目前僅7天資料）"
+          },
+          "vs_ma5": "持平",
+          "ma5_vs_ma20": "持平",
+          "trend": "持平"
+        },
+        "arrived": {
+          "today": 0,
+          "change": null,
+          "ma5": {
+            "value": 0.2,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.2,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "vs_ma5": "持平",
+          "ma5_vs_ma20": "持平",
+          "trend": "持平"
+        },
+        "gone": {
+          "today": 0,
+          "change": null,
+          "ma5": {
+            "value": 0.0,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.0,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "vs_ma5": "持平",
+          "ma5_vs_ma20": "持平",
+          "trend": "持平"
+        }
+      },
+      {
+        "line": "718",
+        "inventory": {
+          "today": 56,
+          "change": 0,
+          "ma5": {
+            "value": 55.2,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 54.9,
+            "n": 7,
+            "complete": false,
+            "label": "20日（目前僅7天資料）"
+          },
+          "vs_ma5": "持平",
+          "ma5_vs_ma20": "持平",
+          "trend": "持平"
+        },
+        "arrived": {
+          "today": 0,
+          "change": null,
+          "ma5": {
+            "value": 0.4,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.3,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "vs_ma5": "持平",
+          "ma5_vs_ma20": "持平",
+          "trend": "持平"
+        },
+        "gone": {
+          "today": 0,
+          "change": null,
+          "ma5": {
+            "value": 0.0,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.0,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "vs_ma5": "持平",
+          "ma5_vs_ma20": "持平",
+          "trend": "持平"
+        }
+      },
+      {
+        "line": "Cayenne",
+        "inventory": {
+          "today": 47,
+          "change": 0,
+          "ma5": {
+            "value": 47.2,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 47.4,
+            "n": 7,
+            "complete": false,
+            "label": "20日（目前僅7天資料）"
+          },
+          "vs_ma5": "持平",
+          "ma5_vs_ma20": "持平",
+          "trend": "持平"
+        },
+        "arrived": {
+          "today": 0,
+          "change": null,
+          "ma5": {
+            "value": 0.6,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.5,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "vs_ma5": "降溫",
+          "ma5_vs_ma20": "持平",
+          "trend": "降溫"
+        },
+        "gone": {
+          "today": 0,
+          "change": null,
+          "ma5": {
+            "value": 0.8,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.7,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "vs_ma5": "降溫",
+          "ma5_vs_ma20": "持平",
+          "trend": "降溫"
+        }
+      },
+      {
+        "line": "Macan",
+        "inventory": {
+          "today": 70,
+          "change": 0,
+          "ma5": {
+            "value": 70.2,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 70.4,
+            "n": 7,
+            "complete": false,
+            "label": "20日（目前僅7天資料）"
+          },
+          "vs_ma5": "持平",
+          "ma5_vs_ma20": "持平",
+          "trend": "持平"
+        },
+        "arrived": {
+          "today": 0,
+          "change": null,
+          "ma5": {
+            "value": 0.0,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.0,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "vs_ma5": "持平",
+          "ma5_vs_ma20": "持平",
+          "trend": "持平"
+        },
+        "gone": {
+          "today": 0,
+          "change": null,
+          "ma5": {
+            "value": 0.2,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.2,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "vs_ma5": "持平",
+          "ma5_vs_ma20": "持平",
+          "trend": "持平"
+        }
+      },
+      {
+        "line": "Panamera",
+        "inventory": {
+          "today": 14,
+          "change": 0,
+          "ma5": {
+            "value": 14.0,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 14.0,
+            "n": 7,
+            "complete": false,
+            "label": "20日（目前僅7天資料）"
+          },
+          "vs_ma5": "持平",
+          "ma5_vs_ma20": "持平",
+          "trend": "持平"
+        },
+        "arrived": {
+          "today": 0,
+          "change": null,
+          "ma5": {
+            "value": 0.0,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.0,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "vs_ma5": "持平",
+          "ma5_vs_ma20": "持平",
+          "trend": "持平"
+        },
+        "gone": {
+          "today": 0,
+          "change": null,
+          "ma5": {
+            "value": 0.0,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.0,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "vs_ma5": "持平",
+          "ma5_vs_ma20": "持平",
+          "trend": "持平"
+        }
+      },
+      {
+        "line": "Taycan",
+        "inventory": {
+          "today": 10,
+          "change": 0,
+          "ma5": {
+            "value": 9.8,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 9.6,
+            "n": 7,
+            "complete": false,
+            "label": "20日（目前僅7天資料）"
+          },
+          "vs_ma5": "持平",
+          "ma5_vs_ma20": "持平",
+          "trend": "持平"
+        },
+        "arrived": {
+          "today": 0,
+          "change": null,
+          "ma5": {
+            "value": 0.2,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.2,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "vs_ma5": "持平",
+          "ma5_vs_ma20": "持平",
+          "trend": "持平"
+        },
+        "gone": {
+          "today": 0,
+          "change": null,
+          "ma5": {
+            "value": 0.0,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.0,
+            "n": 6,
+            "complete": false,
+            "label": "20日（目前僅6天資料）"
+          },
+          "vs_ma5": "持平",
+          "ma5_vs_ma20": "持平",
+          "trend": "持平"
+        }
+      }
+    ]
+  }
 }

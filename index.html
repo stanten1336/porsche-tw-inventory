@@ -119,6 +119,22 @@
     .chart-box svg { width: 100%; height: auto; display: block; overflow: visible; }
     .chart-legend { display: flex; flex-wrap: wrap; gap: 12px 18px; margin: 8px 0 0; color: var(--muted); font-size: 13px; }
     .chart-legend i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+
+    .ma-block { margin: 18px 0 0; }
+    .ma-block h3 { font-size: 16px; margin: 0 0 8px; }
+    .trend {
+      display: inline-block; padding: 1px 8px; border-radius: 999px;
+      font-size: 12px; font-weight: 700; letter-spacing: .04em; white-space: nowrap;
+    }
+    .trend.up { background: rgba(63,166,107,.18); color: #8fd4a8; border: 1px solid rgba(63,166,107,.4); }
+    .trend.down { background: var(--accent-soft); color: #f0a3a8; border: 1px solid rgba(230,49,60,.4); }
+    .trend.flat { background: rgba(156,151,140,.14); color: #c9c3b6; border: 1px solid var(--line); }
+    .trend.mixed { background: rgba(201,162,39,.16); color: #e6c86a; border: 1px solid rgba(201,162,39,.35); }
+    .ma-table td small, .ma-table th small {
+      display: block; color: var(--muted); font-weight: 400; font-size: 11px; margin-top: 2px;
+    }
+    .today-sub { color: var(--muted); font-size: 12px; font-weight: 400; margin-top: 2px; }
+
     @media (max-width: 640px) { .io-hero { grid-template-columns: 1fr; } }
     @media (max-width: 640px) {
       .bar { grid-template-columns: 72px 1fr 44px 44px; }
@@ -146,6 +162,7 @@
   <main class="wrap">
     <div id="error" class="error" hidden></div>
     <section id="summary"></section>
+    <section id="indicators"></section>
     <section id="io"></section>
     <section id="stockChart"></section>
     <section id="salesChart"></section>
@@ -160,6 +177,7 @@
         <li>只含各保時捷中心掛在 Porsche Finder 公開新車頁上的庫存，不含認證中古車與中古車，也不是全省每台實體車或 8891 等外部網站。</li>
         <li>庫存比例＝該經銷商該車系台數 ÷ 全台該車系新車台數；也可切換成該車系占該店自己新車庫存的比例。</li>
         <li>從列表下架的車輛暫定為銷售（以下架計），不一定已經交車。日週期變化只比對新車。</li>
+        <li>今日／5日／20日均線只使用實際已有的每日快照，不會回補缺日；視窗未滿期時以目前天數計算並標示。</li>
         <li>價格為網站標示之含稅建議售價，實際成交與折扣請仍以各中心為準。</li>
         <li>此網站與程式碼公開在 GitHub，任何人都可以看到這裡的彙整資料。</li>
       </ul>
@@ -636,11 +654,113 @@
       });
     }
 
+
+    function fmtAvg(ma) {
+      if (!ma || ma.value == null || ma.value === "") return "—";
+      const n = Number(ma.value);
+      if (!Number.isFinite(n)) return "—";
+      const text = n.toLocaleString("zh-Hant-TW", { maximumFractionDigits: 1, minimumFractionDigits: 0 });
+      if (ma.complete) return text;
+      return `${text}<small>目前僅${esc(ma.n)}天資料</small>`;
+    }
+    function fmtTodayVal(metric, withChange) {
+      if (!metric || metric.today == null) return "—";
+      let s = fmtN(metric.today);
+      if (withChange && metric.change != null) {
+        const ch = Number(metric.change);
+        if (ch === 0) s += `<div class="today-sub">較昨日持平</div>`;
+        else s += `<div class="today-sub">較昨日 ${ch > 0 ? "＋" : "−"}${fmtN(Math.abs(ch))}</div>`;
+      }
+      return s;
+    }
+    function trendBadge(label) {
+      if (!label) return `<span class="dash">—</span>`;
+      let cls = "flat";
+      if (label === "升溫") cls = "up";
+      else if (label === "降溫") cls = "down";
+      else if (label === "短升長降" || label === "短降長升") cls = "mixed";
+      return `<span class="trend ${cls}">${esc(label)}</span>`;
+    }
+    function maRow(label, metric, withChange) {
+      if (!metric) return "";
+      return `<tr>
+        <td>${esc(label)}</td>
+        <td class="num">${fmtTodayVal(metric, withChange)}</td>
+        <td class="num">${fmtAvg(metric.ma5)}</td>
+        <td class="num">${fmtAvg(metric.ma20)}</td>
+        <td>${trendBadge(metric.trend)}</td>
+      </tr>`;
+    }
+    function renderIndicators() {
+      const ind = (DATA && DATA.indicators) || (HISTORY && HISTORY.indicators);
+      const el = $("indicators");
+      if (!el) return;
+      if (!ind || !ind.total) { el.innerHTML = ""; return; }
+      const start = (ind.history_start || "").replace(/-/g, "/");
+      const modelRows = (ind.models || []).map((r) => `<tr>
+          <td>${esc(r.line)}</td>
+          <td class="num">${fmtTodayVal(r.inventory, true)}</td>
+          <td class="num">${fmtAvg(r.inventory && r.inventory.ma5)}</td>
+          <td class="num">${fmtAvg(r.inventory && r.inventory.ma20)}</td>
+          <td>${trendBadge(r.inventory && r.inventory.trend)}</td>
+          <td class="num">${fmtTodayVal(r.arrived, false)}</td>
+          <td class="num">${fmtAvg(r.arrived && r.arrived.ma5)}</td>
+          <td class="num">${fmtAvg(r.arrived && r.arrived.ma20)}</td>
+          <td>${trendBadge(r.arrived && r.arrived.trend)}</td>
+          <td class="num">${fmtTodayVal(r.gone, false)}</td>
+          <td class="num">${fmtAvg(r.gone && r.gone.ma5)}</td>
+          <td class="num">${fmtAvg(r.gone && r.gone.ma20)}</td>
+          <td>${trendBadge(r.gone && r.gone.trend)}</td>
+        </tr>`).join("");
+      el.innerHTML = `
+        <h2>今日／5日／20日</h2>
+        <p class="cap">像看均線一樣，每個指標並陳今日、5日平均與20日平均。資料自 ${esc(start || "—")} 起累積，目前共 ${fmtN(ind.history_days)} 天；庫存平均有 ${fmtN(ind.stock_days)} 天，進車／下架平均有 ${fmtN(ind.flow_days)} 天（第一天沒有前日可比）。視窗未滿期時以現有天數計算並在格子標示，不會回補缺日。庫存差距未滿 1 台或未滿 1%、進車／下架差距未滿 10% 時標示為持平。動向看今日對5日、以及5日對20日（資料夠長才比較）。下架暫定為銷售（以下架計）。</p>
+        <div class="ma-block">
+          <h3>全台新車</h3>
+          <div class="table-wrap"><table class="ma-table">
+            <thead><tr>
+              <th>指標</th>
+              <th class="num">今日</th>
+              <th class="num">5日平均</th>
+              <th class="num">20日平均</th>
+              <th>動向</th>
+            </tr></thead>
+            <tbody>
+              ${maRow("庫存台數", ind.total.inventory, true)}
+              ${maRow("進車", ind.total.arrived, false)}
+              ${maRow("下架（銷售以下架計）", ind.total.gone, false)}
+            </tbody>
+          </table></div>
+        </div>
+        <div class="ma-block">
+          <h3>各車系</h3>
+          <div class="table-wrap"><table class="ma-table">
+            <thead><tr>
+              <th>車系</th>
+              <th class="num">今日庫存</th>
+              <th class="num">5日庫存</th>
+              <th class="num">20日庫存</th>
+              <th>庫存動向</th>
+              <th class="num">今日進車</th>
+              <th class="num">5日進車</th>
+              <th class="num">20日進車</th>
+              <th>進車動向</th>
+              <th class="num">今日下架</th>
+              <th class="num">5日下架</th>
+              <th class="num">20日下架</th>
+              <th>下架動向</th>
+            </tr></thead>
+            <tbody>${modelRows}</tbody>
+          </table></div>
+        </div>`;
+    }
+
     function render() {
       if (!DATA) return;
       buttonSeg($("lineSeg"), [["all","全部車系"], ...LINES.map((l) => [l, l])], state.line, (v) => { state.line = v; render(); });
       renderMeta();
       renderSummary();
+      renderIndicators();
       renderLines();
       renderMatrix();
       renderDealers();
