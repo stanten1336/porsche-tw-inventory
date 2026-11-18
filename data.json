@@ -1,36 +1,36 @@
 {
-  "date": "2026-11-17",
-  "captured_at": "2026-11-17T09:15:23+08:00",
+  "date": "2026-11-18",
+  "captured_at": "2026-11-18T09:21:10+08:00",
   "source": "https://finder.porsche.com/tw/zh-TW?int_ref=globalnav&int_medium=link&int_id=inventory",
   "scope": "new",
   "source_search": "https://finder.porsche.com/tw/zh-TW/search?condition=new",
-  "total": 214,
+  "total": 216,
   "stats": {
-    "total": 214,
+    "total": 216,
     "national_by_model_line": {
-      "Macan": 70,
+      "Macan": 71,
       "718": 56,
-      "Cayenne": 47,
+      "Cayenne": 48,
       "911": 17,
       "Panamera": 14,
       "Taycan": 10
     },
     "national_by_variant": {
       "Macan Macan": 51,
+      "Cayenne Cayenne Coupé": 32,
       "718 718 Cayman GT4 RS": 31,
-      "Cayenne Cayenne Coupé": 31,
       "Macan Macan T": 15,
       "718 718 Spyder RS": 12,
       "Panamera Panamera": 12,
       "Cayenne Cayenne Coupé Black Edition": 8,
       "911 911 Carrera": 5,
       "911 911 Carrera GTS": 5,
+      "Macan Macan 4": 4,
       "Taycan Taycan": 4,
       "Taycan Taycan Black Edition": 4,
       "718 718 Cayman Style Edition": 3,
       "911 911 Carrera 4 GTS": 3,
       "911 911 Carrera T": 3,
-      "Macan Macan 4": 3,
       "718 718 Boxster": 2,
       "718 718 Boxster Style Edition": 2,
       "718 718 Cayman": 2,
@@ -50,16 +50,16 @@
       "Taycan Taycan Turbo GT with Weissach Package": 1
     },
     "national_by_condition": {
-      "new": 214
+      "new": 216
     },
     "dealer_totals": {
       "新北保時捷中心": 87,
       "台南保時捷中心": 46,
       "新竹保時捷中心": 23,
       "高雄保時捷中心": 23,
-      "台中保時捷中心": 15,
+      "台中保時捷中心": 16,
       "台北保時捷中心": 15,
-      "桃園保時捷中心": 5
+      "桃園保時捷中心": 6
     },
     "dealer_by_model_line": {
       "台北保時捷中心": {
@@ -79,7 +79,7 @@
       "桃園保時捷中心": {
         "911": 1,
         "718": 2,
-        "Macan": 2
+        "Macan": 3
       },
       "新竹保時捷中心": {
         "911": 2,
@@ -92,7 +92,7 @@
       "台中保時捷中心": {
         "911": 3,
         "718": 3,
-        "Cayenne": 2,
+        "Cayenne": 3,
         "Macan": 3,
         "Panamera": 1,
         "Taycan": 3
@@ -120,13 +120,13 @@
         "new": 87
       },
       "桃園保時捷中心": {
-        "new": 5
+        "new": 6
       },
       "新竹保時捷中心": {
         "new": 23
       },
       "台中保時捷中心": {
-        "new": 15
+        "new": 16
       },
       "台南保時捷中心": {
         "new": 46
@@ -143,13 +143,13 @@
         "new": 56
       },
       "Cayenne": {
-        "new": 47
+        "new": 48
       },
       "Panamera": {
         "new": 14
       },
       "Macan": {
-        "new": 70
+        "new": 71
       },
       "Taycan": {
         "new": 10
@@ -169,8 +169,8 @@
         },
         "Cayenne": {
           "count": 1,
-          "national": 47,
-          "share": 0.021277
+          "national": 48,
+          "share": 0.020833
         },
         "Panamera": {
           "count": 3,
@@ -191,13 +191,13 @@
         },
         "Cayenne": {
           "count": 19,
-          "national": 47,
-          "share": 0.404255
+          "national": 48,
+          "share": 0.395833
         },
         "Macan": {
           "count": 42,
-          "national": 70,
-          "share": 0.6
+          "national": 71,
+          "share": 0.591549
         },
         "Panamera": {
           "count": 5,
@@ -222,9 +222,9 @@
           "share": 0.035714
         },
         "Macan": {
-          "count": 2,
-          "national": 70,
-          "share": 0.028571
+          "count": 3,
+          "national": 71,
+          "share": 0.042254
         }
       },
       "新竹保時捷中心": {
@@ -240,13 +240,13 @@
         },
         "Cayenne": {
           "count": 4,
-          "national": 47,
-          "share": 0.085106
+          "national": 48,
+          "share": 0.083333
         },
         "Macan": {
           "count": 4,
-          "national": 70,
-          "share": 0.057143
+          "national": 71,
+          "share": 0.056338
         },
         "Panamera": {
           "count": 1,
@@ -271,14 +271,14 @@
           "share": 0.053571
         },
         "Cayenne": {
-          "count": 2,
-          "national": 47,
-          "share": 0.042553
+          "count": 3,
+          "national": 48,
+          "share": 0.0625
         },
         "Macan": {
           "count": 3,
-          "national": 70,
-          "share": 0.042857
+          "national": 71,
+          "share": 0.042254
         },
         "Panamera": {
           "count": 1,
@@ -304,13 +304,13 @@
         },
         "Cayenne": {
           "count": 11,
-          "national": 47,
-          "share": 0.234043
+          "national": 48,
+          "share": 0.229167
         },
         "Macan": {
           "count": 11,
-          "national": 70,
-          "share": 0.157143
+          "national": 71,
+          "share": 0.15493
         },
         "Panamera": {
           "count": 2,
@@ -331,13 +331,13 @@
         },
         "Cayenne": {
           "count": 10,
-          "national": 47,
-          "share": 0.212766
+          "national": 48,
+          "share": 0.208333
         },
         "Macan": {
           "count": 8,
-          "national": 70,
-          "share": 0.114286
+          "national": 71,
+          "share": 0.112676
         },
         "Panamera": {
           "count": 2,
@@ -404,18 +404,18 @@
       "桃園保時捷中心": {
         "911": {
           "count": 1,
-          "dealer_total": 5,
-          "share": 0.2
+          "dealer_total": 6,
+          "share": 0.166667
         },
         "718": {
           "count": 2,
-          "dealer_total": 5,
-          "share": 0.4
+          "dealer_total": 6,
+          "share": 0.333333
         },
         "Macan": {
-          "count": 2,
-          "dealer_total": 5,
-          "share": 0.4
+          "count": 3,
+          "dealer_total": 6,
+          "share": 0.5
         }
       },
       "新竹保時捷中心": {
@@ -453,33 +453,33 @@
       "台中保時捷中心": {
         "911": {
           "count": 3,
-          "dealer_total": 15,
-          "share": 0.2
+          "dealer_total": 16,
+          "share": 0.1875
         },
         "718": {
           "count": 3,
-          "dealer_total": 15,
-          "share": 0.2
+          "dealer_total": 16,
+          "share": 0.1875
         },
         "Cayenne": {
-          "count": 2,
-          "dealer_total": 15,
-          "share": 0.133333
+          "count": 3,
+          "dealer_total": 16,
+          "share": 0.1875
         },
         "Macan": {
           "count": 3,
-          "dealer_total": 15,
-          "share": 0.2
+          "dealer_total": 16,
+          "share": 0.1875
         },
         "Panamera": {
           "count": 1,
-          "dealer_total": 15,
-          "share": 0.066667
+          "dealer_total": 16,
+          "share": 0.0625
         },
         "Taycan": {
           "count": 3,
-          "dealer_total": 15,
-          "share": 0.2
+          "dealer_total": 16,
+          "share": 0.1875
         }
       },
       "台南保時捷中心": {
@@ -539,11 +539,34 @@
     }
   },
   "changes": {
-    "compared_to": "2026-11-16",
-    "compared_to_captured_at": "2026-11-16T09:18:43+08:00",
-    "arrived_count": 0,
+    "compared_to": "2026-11-17",
+    "compared_to_captured_at": "2026-11-17T09:15:23+08:00",
+    "arrived_count": 2,
     "gone_count": 0,
-    "arrived": [],
+    "arrived": [
+      {
+        "id": "KPX6VN",
+        "condition": "new",
+        "condition_label": "新車",
+        "model_line": "Macan",
+        "model_variant": "Macan 4",
+        "model_year": 2026,
+        "price_twd": 4311200,
+        "dealer_name": "桃園保時捷中心",
+        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-4-KPX6VN"
+      },
+      {
+        "id": "QVLRPW",
+        "condition": "new",
+        "condition_label": "新車",
+        "model_line": "Cayenne",
+        "model_variant": "Cayenne Coupé",
+        "model_year": 2026,
+        "price_twd": 4519400,
+        "dealer_name": "台中保時捷中心",
+        "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-QVLRPW"
+      }
+    ],
     "gone": [],
     "gone_label": "銷售（以下架計）",
     "note": "僅比對新車。從列表下架的車輛暫定為銷售（以下架計），不一定已經交車。"
@@ -1971,6 +1994,19 @@
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-W30QQ4"
     },
     {
+      "id": "KPX6VN",
+      "condition": "new",
+      "condition_label": "新車",
+      "model_line": "Macan",
+      "model_variant": "Macan 4",
+      "model_year": 2026,
+      "price_twd": 4311200,
+      "dealer_name": "桃園保時捷中心",
+      "first_registration": null,
+      "mileage_km": 0,
+      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-macan-4-KPX6VN"
+    },
+    {
       "id": "25RRD9",
       "condition": "new",
       "condition_label": "新車",
@@ -2359,6 +2395,19 @@
       "first_registration": null,
       "mileage_km": 0,
       "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-LV63MX"
+    },
+    {
+      "id": "QVLRPW",
+      "condition": "new",
+      "condition_label": "新車",
+      "model_line": "Cayenne",
+      "model_variant": "Cayenne Coupé",
+      "model_year": 2026,
+      "price_twd": 4519400,
+      "dealer_name": "台中保時捷中心",
+      "first_registration": null,
+      "mileage_km": 0,
+      "listing_url": "https://finder.porsche.com/tw/zh-TW/details/porsche-cayenne-coupe-QVLRPW"
     },
     {
       "id": "252Q29",
@@ -3367,11 +3416,11 @@
       5,
       20
     ],
-    "history_days": 8,
-    "stock_days": 8,
-    "flow_days": 7,
+    "history_days": 9,
+    "stock_days": 9,
+    "flow_days": 8,
     "history_start": "2026-11-10",
-    "history_end": "2026-11-17",
+    "history_end": "2026-11-18",
     "threshold_stock": 0.01,
     "threshold_flow": 0.1,
     "min_abs_stock": 1,
@@ -3379,31 +3428,31 @@
     "note": "5日、20日平均只使用實際已有的每日資料，不會回補或推估缺日。視窗未滿期時，以目前天數計算並標示，例如「20日（目前僅7天資料）」。進車／下架平均不含沒有前日可比的第一天。庫存較均線差距未滿 1 台或未滿 1%、進車／下架差距未滿 10% 時標示為持平。下架（銷售以下架計）高於均線為升溫、低於為降溫；進車減少為供給緊縮（偏多），增加為供給增加（偏空）；庫存減少為庫存減少（偏多），增加為庫存增加（偏空）。五日或二十日平均未滿 3 台時，不顯示百分比與升溫／偏多等動向，改列台數並標示「樣本太少」（量少，僅供參考）。下架暫定為銷售（以下架計）。",
     "total": {
       "inventory": {
-        "today": 214,
-        "change": 0,
+        "today": 216,
+        "change": 2,
         "ma5": {
-          "value": 213.4,
+          "value": 214.4,
           "n": 5,
           "complete": true,
           "label": "5日"
         },
         "ma20": {
-          "value": 212.9,
-          "n": 8,
+          "value": 213.2,
+          "n": 9,
           "complete": false,
-          "label": "20日（目前僅8天資料）"
+          "label": "20日（目前僅9天資料）"
         },
         "thin_short": false,
         "thin_medium": false,
         "thin_note": null,
-        "short_display": "今日 214 台 vs 5日均 213.4 台",
-        "medium_display": "5日均 213.4 台 vs 20日均 212.9 台",
+        "short_display": "今日 216 台 vs 5日均 214.4 台",
+        "medium_display": "5日均 214.4 台 vs 20日均 213.2 台",
         "vs_ma5": "持平",
         "ma5_vs_ma20": "持平",
         "trend": "持平"
       },
       "arrived": {
-        "today": 0,
+        "today": 2,
         "change": null,
         "ma5": {
           "value": 1.4,
@@ -3412,16 +3461,16 @@
           "label": "5日"
         },
         "ma20": {
-          "value": 1.0,
-          "n": 7,
+          "value": 1.1,
+          "n": 8,
           "complete": false,
-          "label": "20日（目前僅7天資料）"
+          "label": "20日（目前僅8天資料）"
         },
         "thin_short": true,
         "thin_medium": true,
         "thin_note": "量少，僅供參考",
-        "short_display": "今日 0 台 vs 5日均 1.4 台",
-        "medium_display": "5日均 1.4 台 vs 20日均 1 台",
+        "short_display": "今日 2 台 vs 5日均 1.4 台",
+        "medium_display": "5日均 1.4 台 vs 20日均 1.1 台",
         "vs_ma5": "樣本太少",
         "ma5_vs_ma20": "樣本太少",
         "trend": "樣本太少"
@@ -3430,22 +3479,22 @@
         "today": 0,
         "change": null,
         "ma5": {
-          "value": 1.0,
+          "value": 0.4,
           "n": 5,
           "complete": true,
           "label": "5日"
         },
         "ma20": {
-          "value": 0.7,
-          "n": 7,
+          "value": 0.6,
+          "n": 8,
           "complete": false,
-          "label": "20日（目前僅7天資料）"
+          "label": "20日（目前僅8天資料）"
         },
         "thin_short": true,
         "thin_medium": true,
         "thin_note": "量少，僅供參考",
-        "short_display": "今日 0 台 vs 5日均 1 台",
-        "medium_display": "5日均 1 台 vs 20日均 0.7 台",
+        "short_display": "今日 0 台 vs 5日均 0.4 台",
+        "medium_display": "5日均 0.4 台 vs 20日均 0.6 台",
         "vs_ma5": "樣本太少",
         "ma5_vs_ma20": "樣本太少",
         "trend": "樣本太少"
@@ -3458,22 +3507,22 @@
           "today": 17,
           "change": 0,
           "ma5": {
-            "value": 16.8,
+            "value": 17.0,
             "n": 5,
             "complete": true,
             "label": "5日"
           },
           "ma20": {
-            "value": 16.5,
-            "n": 8,
+            "value": 16.6,
+            "n": 9,
             "complete": false,
-            "label": "20日（目前僅8天資料）"
+            "label": "20日（目前僅9天資料）"
           },
           "thin_short": false,
           "thin_medium": false,
           "thin_note": null,
-          "short_display": "今日 17 台 vs 5日均 16.8 台",
-          "medium_display": "5日均 16.8 台 vs 20日均 16.5 台",
+          "short_display": "今日 17 台 vs 5日均 17 台",
+          "medium_display": "5日均 17 台 vs 20日均 16.6 台",
           "vs_ma5": "持平",
           "ma5_vs_ma20": "持平",
           "trend": "持平"
@@ -3489,9 +3538,9 @@
           },
           "ma20": {
             "value": 0.1,
-            "n": 7,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "thin_short": true,
           "thin_medium": true,
@@ -3513,9 +3562,9 @@
           },
           "ma20": {
             "value": 0.0,
-            "n": 7,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "thin_short": true,
           "thin_medium": true,
@@ -3533,22 +3582,22 @@
           "today": 56,
           "change": 0,
           "ma5": {
-            "value": 55.6,
+            "value": 56.0,
             "n": 5,
             "complete": true,
             "label": "5日"
           },
           "ma20": {
-            "value": 55.0,
-            "n": 8,
+            "value": 55.1,
+            "n": 9,
             "complete": false,
-            "label": "20日（目前僅8天資料）"
+            "label": "20日（目前僅9天資料）"
           },
           "thin_short": false,
           "thin_medium": false,
           "thin_note": null,
-          "short_display": "今日 56 台 vs 5日均 55.6 台",
-          "medium_display": "5日均 55.6 台 vs 20日均 55 台",
+          "short_display": "今日 56 台 vs 5日均 56 台",
+          "medium_display": "5日均 56 台 vs 20日均 55.1 台",
           "vs_ma5": "持平",
           "ma5_vs_ma20": "持平",
           "trend": "持平"
@@ -3563,16 +3612,16 @@
             "label": "5日"
           },
           "ma20": {
-            "value": 0.3,
-            "n": 7,
+            "value": 0.2,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "thin_short": true,
           "thin_medium": true,
           "thin_note": "量少，僅供參考",
           "short_display": "今日 0 台 vs 5日均 0.4 台",
-          "medium_display": "5日均 0.4 台 vs 20日均 0.3 台",
+          "medium_display": "5日均 0.4 台 vs 20日均 0.2 台",
           "vs_ma5": "樣本太少",
           "ma5_vs_ma20": "樣本太少",
           "trend": "樣本太少"
@@ -3588,9 +3637,9 @@
           },
           "ma20": {
             "value": 0.0,
-            "n": 7,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "thin_short": true,
           "thin_medium": true,
@@ -3605,31 +3654,31 @@
       {
         "line": "Cayenne",
         "inventory": {
-          "today": 47,
-          "change": 0,
+          "today": 48,
+          "change": 1,
           "ma5": {
-            "value": 47.0,
+            "value": 47.2,
             "n": 5,
             "complete": true,
             "label": "5日"
           },
           "ma20": {
             "value": 47.4,
-            "n": 8,
+            "n": 9,
             "complete": false,
-            "label": "20日（目前僅8天資料）"
+            "label": "20日（目前僅9天資料）"
           },
           "thin_short": false,
           "thin_medium": false,
           "thin_note": null,
-          "short_display": "今日 47 台 vs 5日均 47 台",
-          "medium_display": "5日均 47 台 vs 20日均 47.4 台",
+          "short_display": "今日 48 台 vs 5日均 47.2 台",
+          "medium_display": "5日均 47.2 台 vs 20日均 47.4 台",
           "vs_ma5": "持平",
           "ma5_vs_ma20": "持平",
           "trend": "持平"
         },
         "arrived": {
-          "today": 0,
+          "today": 1,
           "change": null,
           "ma5": {
             "value": 0.6,
@@ -3638,16 +3687,16 @@
             "label": "5日"
           },
           "ma20": {
-            "value": 0.4,
-            "n": 7,
+            "value": 0.5,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "thin_short": true,
           "thin_medium": true,
           "thin_note": "量少，僅供參考",
-          "short_display": "今日 0 台 vs 5日均 0.6 台",
-          "medium_display": "5日均 0.6 台 vs 20日均 0.4 台",
+          "short_display": "今日 1 台 vs 5日均 0.6 台",
+          "medium_display": "5日均 0.6 台 vs 20日均 0.5 台",
           "vs_ma5": "樣本太少",
           "ma5_vs_ma20": "樣本太少",
           "trend": "樣本太少"
@@ -3656,22 +3705,22 @@
           "today": 0,
           "change": null,
           "ma5": {
-            "value": 0.8,
+            "value": 0.4,
             "n": 5,
             "complete": true,
             "label": "5日"
           },
           "ma20": {
-            "value": 0.6,
-            "n": 7,
+            "value": 0.5,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "thin_short": true,
           "thin_medium": true,
           "thin_note": "量少，僅供參考",
-          "short_display": "今日 0 台 vs 5日均 0.8 台",
-          "medium_display": "5日均 0.8 台 vs 20日均 0.6 台",
+          "short_display": "今日 0 台 vs 5日均 0.4 台",
+          "medium_display": "5日均 0.4 台 vs 20日均 0.5 台",
           "vs_ma5": "樣本太少",
           "ma5_vs_ma20": "樣本太少",
           "trend": "樣本太少"
@@ -3680,55 +3729,31 @@
       {
         "line": "Macan",
         "inventory": {
-          "today": 70,
-          "change": 0,
+          "today": 71,
+          "change": 1,
           "ma5": {
-            "value": 70.0,
+            "value": 70.2,
             "n": 5,
             "complete": true,
             "label": "5日"
           },
           "ma20": {
             "value": 70.4,
-            "n": 8,
+            "n": 9,
             "complete": false,
-            "label": "20日（目前僅8天資料）"
+            "label": "20日（目前僅9天資料）"
           },
           "thin_short": false,
           "thin_medium": false,
           "thin_note": null,
-          "short_display": "今日 70 台 vs 5日均 70 台",
-          "medium_display": "5日均 70 台 vs 20日均 70.4 台",
+          "short_display": "今日 71 台 vs 5日均 70.2 台",
+          "medium_display": "5日均 70.2 台 vs 20日均 70.4 台",
           "vs_ma5": "持平",
           "ma5_vs_ma20": "持平",
           "trend": "持平"
         },
         "arrived": {
-          "today": 0,
-          "change": null,
-          "ma5": {
-            "value": 0.0,
-            "n": 5,
-            "complete": true,
-            "label": "5日"
-          },
-          "ma20": {
-            "value": 0.0,
-            "n": 7,
-            "complete": false,
-            "label": "20日（目前僅7天資料）"
-          },
-          "thin_short": true,
-          "thin_medium": true,
-          "thin_note": "量少，僅供參考",
-          "short_display": "今日 0 台 vs 5日均 0 台",
-          "medium_display": "5日均 0 台 vs 20日均 0 台",
-          "vs_ma5": "樣本太少",
-          "ma5_vs_ma20": "樣本太少",
-          "trend": "樣本太少"
-        },
-        "gone": {
-          "today": 0,
+          "today": 1,
           "change": null,
           "ma5": {
             "value": 0.2,
@@ -3738,15 +3763,39 @@
           },
           "ma20": {
             "value": 0.1,
-            "n": 7,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "thin_short": true,
           "thin_medium": true,
           "thin_note": "量少，僅供參考",
-          "short_display": "今日 0 台 vs 5日均 0.2 台",
+          "short_display": "今日 1 台 vs 5日均 0.2 台",
           "medium_display": "5日均 0.2 台 vs 20日均 0.1 台",
+          "vs_ma5": "樣本太少",
+          "ma5_vs_ma20": "樣本太少",
+          "trend": "樣本太少"
+        },
+        "gone": {
+          "today": 0,
+          "change": null,
+          "ma5": {
+            "value": 0.0,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.1,
+            "n": 8,
+            "complete": false,
+            "label": "20日（目前僅8天資料）"
+          },
+          "thin_short": true,
+          "thin_medium": true,
+          "thin_note": "量少，僅供參考",
+          "short_display": "今日 0 台 vs 5日均 0 台",
+          "medium_display": "5日均 0 台 vs 20日均 0.1 台",
           "vs_ma5": "樣本太少",
           "ma5_vs_ma20": "樣本太少",
           "trend": "樣本太少"
@@ -3765,9 +3814,9 @@
           },
           "ma20": {
             "value": 14.0,
-            "n": 8,
+            "n": 9,
             "complete": false,
-            "label": "20日（目前僅8天資料）"
+            "label": "20日（目前僅9天資料）"
           },
           "thin_short": false,
           "thin_medium": false,
@@ -3789,9 +3838,9 @@
           },
           "ma20": {
             "value": 0.0,
-            "n": 7,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "thin_short": true,
           "thin_medium": true,
@@ -3813,9 +3862,9 @@
           },
           "ma20": {
             "value": 0.0,
-            "n": 7,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "thin_short": true,
           "thin_medium": true,
@@ -3839,16 +3888,16 @@
             "label": "5日"
           },
           "ma20": {
-            "value": 9.6,
-            "n": 8,
+            "value": 9.7,
+            "n": 9,
             "complete": false,
-            "label": "20日（目前僅8天資料）"
+            "label": "20日（目前僅9天資料）"
           },
           "thin_short": false,
           "thin_medium": false,
           "thin_note": null,
           "short_display": "今日 10 台 vs 5日均 10 台",
-          "medium_display": "5日均 10 台 vs 20日均 9.6 台",
+          "medium_display": "5日均 10 台 vs 20日均 9.7 台",
           "vs_ma5": "持平",
           "ma5_vs_ma20": "持平",
           "trend": "持平"
@@ -3857,22 +3906,22 @@
           "today": 0,
           "change": null,
           "ma5": {
-            "value": 0.2,
+            "value": 0.0,
             "n": 5,
             "complete": true,
             "label": "5日"
           },
           "ma20": {
             "value": 0.1,
-            "n": 7,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "thin_short": true,
           "thin_medium": true,
           "thin_note": "量少，僅供參考",
-          "short_display": "今日 0 台 vs 5日均 0.2 台",
-          "medium_display": "5日均 0.2 台 vs 20日均 0.1 台",
+          "short_display": "今日 0 台 vs 5日均 0 台",
+          "medium_display": "5日均 0 台 vs 20日均 0.1 台",
           "vs_ma5": "樣本太少",
           "ma5_vs_ma20": "樣本太少",
           "trend": "樣本太少"
@@ -3888,9 +3937,9 @@
           },
           "ma20": {
             "value": 0.0,
-            "n": 7,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "thin_short": true,
           "thin_medium": true,
@@ -3911,43 +3960,43 @@
     "min_sold_ma5": 3,
     "thin_base": 3,
     "pressure_eq_band": 0.02,
-    "history_days": 8,
-    "flow_days": 7,
+    "history_days": 9,
+    "flow_days": 8,
     "history_start": "2026-11-10",
-    "history_end": "2026-11-17",
+    "history_end": "2026-11-18",
     "medium_available": true,
     "eligible_count": 0,
     "note": "動能比較以五日、二十日均線為基礎，只使用實際已有的每日資料，不會回補或推估缺日。短期動能＝（今日 − 5日平均）÷ 5日平均 × 100%；5日平均為 0 且今日也是 0 時記為 0%。中期動能＝（5日平均 − 20日平均）÷ 20日平均 × 100%；只有 20 日視窗的天數多於 5 日視窗時才計算，否則標示「資料不足」。下架增加為升溫（偏多）、減少為降溫；進車減少為供給緊縮（偏多），增加為供給增加（偏空）。動能分數＝（下架短期動能％ − 進車短期動能％）＋（供需比 − 1）× 100。下架動能越高、進車動能越低，分數越高（偏多）；供需比大於 1 也加分。車系排名依動能分數由高到低，且五日下架與進車平均都須至少 3 台；未滿 3 台不計算百分比與分數，改列台數並標示「樣本太少」（量少，僅供參考）。均線動向有持平門檻，達標後的分數使用實際百分比，不因持平門檻歸零。供需比＝五日下架平均 ÷ 五日進車平均；大於 1 代表去化快於進貨，小於 1 代表進貨快於去化，差距未滿 2% 標示為接近均衡。下架暫定為銷售（以下架計）。",
     "total": {
       "inventory": {
-        "today": 214,
+        "today": 216,
         "ma5": {
-          "value": 213.4,
+          "value": 214.4,
           "n": 5,
           "complete": true,
           "label": "5日"
         },
         "ma20": {
-          "value": 212.9,
-          "n": 8,
+          "value": 213.2,
+          "n": 9,
           "complete": false,
-          "label": "20日（目前僅8天資料）"
+          "label": "20日（目前僅9天資料）"
         },
-        "short_pct": 0.3,
-        "medium_pct": 0.2,
+        "short_pct": 0.7,
+        "medium_pct": 0.6,
         "medium_available": true,
         "medium_label": null,
         "thin_short": false,
         "thin_medium": false,
         "thin_note": null,
-        "short_display": "今日 214 台 vs 5日均 213.4 台",
-        "medium_display": "5日均 213.4 台 vs 20日均 212.9 台",
+        "short_display": "今日 216 台 vs 5日均 214.4 台",
+        "medium_display": "5日均 214.4 台 vs 20日均 213.2 台",
         "short_label": "持平",
         "medium_dir_label": "持平",
         "trend": "持平"
       },
       "arrived": {
-        "today": 0,
+        "today": 2,
         "ma5": {
           "value": 1.4,
           "n": 5,
@@ -3955,10 +4004,10 @@
           "label": "5日"
         },
         "ma20": {
-          "value": 1.0,
-          "n": 7,
+          "value": 1.1,
+          "n": 8,
           "complete": false,
-          "label": "20日（目前僅7天資料）"
+          "label": "20日（目前僅8天資料）"
         },
         "short_pct": null,
         "medium_pct": null,
@@ -3967,8 +4016,8 @@
         "thin_short": true,
         "thin_medium": true,
         "thin_note": "量少，僅供參考",
-        "short_display": "今日 0 台 vs 5日均 1.4 台",
-        "medium_display": "5日均 1.4 台 vs 20日均 1 台",
+        "short_display": "今日 2 台 vs 5日均 1.4 台",
+        "medium_display": "5日均 1.4 台 vs 20日均 1.1 台",
         "short_label": "樣本太少",
         "medium_dir_label": "樣本太少",
         "trend": "樣本太少"
@@ -3976,16 +4025,16 @@
       "gone": {
         "today": 0,
         "ma5": {
-          "value": 1.0,
+          "value": 0.4,
           "n": 5,
           "complete": true,
           "label": "5日"
         },
         "ma20": {
-          "value": 0.7,
-          "n": 7,
+          "value": 0.6,
+          "n": 8,
           "complete": false,
-          "label": "20日（目前僅7天資料）"
+          "label": "20日（目前僅8天資料）"
         },
         "short_pct": null,
         "medium_pct": null,
@@ -3994,18 +4043,18 @@
         "thin_short": true,
         "thin_medium": true,
         "thin_note": "量少，僅供參考",
-        "short_display": "今日 0 台 vs 5日均 1 台",
-        "medium_display": "5日均 1 台 vs 20日均 0.7 台",
+        "short_display": "今日 0 台 vs 5日均 0.4 台",
+        "medium_display": "5日均 0.4 台 vs 20日均 0.6 台",
         "short_label": "樣本太少",
         "medium_dir_label": "樣本太少",
         "trend": "樣本太少"
       },
       "pressure": {
-        "sold_ma5": 1.0,
+        "sold_ma5": 0.4,
         "arrived_ma5": 1.4,
         "ratio": null,
         "label": "量少，僅供參考",
-        "display": "五日下架 1 台 vs 五日進貨 1.4 台",
+        "display": "五日下架 0.4 台 vs 五日進貨 1.4 台",
         "thin": true
       },
       "spread": null,
@@ -4022,26 +4071,26 @@
         "inventory": {
           "today": 56,
           "ma5": {
-            "value": 55.6,
+            "value": 56.0,
             "n": 5,
             "complete": true,
             "label": "5日"
           },
           "ma20": {
-            "value": 55.0,
-            "n": 8,
+            "value": 55.1,
+            "n": 9,
             "complete": false,
-            "label": "20日（目前僅8天資料）"
+            "label": "20日（目前僅9天資料）"
           },
-          "short_pct": 0.7,
-          "medium_pct": 1.1,
+          "short_pct": 0.0,
+          "medium_pct": 1.6,
           "medium_available": true,
           "medium_label": null,
           "thin_short": false,
           "thin_medium": false,
           "thin_note": null,
-          "short_display": "今日 56 台 vs 5日均 55.6 台",
-          "medium_display": "5日均 55.6 台 vs 20日均 55 台",
+          "short_display": "今日 56 台 vs 5日均 56 台",
+          "medium_display": "5日均 56 台 vs 20日均 55.1 台",
           "short_label": "持平",
           "medium_dir_label": "持平",
           "trend": "持平"
@@ -4055,10 +4104,10 @@
             "label": "5日"
           },
           "ma20": {
-            "value": 0.3,
-            "n": 7,
+            "value": 0.2,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "short_pct": null,
           "medium_pct": null,
@@ -4068,7 +4117,7 @@
           "thin_medium": true,
           "thin_note": "量少，僅供參考",
           "short_display": "今日 0 台 vs 5日均 0.4 台",
-          "medium_display": "5日均 0.4 台 vs 20日均 0.3 台",
+          "medium_display": "5日均 0.4 台 vs 20日均 0.2 台",
           "short_label": "樣本太少",
           "medium_dir_label": "樣本太少",
           "trend": "樣本太少"
@@ -4083,9 +4132,9 @@
           },
           "ma20": {
             "value": 0.0,
-            "n": 7,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "short_pct": null,
           "medium_pct": null,
@@ -4121,26 +4170,26 @@
         "inventory": {
           "today": 17,
           "ma5": {
-            "value": 16.8,
+            "value": 17.0,
             "n": 5,
             "complete": true,
             "label": "5日"
           },
           "ma20": {
-            "value": 16.5,
-            "n": 8,
+            "value": 16.6,
+            "n": 9,
             "complete": false,
-            "label": "20日（目前僅8天資料）"
+            "label": "20日（目前僅9天資料）"
           },
-          "short_pct": 1.2,
-          "medium_pct": 1.8,
+          "short_pct": 0.0,
+          "medium_pct": 2.4,
           "medium_available": true,
           "medium_label": null,
           "thin_short": false,
           "thin_medium": false,
           "thin_note": null,
-          "short_display": "今日 17 台 vs 5日均 16.8 台",
-          "medium_display": "5日均 16.8 台 vs 20日均 16.5 台",
+          "short_display": "今日 17 台 vs 5日均 17 台",
+          "medium_display": "5日均 17 台 vs 20日均 16.6 台",
           "short_label": "持平",
           "medium_dir_label": "持平",
           "trend": "持平"
@@ -4155,9 +4204,9 @@
           },
           "ma20": {
             "value": 0.1,
-            "n": 7,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "short_pct": null,
           "medium_pct": null,
@@ -4182,9 +4231,9 @@
           },
           "ma20": {
             "value": 0.0,
-            "n": 7,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "short_pct": null,
           "medium_pct": null,
@@ -4218,34 +4267,34 @@
       },
       {
         "inventory": {
-          "today": 47,
+          "today": 48,
           "ma5": {
-            "value": 47.0,
+            "value": 47.2,
             "n": 5,
             "complete": true,
             "label": "5日"
           },
           "ma20": {
             "value": 47.4,
-            "n": 8,
+            "n": 9,
             "complete": false,
-            "label": "20日（目前僅8天資料）"
+            "label": "20日（目前僅9天資料）"
           },
-          "short_pct": 0.0,
-          "medium_pct": -0.8,
+          "short_pct": 1.7,
+          "medium_pct": -0.4,
           "medium_available": true,
           "medium_label": null,
           "thin_short": false,
           "thin_medium": false,
           "thin_note": null,
-          "short_display": "今日 47 台 vs 5日均 47 台",
-          "medium_display": "5日均 47 台 vs 20日均 47.4 台",
+          "short_display": "今日 48 台 vs 5日均 47.2 台",
+          "medium_display": "5日均 47.2 台 vs 20日均 47.4 台",
           "short_label": "持平",
           "medium_dir_label": "持平",
           "trend": "持平"
         },
         "arrived": {
-          "today": 0,
+          "today": 1,
           "ma5": {
             "value": 0.6,
             "n": 5,
@@ -4253,10 +4302,10 @@
             "label": "5日"
           },
           "ma20": {
-            "value": 0.4,
-            "n": 7,
+            "value": 0.5,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "short_pct": null,
           "medium_pct": null,
@@ -4265,8 +4314,8 @@
           "thin_short": true,
           "thin_medium": true,
           "thin_note": "量少，僅供參考",
-          "short_display": "今日 0 台 vs 5日均 0.6 台",
-          "medium_display": "5日均 0.6 台 vs 20日均 0.4 台",
+          "short_display": "今日 1 台 vs 5日均 0.6 台",
+          "medium_display": "5日均 0.6 台 vs 20日均 0.5 台",
           "short_label": "樣本太少",
           "medium_dir_label": "樣本太少",
           "trend": "樣本太少"
@@ -4274,16 +4323,16 @@
         "gone": {
           "today": 0,
           "ma5": {
-            "value": 0.8,
+            "value": 0.4,
             "n": 5,
             "complete": true,
             "label": "5日"
           },
           "ma20": {
-            "value": 0.6,
-            "n": 7,
+            "value": 0.5,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "short_pct": null,
           "medium_pct": null,
@@ -4292,18 +4341,18 @@
           "thin_short": true,
           "thin_medium": true,
           "thin_note": "量少，僅供參考",
-          "short_display": "今日 0 台 vs 5日均 0.8 台",
-          "medium_display": "5日均 0.8 台 vs 20日均 0.6 台",
+          "short_display": "今日 0 台 vs 5日均 0.4 台",
+          "medium_display": "5日均 0.4 台 vs 20日均 0.5 台",
           "short_label": "樣本太少",
           "medium_dir_label": "樣本太少",
           "trend": "樣本太少"
         },
         "pressure": {
-          "sold_ma5": 0.8,
+          "sold_ma5": 0.4,
           "arrived_ma5": 0.6,
           "ratio": null,
           "label": "量少，僅供參考",
-          "display": "五日下架 0.8 台 vs 五日進貨 0.6 台",
+          "display": "五日下架 0.4 台 vs 五日進貨 0.6 台",
           "thin": true
         },
         "spread": null,
@@ -4317,33 +4366,60 @@
       },
       {
         "inventory": {
-          "today": 70,
+          "today": 71,
           "ma5": {
-            "value": 70.0,
+            "value": 70.2,
             "n": 5,
             "complete": true,
             "label": "5日"
           },
           "ma20": {
             "value": 70.4,
-            "n": 8,
+            "n": 9,
             "complete": false,
-            "label": "20日（目前僅8天資料）"
+            "label": "20日（目前僅9天資料）"
           },
-          "short_pct": 0.0,
-          "medium_pct": -0.6,
+          "short_pct": 1.1,
+          "medium_pct": -0.3,
           "medium_available": true,
           "medium_label": null,
           "thin_short": false,
           "thin_medium": false,
           "thin_note": null,
-          "short_display": "今日 70 台 vs 5日均 70 台",
-          "medium_display": "5日均 70 台 vs 20日均 70.4 台",
+          "short_display": "今日 71 台 vs 5日均 70.2 台",
+          "medium_display": "5日均 70.2 台 vs 20日均 70.4 台",
           "short_label": "持平",
           "medium_dir_label": "持平",
           "trend": "持平"
         },
         "arrived": {
+          "today": 1,
+          "ma5": {
+            "value": 0.2,
+            "n": 5,
+            "complete": true,
+            "label": "5日"
+          },
+          "ma20": {
+            "value": 0.1,
+            "n": 8,
+            "complete": false,
+            "label": "20日（目前僅8天資料）"
+          },
+          "short_pct": null,
+          "medium_pct": null,
+          "medium_available": true,
+          "medium_label": null,
+          "thin_short": true,
+          "thin_medium": true,
+          "thin_note": "量少，僅供參考",
+          "short_display": "今日 1 台 vs 5日均 0.2 台",
+          "medium_display": "5日均 0.2 台 vs 20日均 0.1 台",
+          "short_label": "樣本太少",
+          "medium_dir_label": "樣本太少",
+          "trend": "樣本太少"
+        },
+        "gone": {
           "today": 0,
           "ma5": {
             "value": 0.0,
@@ -4352,10 +4428,10 @@
             "label": "5日"
           },
           "ma20": {
-            "value": 0.0,
-            "n": 7,
+            "value": 0.1,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "short_pct": null,
           "medium_pct": null,
@@ -4365,44 +4441,17 @@
           "thin_medium": true,
           "thin_note": "量少，僅供參考",
           "short_display": "今日 0 台 vs 5日均 0 台",
-          "medium_display": "5日均 0 台 vs 20日均 0 台",
-          "short_label": "樣本太少",
-          "medium_dir_label": "樣本太少",
-          "trend": "樣本太少"
-        },
-        "gone": {
-          "today": 0,
-          "ma5": {
-            "value": 0.2,
-            "n": 5,
-            "complete": true,
-            "label": "5日"
-          },
-          "ma20": {
-            "value": 0.1,
-            "n": 7,
-            "complete": false,
-            "label": "20日（目前僅7天資料）"
-          },
-          "short_pct": null,
-          "medium_pct": null,
-          "medium_available": true,
-          "medium_label": null,
-          "thin_short": true,
-          "thin_medium": true,
-          "thin_note": "量少，僅供參考",
-          "short_display": "今日 0 台 vs 5日均 0.2 台",
-          "medium_display": "5日均 0.2 台 vs 20日均 0.1 台",
+          "medium_display": "5日均 0 台 vs 20日均 0.1 台",
           "short_label": "樣本太少",
           "medium_dir_label": "樣本太少",
           "trend": "樣本太少"
         },
         "pressure": {
-          "sold_ma5": 0.2,
-          "arrived_ma5": 0.0,
+          "sold_ma5": 0.0,
+          "arrived_ma5": 0.2,
           "ratio": null,
           "label": "量少，僅供參考",
-          "display": "五日下架 0.2 台 vs 五日進貨 0 台",
+          "display": "五日下架 0 台 vs 五日進貨 0.2 台",
           "thin": true
         },
         "spread": null,
@@ -4425,9 +4474,9 @@
           },
           "ma20": {
             "value": 14.0,
-            "n": 8,
+            "n": 9,
             "complete": false,
-            "label": "20日（目前僅8天資料）"
+            "label": "20日（目前僅9天資料）"
           },
           "short_pct": 0.0,
           "medium_pct": 0.0,
@@ -4452,9 +4501,9 @@
           },
           "ma20": {
             "value": 0.0,
-            "n": 7,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "short_pct": null,
           "medium_pct": null,
@@ -4479,9 +4528,9 @@
           },
           "ma20": {
             "value": 0.0,
-            "n": 7,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "short_pct": null,
           "medium_pct": null,
@@ -4523,20 +4572,20 @@
             "label": "5日"
           },
           "ma20": {
-            "value": 9.6,
-            "n": 8,
+            "value": 9.7,
+            "n": 9,
             "complete": false,
-            "label": "20日（目前僅8天資料）"
+            "label": "20日（目前僅9天資料）"
           },
           "short_pct": 0.0,
-          "medium_pct": 4.2,
+          "medium_pct": 3.1,
           "medium_available": true,
           "medium_label": null,
           "thin_short": false,
           "thin_medium": false,
           "thin_note": null,
           "short_display": "今日 10 台 vs 5日均 10 台",
-          "medium_display": "5日均 10 台 vs 20日均 9.6 台",
+          "medium_display": "5日均 10 台 vs 20日均 9.7 台",
           "short_label": "持平",
           "medium_dir_label": "持平",
           "trend": "持平"
@@ -4544,16 +4593,16 @@
         "arrived": {
           "today": 0,
           "ma5": {
-            "value": 0.2,
+            "value": 0.0,
             "n": 5,
             "complete": true,
             "label": "5日"
           },
           "ma20": {
             "value": 0.1,
-            "n": 7,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "short_pct": null,
           "medium_pct": null,
@@ -4562,8 +4611,8 @@
           "thin_short": true,
           "thin_medium": true,
           "thin_note": "量少，僅供參考",
-          "short_display": "今日 0 台 vs 5日均 0.2 台",
-          "medium_display": "5日均 0.2 台 vs 20日均 0.1 台",
+          "short_display": "今日 0 台 vs 5日均 0 台",
+          "medium_display": "5日均 0 台 vs 20日均 0.1 台",
           "short_label": "樣本太少",
           "medium_dir_label": "樣本太少",
           "trend": "樣本太少"
@@ -4578,9 +4627,9 @@
           },
           "ma20": {
             "value": 0.0,
-            "n": 7,
+            "n": 8,
             "complete": false,
-            "label": "20日（目前僅7天資料）"
+            "label": "20日（目前僅8天資料）"
           },
           "short_pct": null,
           "medium_pct": null,
@@ -4597,10 +4646,10 @@
         },
         "pressure": {
           "sold_ma5": 0.0,
-          "arrived_ma5": 0.2,
+          "arrived_ma5": 0.0,
           "ratio": null,
           "label": "量少，僅供參考",
-          "display": "五日下架 0 台 vs 五日進貨 0.2 台",
+          "display": "五日下架 0 台 vs 五日進貨 0 台",
           "thin": true
         },
         "spread": null,
